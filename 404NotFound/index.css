@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&family=Montserrat:wght@400;700&family=Space+Mono:wght@400;700&display=swap');
+
+:root {
+  --text-color-primary: #333333;
+  --text-color-secondary: #4f4f4f;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.top-container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  flex: 1;
+}
+
+main {
+  flex: 8;
+}
+
+footer {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+footer p {
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 0.875rem;
+  line-height: 1.0625rem;
+  text-align: center;
+  color: var(--text-color-primary);
+}
+
+.heading {
+  margin-top: 20px;
+  margin-left: 24px;
+  width: 133px;
+  height: 25px;
+  font-family: Inconsolata;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 1.5rem;
+  line-height: 1.56rem;
+  letter-spacing: -0.08em;
+  text-transform: uppercase;
+  font-family: 'Inconsolata', monospace;
+  color: var(--text-color-primary);
+}
+
+.main-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 0 25px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.not-found-img {
+  width: 320px;
+}
+
+.content {
+  font-family: 'Space Mono', monospace;
+  font-style: normal;
+}
+
+.content h2 {
+  font-weight: bold;
+  font-weight: bold;
+  font-size: 3rem;
+  line-height: 4.4375rem;
+  letter-spacing: -0.035em;
+  color: var(--text-color-primary);
+}
+
+.content p {
+  font-weight: normal;
+  font-size: 1.125rem;
+  line-height: 1.6875rem;
+  letter-spacing: -0.035em;
+  color: var(--text-color-secondary);
+}
+
+.content a {
+  display: inline-block;
+  padding: 24px 43px;
+  font-weight: bold;
+  font-size: 1.125rem;
+  line-height: 1.3125rem;
+  letter-spacing: -0.035em;
+  text-transform: uppercase;
+  text-decoration: none;
+  background-color: var(--text-color-primary);
+  color: white;
+  margin-top: 20px;
+}
+
+@media (min-width: 992px) {
+  .main-container {
+    flex-direction: row;
+    padding: 0 30px;
+  }
+
+  .content {
+    margin: 0 30px;
+  }
+
+  .content h2 {
+    font-size: 4rem;
+    line-height: 5.9375rem;
+    font-size: 4rem;
+  }
+
+  .content p {
+    width: 60%;
+    font-size: 1.5rem;
+    line-height: 2.25rem;
+  }
+
+  .content a {
+    margin-top: 30px;
+  }
+
+  .main-container img {
+    margin: 0 30px;
+  }
+
+  .not-found-img {
+    width: 480px;
+  }
+}
