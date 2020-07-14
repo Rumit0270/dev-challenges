@@ -1,0 +1,124 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=PT+Serif:wght@400;700&family=Poppins:wght@300;400;700&display=swap");
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #fafafa;
+}
+
+footer {
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 17px;
+  color: #a9a9a9;
+  text-align: center;
+  margin: 10px auto 20px;
+}
+
+.team {
+  padding: 20px 10px 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.team-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 40px;
+}
+.team-header__heading {
+  font-family: "PT Serif", serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 48px;
+  letter-spacing: -0.045em;
+  color: #000000;
+  flex: 1;
+  margin-top: 0;
+}
+.team-header__description {
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  color: #000000;
+  flex: 1;
+}
+.team-header__description h3 {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 27px;
+  text-transform: uppercase;
+  margin-top: 0;
+}
+.team-header__description p {
+  font-size: 14px;
+  line-height: 21px;
+}
+
+.team-body {
+  display: grid;
+  grid-template-columns: auto auto;
+  column-gap: 20px;
+  row-gap: 10px;
+}
+
+.team-member {
+  position: relative;
+}
+.team-member__photo {
+  width: 90%;
+}
+.team-member__designation {
+  font-family: "PT Serif", serif;
+  position: absolute;
+  top: 0;
+  writing-mode: vertical-rl;
+  text-transform: uppercase;
+  font-size: 12px;
+  line-height: 13px;
+}
+.team-member__name {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 27px;
+}
+
+.team-member:nth-child(2n) {
+  margin-top: 55px;
+}
+
+@media (min-width: 992px) {
+  .team {
+    padding: 80px 10px 60px;
+  }
+
+  .team-header {
+    flex-direction: row;
+  }
+  .team-header__description p {
+    font-size: 18px;
+    line-height: 27px;
+  }
+
+  .team-body {
+    grid-template-columns: auto auto auto;
+  }
+
+  .team-member:nth-child(2n) {
+    margin-top: 0;
+  }
+
+  .team-member:nth-child(3n+2) {
+    margin-top: 55px;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */

@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=PT+Serif:wght@400;700&family=Poppins:wght@300;400;700&display=swap');
+
+$layout-breakpoint-small: 992px;
+$layout-max-width: 1200px;
+$body-background-color: #fafafa;
+$footer-color: #a9a9a9;
+$font-montserrat: 'Montserrat', sans-serif;
+$font-pt-serrif: 'PT Serif', serif;
+$font-poppins: 'Poppins', sans-serif;
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: $body-background-color;
+}
+
+footer {
+  font-family: $font-montserrat;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 17px;
+  color: $footer-color;
+  text-align: center;
+  margin: 10px auto 20px;
+}
+
+.team {
+  padding: 20px 10px 30px;
+  max-width: $layout-max-width;
+  margin: 0 auto;
+}
+
+.team-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 40px;
+
+  &__heading {
+    font-family: $font-pt-serrif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 48px;
+    letter-spacing: -0.045em;
+    color: #000000;
+    flex: 1;
+    margin-top: 0;
+  }
+
+  &__description {
+    font-family: $font-poppins;
+    font-style: normal;
+    color: #000000;
+    flex: 1;
+  }
+
+  &__description h3 {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 27px;
+    text-transform: uppercase;
+    margin-top: 0;
+  }
+
+  &__description p {
+    font-size: 14px;
+    line-height: 21px;
+  }
+}
+
+.team-body {
+  display: grid;
+  grid-template-columns: auto auto;
+  column-gap: 20px;
+  row-gap: 10px;
+}
+
+.team-member {
+  position: relative;
+
+  &__photo {
+    width: 90%;
+  }
+
+  &__designation {
+    font-family: $font-pt-serrif;
+    position: absolute;
+    top: 0;
+    writing-mode: vertical-rl;
+    text-transform: uppercase;
+    font-size: 12px;
+    line-height: 13px;
+    // transform: rotate(90deg);
+  }
+
+  &__name {
+    font-family: $font-poppins;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 27px;
+  }
+}
+
+.team-member:nth-child(2n) {
+  margin-top: 55px;
+}
+
+@media (min-width: $layout-breakpoint-small) {
+  .team {
+    padding: 80px 10px 60px;
+  }
+
+  .team-header {
+    flex-direction: row;
+
+    &__description p {
+      font-size: 18px;
+      line-height: 27px;
+    }
+  }
+
+  .team-body {
+    grid-template-columns: auto auto auto;
+  }
+
+  .team-member:nth-child(2n) {
+    margin-top: 0;
+  }
+
+  .team-member:nth-child(3n + 2) {
+    margin-top: 55px;
+  }
+}
