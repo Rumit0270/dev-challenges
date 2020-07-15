@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@300;400;700&family=Lora:wght@400;700&family=Montserrat:wght@300;400;700&display=swap');
+
+$body-background-color: #181719;
+$layout-breakpoint-small: 992px;
+$layout-max-width: 1200px;
+$layout-small-padding-vertical: 10px;
+$layout-small-padding-horizontal: 10px;
+$layout-large-padding-vertical: 30px;
+$layout-large-padding-horizontal: 40px;
+$font-montserrat: 'Montserrat', sans-serif;
+$font-lora: 'Lora', serif;
+$font-crimson-pro: 'Crimson Pro', serif;
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: $body-background-color;
+}
+
+header {
+  width: 100%;
+  padding: $layout-small-padding-vertical $layout-small-padding-horizontal;
+}
+
+.navbar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar__brand {
+  display: inline-block;
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-family: $font-crimson-pro;
+  font-size: 14px;
+  line-height: 16px;
+  padding: 10px;
+  border: 1px solid white;
+}
+
+.hamburger {
+  display: inline-block;
+  padding: 2px;
+  background-color: transparent;
+  cursor: pointer;
+  z-index: 200;
+}
+
+.hamburger__line {
+  display: block;
+  width: 24px;
+  height: 3px;
+  margin: 5px;
+  background-color: white;
+  transition: all 0.4s;
+}
+
+.nav__links {
+  display: none;
+}
+
+.nav__link {
+  display: inline-block;
+  text-decoration: none;
+  color: white;
+  margin: 20px 40px;
+  font-family: $font-montserrat;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 22px;
+  transition: color 0.4s;
+}
+
+.nav__link:hover {
+  color: #aaaaaa;
+}
+
+.nav__link--active {
+  font-weight: bold;
+}
+
+.animate .hamburger__line1 {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.animate .hamburger__line2 {
+  opacity: 0;
+}
+
+.animate .hamburger__line3 {
+  transform: rotate(45deg) translate(-5px, -6px);
+}
+
+.animate .navbar__brand {
+  opacity: 0;
+}
+
+.animate .nav__links {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 100;
+}
+
+@media screen and (min-width: $layout-breakpoint-small) {
+  .hamburger {
+    display: none;
+  }
+
+  .nav__links {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+}
