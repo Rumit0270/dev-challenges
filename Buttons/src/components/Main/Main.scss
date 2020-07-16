@@ -1,0 +1,24 @@
+@import '../../styles/variables';
+
+$title-color: #4f4f4f;
+
+.main-container {
+  margin: 20px 40px;
+  padding: 15px 25px;
+}
+
+.main__title {
+  font-family: $font-poppins;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 36px;
+  color: $title-color;
+  margin: 15px 0;
+}
+
+.main__buttons {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
