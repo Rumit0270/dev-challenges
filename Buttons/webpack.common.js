@@ -19,6 +19,9 @@ const config = {
     // define the output filename
     filename: '[name].[contenthash].js',
   },
+  resolve: {
+    extensions: ['.ts', '.tsx', '.js'],
+  },
   module: {
     rules: [
       {
