@@ -22,3 +22,9 @@ $title-color: #4f4f4f;
   flex-direction: column;
   flex-wrap: wrap;
 }
+
+.main-buttons--category {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}

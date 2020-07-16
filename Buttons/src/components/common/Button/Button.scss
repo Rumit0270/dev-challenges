@@ -11,7 +11,19 @@ $button-outline-background-color-highlight: rgba(41, 98, 255, 0.1);
 $button-text-font-color: #3d5afe;
 $button-text-background-color-highlight: rgba(41, 98, 255, 0.1);
 
-@mixin base-button-style {
+$button-disabled-box-shadow-bg-color: #3d5afe;
+$button-disabled-text-color: #9e9e9e;
+
+$button-primary-background-color: #2962ff;
+$button-primary-background-color-highlight: #0039cb;
+
+$button-secondary-background-color: #455a64;
+$button-secondary-background-color-highlight: #1c313a;
+
+$button-danger-background-color: #d32f2f;
+$button-danger-background-color-highlight: #9a0007;
+
+.base-button-style {
   font-family: $font-noto-sans-jp;
   font-style: normal;
   font-weight: 500;
@@ -22,10 +34,17 @@ $button-text-background-color-highlight: rgba(41, 98, 255, 0.1);
   border-radius: 6px;
   transition: all 0.3s;
   cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+}
+
+.base-button-style:disabled {
+  color: $button-disabled-text-color;
+  box-shadow: none;
+  pointer-events: none;
 }
 
 .default-variant {
-  @include base-button-style();
   color: $button-default-font-color;
   background-color: $button-default-background-color;
   border: none;
@@ -40,7 +59,6 @@ $button-text-background-color-highlight: rgba(41, 98, 255, 0.1);
 }
 
 .outline-variant {
-  @include base-button-style();
   color: $button-outline-font-color;
   background-color: transparent;
   border: 1px solid $button-outline-border-color;
@@ -54,7 +72,6 @@ $button-text-background-color-highlight: rgba(41, 98, 255, 0.1);
 }
 
 .text-variant {
-  @include base-button-style();
   color: $button-text-font-color;
   background-color: transparent;
   border: none;
@@ -64,5 +81,60 @@ $button-text-background-color-highlight: rgba(41, 98, 255, 0.1);
   &:focus {
     background-color: $button-text-background-color-highlight;
     outline: none;
+  }
+}
+
+.disable-shadow__btn {
+  box-shadow: none;
+
+  &:hover,
+  &:focus {
+    box-shadow: none;
+  }
+}
+
+.btn-icon {
+  margin: auto 5px;
+}
+
+.btn-small {
+  padding: 4px 10px;
+}
+
+.btn-medium {
+  padding: 8px 16px;
+}
+
+.btn-large {
+  padding: 12px 24px;
+}
+
+.btn-primary {
+  color: white;
+  background-color: $button-primary-background-color;
+
+  &:hover,
+  &:focus {
+    background: $button-primary-background-color-highlight;
+  }
+}
+
+.btn-secondary {
+  color: white;
+  background-color: $button-secondary-background-color;
+
+  &:hover,
+  &:focus {
+    background: $button-secondary-background-color-highlight;
+  }
+}
+
+.btn-danger {
+  color: white;
+  background-color: $button-danger-background-color;
+
+  &:hover,
+  &:focus {
+    background: $button-danger-background-color-highlight;
   }
 }
