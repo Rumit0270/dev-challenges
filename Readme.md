@@ -1,11 +1,11 @@
-# This repository contains the solutions for the design challenges on http://devchallenges.io
+# This repository contains the solutions for the design challenges on https://devchallenges.io
 
 ## Responsive Section
 
-- 404 Not Found: http://excellent-division.surge.sh/
-- My Team Page: http://ethereal-goose.surge.sh/
-- Interior Consultant: http://educated-station.surge.sh/
+- 404 Not Found: https://excellent-division.surge.sh/
+- My Team Page: https://ethereal-goose.surge.sh/
+- Interior Consultant: https://educated-station.surge.sh/
 
 ## Frontend Section
 
-- Reusable Button (React): http://abusive-space.surge.sh
+- Reusable Button (React): https://abusive-space.surge.sh
