@@ -1,0 +1,93 @@
+@import '../../../styles/variables';
+
+$input-label-color: #333333;
+$input-default-color: #828282;
+$input-placeholder-default-color: #828282;
+$input-hover-default-color: #333333;
+$input-focus-default-color: #2962ff;
+$input-error-color: #d32f2f;
+$input-disabled-color: #e0e0e0;
+$input-disabled-background-color: #f2f2f2;
+
+.input-container {
+  display: table;
+}
+
+.input__label {
+  font-family: $font-noto-sans-jp;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 17px;
+  color: $input-label-color;
+  display: table-header-group;
+  margin: 3px 0;
+}
+
+.base-input-style {
+  min-height: 56px;
+  min-width: 200px;
+  border: 1px solid $input-default-color;
+  box-sizing: border-box;
+  border-radius: 8px;
+  padding: 20px;
+  font-size: 14px;
+  line-height: 20px;
+  display: table-row-group;
+
+  &:hover {
+    border-color: $input-hover-default-color;
+  }
+
+  &:focus {
+    border: 2px solid $input-focus-default-color;
+    outline: none;
+  }
+}
+
+.base-input-style:focus + label {
+  color: $input-focus-default-color;
+}
+
+.base-input-style::placeholder {
+  font-family: $font-noto-sans-jp;
+  font-style: normal;
+  font-weight: 500;
+  color: $input-placeholder-default-color;
+}
+
+.input--error,
+.input--error:hover {
+  border: 1px solid $input-error-color;
+
+  & + label {
+    color: $input-error-color;
+  }
+}
+
+.input--error:focus {
+  border: 2px solid $input-error-color;
+}
+
+.input--error:focus + label {
+  color: $input-error-color;
+}
+
+.input--error ~ .helper-text {
+  color: $input-error-color;
+}
+
+.input--disabled {
+  pointer-events: none;
+  background-color: $input-disabled-background-color;
+  border: 1px solid $input-disabled-color;
+}
+
+.helper-text {
+  font-family: $font-noto-sans-jp;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 10px;
+  line-height: 14px;
+  color: $input-default-color;
+}

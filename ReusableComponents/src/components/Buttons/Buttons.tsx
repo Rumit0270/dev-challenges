@@ -1,6 +1,6 @@
 import * as React from 'react';
 import './Buttons.scss';
-import ButtonDemo from '../common/ButtonDemo/ButtonDemo';
+import ComponentDemo from '../common/ComponentDemo/ComponentDemo';
 import Button from '../common/Button/Button';
 
 const Buttons: React.FC = (): JSX.Element => {
@@ -8,68 +8,68 @@ const Buttons: React.FC = (): JSX.Element => {
     <div className="buttons-container">
       <h2 className="buttons__title">Buttons</h2>
       <div className="buttons-demo-container">
-        <ButtonDemo jsx="<Button />">
+        <ComponentDemo jsx="<Button />">
           <Button />
-        </ButtonDemo>
+        </ComponentDemo>
 
-        <ButtonDemo jsx="<Button variant='outline' />">
+        <ComponentDemo jsx="<Button variant='outline' />">
           <Button variant="outline" />
-        </ButtonDemo>
+        </ComponentDemo>
 
-        <ButtonDemo jsx="<Button variant='text' />">
+        <ComponentDemo jsx="<Button variant='text' />">
           <Button variant="text" />
-        </ButtonDemo>
+        </ComponentDemo>
 
-        <ButtonDemo jsx="<Button disableShadow />">
+        <ComponentDemo jsx="<Button disableShadow />">
           <Button disableShadow />
-        </ButtonDemo>
+        </ComponentDemo>
 
         <div className="buttons--category">
-          <ButtonDemo jsx="<Button disabled />">
+          <ComponentDemo jsx="<Button disabled />">
             <Button disabled />
-          </ButtonDemo>
-          <ButtonDemo jsx="<Button variant='text' disabled />">
+          </ComponentDemo>
+          <ComponentDemo jsx="<Button variant='text' disabled />">
             <Button variant="text" disabled />
-          </ButtonDemo>
+          </ComponentDemo>
         </div>
 
         <div className="buttons--category">
-          <ButtonDemo jsx="<Button startIcon='local_grocery_store' />">
+          <ComponentDemo jsx="<Button startIcon='local_grocery_store' />">
             <Button startIcon="local_grocery_store" />
-          </ButtonDemo>
-          <ButtonDemo jsx="<Button endIcon='local_grocery_store' />">
+          </ComponentDemo>
+          <ComponentDemo jsx="<Button endIcon='local_grocery_store' />">
             <Button endIcon="local_grocery_store" />
-          </ButtonDemo>
+          </ComponentDemo>
         </div>
 
         <div className="buttons--category">
-          <ButtonDemo jsx="<Button size='sm' />">
+          <ComponentDemo jsx="<Button size='sm' />">
             <Button size="sm" />
-          </ButtonDemo>
-          <ButtonDemo jsx="<Button size='md' />">
+          </ComponentDemo>
+          <ComponentDemo jsx="<Button size='md' />">
             <Button size="md" />
-          </ButtonDemo>
-          <ButtonDemo jsx="<Button size='lg' />">
+          </ComponentDemo>
+          <ComponentDemo jsx="<Button size='lg' />">
             <Button size="lg" />
-          </ButtonDemo>
+          </ComponentDemo>
         </div>
 
         <div className="buttons--category">
-          <ButtonDemo jsx="<Button color='default' />">
+          <ComponentDemo jsx="<Button color='default' />">
             <Button color="default" />
-          </ButtonDemo>
+          </ComponentDemo>
 
-          <ButtonDemo jsx="<Button color='primary' title='Primary' />">
+          <ComponentDemo jsx="<Button color='primary' title='Primary' />">
             <Button color="primary" title="Primary" />
-          </ButtonDemo>
+          </ComponentDemo>
 
-          <ButtonDemo jsx="<Button color='secondary' title='Secondary' />">
+          <ComponentDemo jsx="<Button color='secondary' title='Secondary' />">
             <Button color="secondary" title="Secondary" />
-          </ButtonDemo>
+          </ComponentDemo>
 
-          <ButtonDemo jsx="<Button color='danger' title='Danger' />">
+          <ComponentDemo jsx="<Button color='danger' title='Danger' />">
             <Button color="danger" title="Danger" />
-          </ButtonDemo>
+          </ComponentDemo>
         </div>
       </div>
     </div>
