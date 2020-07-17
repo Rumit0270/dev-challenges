@@ -1,8 +1,16 @@
 import * as React from 'react';
 
 import './Input.scss';
+import { ChangeEvent } from 'react';
 
-interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
+type InputSize = 'sm' | 'md';
+
+const inputSizeMap = {
+  sm: 'input-small',
+  md: '',
+};
+
+interface IInputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   label?: string;
   placeholder?: string;
   error?: boolean;
@@ -10,7 +18,16 @@ interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   helperText?: string | null;
   startIcon?: string;
   endIcon?: string;
+  inputSize?: InputSize;
+  fullWidth?: boolean;
+  multiline?: boolean;
+  handleInputChange?: (
+    event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => void;
 }
+
+type InputProps = IInputProps &
+  React.TextareaHTMLAttributes<HTMLTextAreaElement>;
 
 const Input: React.FC<InputProps> = ({
   label = 'Label',
@@ -20,6 +37,10 @@ const Input: React.FC<InputProps> = ({
   helperText = null,
   startIcon = null,
   endIcon = null,
+  inputSize = 'md',
+  fullWidth = false,
+  multiline = false,
+  handleInputChange = () => {},
   ...props
 }): JSX.Element => {
   const errorClass = error ? 'input--error' : '';
@@ -40,17 +61,30 @@ const Input: React.FC<InputProps> = ({
     <span className="material-icons input-icon">{endIcon}</span>
   ) : null;
 
+  const inputSizeClass = inputSizeMap[inputSize];
+  const fullWidthClass = fullWidth ? 'width-100' : '';
+
   return (
     <div
-      className={`input-container ${hasHelperText} ${hasStartIcon} ${hasEndIcon}`}
+      className={`input-container ${hasHelperText} ${hasStartIcon} ${hasEndIcon} ${fullWidthClass}`}
     >
       {iconStart}
-      <input
-        type="text"
-        className={`base-input-style ${errorClass} ${disabledClass}`}
-        placeholder={placeholder}
-        {...props}
-      />
+      {multiline ? (
+        <textarea
+          className={`base-input-style ${errorClass} ${disabledClass} ${inputSizeClass} ${fullWidthClass}`}
+          placeholder={placeholder}
+          {...props}
+          onChange={handleInputChange}
+        ></textarea>
+      ) : (
+        <input
+          type="text"
+          className={`base-input-style ${errorClass} ${disabledClass} ${inputSizeClass} ${fullWidthClass}`}
+          placeholder={placeholder}
+          {...props}
+          onChange={handleInputChange}
+        />
+      )}
       {iconEnd}
       <label className="input__label">{label}</label>
       {helperInputText}

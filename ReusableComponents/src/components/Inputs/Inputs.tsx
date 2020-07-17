@@ -35,10 +35,32 @@ const Inputs: React.FC = (): JSX.Element => {
             <Input startIcon="phone" />
           </ComponentDemo>
 
-          <ComponentDemo jsx="<Input endIcon='https'  />">
+          <ComponentDemo jsx="<Input endIcon='https' />">
             <Input endIcon="https" />
           </ComponentDemo>
         </div>
+
+        <ComponentDemo jsx="<Input value='text' />">
+          <Input value="text" />
+        </ComponentDemo>
+
+        <div className="inputs-category">
+          <ComponentDemo jsx="<Input inputSize='sm' />">
+            <Input inputSize="sm" />
+          </ComponentDemo>
+
+          <ComponentDemo jsx="<Input inputSize='md' />">
+            <Input inputSize="md" />
+          </ComponentDemo>
+        </div>
+
+        <ComponentDemo jsx="<Input fullWidth />">
+          <Input fullWidth />
+        </ComponentDemo>
+
+        <ComponentDemo jsx="<Input multiline />">
+          <Input multiline rows={4} />
+        </ComponentDemo>
       </div>
     </div>
   );

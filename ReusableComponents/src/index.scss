@@ -10,15 +10,18 @@ body {
 }
 
 .app-container {
-  min-width: 100vw;
-  min-height: 100vh;
-  display: flex;
+  min-width: 80%;
+  min-height: 80vh;
 }
 
 .sidebar {
-  flex: 2;
+  position: fixed;
+  width: 20%;
+  height: 100%;
+  top: 0;
+  left: 0;
 }
 
 .main {
-  flex: 8;
+  padding-left: 20%;
 }

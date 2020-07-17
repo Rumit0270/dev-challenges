@@ -35,6 +35,11 @@ $input-disabled-background-color: #f2f2f2;
   font-size: 14px;
   line-height: 20px;
   display: table-row-group;
+  color: $input-label-color;
+  font-weight: 500;
+  font-family: $font-noto-sans-jp;
+  font-size: 14px;
+  line-height: 20px;
 
   &:hover {
     border-color: $input-hover-default-color;
@@ -126,4 +131,13 @@ $input-disabled-background-color: #f2f2f2;
 .has-helper .material-icons {
   top: 50%;
   transform: translateY(-50%);
+}
+
+.input-small {
+  padding: 8px;
+  min-height: 40px;
+}
+
+.width-100 {
+  width: 100%;
 }
