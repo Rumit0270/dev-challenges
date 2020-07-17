@@ -1,13 +1,13 @@
 import * as React from 'react';
-import './Main.scss';
+import './Buttons.scss';
 import ButtonDemo from '../common/ButtonDemo/ButtonDemo';
 import Button from '../common/Button/Button';
 
-const Main: React.FC = (): JSX.Element => {
+const Buttons: React.FC = (): JSX.Element => {
   return (
-    <div className="main-container">
-      <h2 className="main__title">Buttons</h2>
-      <div className="main__buttons">
+    <div className="buttons-container">
+      <h2 className="buttons__title">Buttons</h2>
+      <div className="buttons-demo-container">
         <ButtonDemo jsx="<Button />">
           <Button />
         </ButtonDemo>
@@ -24,7 +24,7 @@ const Main: React.FC = (): JSX.Element => {
           <Button disableShadow />
         </ButtonDemo>
 
-        <div className="main-buttons--category">
+        <div className="buttons--category">
           <ButtonDemo jsx="<Button disabled />">
             <Button disabled />
           </ButtonDemo>
@@ -33,7 +33,7 @@ const Main: React.FC = (): JSX.Element => {
           </ButtonDemo>
         </div>
 
-        <div className="main-buttons--category">
+        <div className="buttons--category">
           <ButtonDemo jsx="<Button startIcon='local_grocery_store' />">
             <Button startIcon="local_grocery_store" />
           </ButtonDemo>
@@ -42,7 +42,7 @@ const Main: React.FC = (): JSX.Element => {
           </ButtonDemo>
         </div>
 
-        <div className="main-buttons--category">
+        <div className="buttons--category">
           <ButtonDemo jsx="<Button size='sm' />">
             <Button size="sm" />
           </ButtonDemo>
@@ -54,7 +54,7 @@ const Main: React.FC = (): JSX.Element => {
           </ButtonDemo>
         </div>
 
-        <div className="main-buttons--category">
+        <div className="buttons--category">
           <ButtonDemo jsx="<Button color='default' />">
             <Button color="default" />
           </ButtonDemo>
@@ -76,4 +76,4 @@ const Main: React.FC = (): JSX.Element => {
   );
 };
 
-export default Main;
+export default Buttons;

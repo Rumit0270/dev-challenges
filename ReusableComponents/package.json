@@ -1,7 +1,7 @@
 {
-  "name": "buttons",
+  "name": "reusable-components",
   "version": "1.0.0",
-  "description": "React Button Component",
+  "description": "Reusable Components",
   "main": "index.js",
   "author": "Rumit Tandukar",
   "license": "MIT",
@@ -17,6 +17,7 @@
     "@types/node": "^14.0.23",
     "@types/react": "^16.9.43",
     "@types/react-dom": "^16.9.8",
+    "@types/react-router-dom": "^5.1.5",
     "babel-loader": "^8.1.0",
     "css-loader": "^3.6.0",
     "html-webpack-plugin": "^4.3.0",
@@ -35,6 +36,7 @@
   },
   "dependencies": {
     "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "react-dom": "^16.13.1",
+    "react-router-dom": "^5.2.0"
   }
 }

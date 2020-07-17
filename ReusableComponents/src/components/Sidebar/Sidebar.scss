@@ -19,6 +19,11 @@ $sidebar-footer-color: #a9a9a9;
   flex: 1;
 }
 
+.sidebar__brand {
+  text-decoration: none;
+  color: black;
+}
+
 .sidebar__title {
   font-family: $font-poppins;
   font-style: normal;
@@ -48,7 +53,7 @@ $sidebar-footer-color: #a9a9a9;
     border-radius: 8px;
     line-height: 20px;
     color: $sidebar-nav-link-color;
-    transition: all 0.3s;
+    transition: all 0.24s;
   }
 
   a:hover {

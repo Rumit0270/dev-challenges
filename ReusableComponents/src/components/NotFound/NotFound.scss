@@ -1,0 +1,20 @@
+@import '../../styles/variables';
+
+.not-found__title {
+  font-family: $font-poppins;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 36px;
+  color: $title-color-primary;
+  margin: 15px 0;
+}
+
+.not-found__description {
+  font-family: $font-montserrat;
+  font-size: 16px;
+  color: rgba($color: #000000, $alpha: 0.7);
+  letter-spacing: 1px;
+  line-height: 22px;
+  width: 60%;
+}

@@ -1,29 +1,22 @@
 @import '../../styles/variables';
 
-$title-color: #4f4f4f;
-
-.main-container {
-  margin: 20px 40px;
-  padding: 15px 25px;
-}
-
-.main__title {
+.buttons__title {
   font-family: $font-poppins;
   font-style: normal;
   font-weight: 500;
   font-size: 24px;
   line-height: 36px;
-  color: $title-color;
+  color: $title-color-primary;
   margin: 15px 0;
 }
 
-.main__buttons {
+.buttons-demo-container {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
 }
 
-.main-buttons--category {
+.buttons--category {
   display: flex;
   flex-direction: row;
   align-items: center;

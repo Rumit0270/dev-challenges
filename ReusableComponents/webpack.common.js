@@ -10,7 +10,6 @@ const config = {
   // Define the entrypoint for app
   entry: {
     bundle: './src/index.tsx',
-    // vendor: VENDOR_LIBS,
   },
   // Define the output for the bundle
   output: {
