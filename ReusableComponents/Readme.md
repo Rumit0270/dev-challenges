@@ -1,6 +1,6 @@
 # Challenge on Reusable Button Component
 
-The code is for the challenge on the Reusable Button Component in React. A page highlighting all the use cases of the Button is deployed on: https://abusive-space.surge.sh
+The code is for the challenge on the Reusable Components in React. A page highlighting the resuable button and input element is deployed on: https://abusive-space.surge.sh
 
 ## Technologies used
 
