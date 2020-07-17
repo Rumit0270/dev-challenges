@@ -29,6 +29,16 @@ const Inputs: React.FC = (): JSX.Element => {
             <Input helperText="Some interesting text" error />
           </ComponentDemo>
         </div>
+
+        <div className="inputs-category">
+          <ComponentDemo jsx="<Input startIcon='phone' />">
+            <Input startIcon="phone" />
+          </ComponentDemo>
+
+          <ComponentDemo jsx="<Input endIcon='https'  />">
+            <Input endIcon="https" />
+          </ComponentDemo>
+        </div>
       </div>
     </div>
   );

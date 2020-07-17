@@ -11,6 +11,7 @@ $input-disabled-background-color: #f2f2f2;
 
 .input-container {
   display: table;
+  position: relative;
 }
 
 .input__label {
@@ -90,4 +91,39 @@ $input-disabled-background-color: #f2f2f2;
   font-size: 10px;
   line-height: 14px;
   color: $input-default-color;
+}
+
+.material-icons {
+  color: $input-default-color;
+}
+
+.has-start-icon .material-icons {
+  position: absolute;
+  top: 60%;
+  transform: translateY(-50%);
+  left: 10px;
+  font-size: 20px;
+  margin-left: 5px;
+}
+
+.has-start-icon input {
+  padding-left: 40px;
+}
+
+.has-end-icon .material-icons {
+  position: absolute;
+  top: 60%;
+  transform: translateY(-50%);
+  right: 10px;
+  font-size: 20px;
+  margin-right: 5px;
+}
+
+.has-end-icon input {
+  padding-right: 40px;
+}
+
+.has-helper .material-icons {
+  top: 50%;
+  transform: translateY(-50%);
 }
