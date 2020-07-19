@@ -10,14 +10,17 @@ import createDataContext from '../createDataContext';
 const filterReducer = (state: IFilterOptions, action: FilterAction) => {
   switch (action.type) {
     case FilterActionTypes.APPLY_FILTER:
-      return { ...action.payload };
+      return { ...state, ...action.payload };
     case FilterActionTypes.RESET_FILTER:
-      return { location: null, guests: { adult: null, children: null } };
+      return {
+        location: null,
+        guests: { adult: null, children: null, description: null },
+      };
   }
 };
 
 export const { Provider, Context } = createDataContext<IFilterOptions>(
   filterReducer,
   { applyFilter, resetFilter },
-  { location: null, guests: { adult: null, children: null } }
+  { location: '', guests: { adult: 0, children: 0, description: '' } }
 );

@@ -1,13 +1,227 @@
+/* Filter Start */
 .filter-backdrop {
   width: 100vw;
-  height: 100vh;
+  height: 0;
   position: fixed;
   top: 0;
   left: 0;
   z-index: 100;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(79, 79, 79, 0.3);
+  opacity: 0;
+  transition: height 0.2s ease-in-out, opacity 0.2s ease-in-out;
 }
 
+.filter-backdrop--show {
+  height: 100vh;
+  opacity: 1;
+}
+
+.filter-container {
+  width: 100vw;
+  height: 0;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  top: 0;
+  left: 0;
+  z-index: 200;
+  background-color: white;
+  opacity: 0;
+  overflow: hidden;
+  transition: height 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.7s;
+}
+
+.filter-container--show {
+  height: 80vh;
+  opacity: 1;
+}
+
+.filter__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.filter__header--heading {
+  font-family: Muli;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 15px;
+  color: #333333;
+  margin: 0;
+}
+
+.filter__header--close {
+  color: #333333;
+  cursor: pointer;
+}
+
+.filter__body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  position: relative;
+}
+
+.filter__body--location,
+.filter__body--guests {
+  cursor: pointer;
+}
+
+.filter__body--location:hover,
+.filter__body--guests:hover {
+  background-color: #eeeeee;
+}
+
+.filter__body--location,
+.filter__body--guests,
+.filter__body--options {
+  height: 55px;
+  background: #ffffff;
+  padding: 10px 20px;
+}
+
+.filter__body label {
+  display: block;
+  font-family: var(--font-muli);
+  font-style: normal;
+  font-weight: bold;
+  font-size: 9px;
+  line-height: 11px;
+  text-transform: uppercase;
+  color: #333333;
+  margin-bottom: 5px;
+}
+
+.filter__body input {
+  display: block;
+  pointer-events: none;
+  border: none;
+  font-family: var(--font-muli);
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 18px;
+  color: #333333;
+  background-color: transparent;
+}
+
+.filter__body--location {
+  box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.1);
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+}
+
+.location-filter {
+  display: flex;
+  align-items: center;
+  color: #4f4f4f;
+  cursor: pointer;
+  margin: 20px 0;
+}
+
+.location-filter__title {
+  font-family: var(--font-muli);
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 18px;
+  margin-left: 10px;
+}
+
+.location-filter--highlight {
+  color: #4c9a2a;
+}
+
+.location-filter--highlight .location-filter__title {
+  font-weight: bold;
+}
+
+.guests-filter {
+  font-family: var(--font-muli);
+  font-style: normal;
+  margin: 20px 0;
+}
+
+.guests-filter .guests-filter__heading {
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 18px;
+  color: #000000;
+  margin: 5px 0;
+}
+
+.guests-filter .guests-filter__description {
+  font-family: var(--font-muli);
+  color: #bdbdbd;
+  margin: 5px 0 8px;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+.button-counter {
+  border: 1px solid #828282;
+  box-sizing: border-box;
+  border-radius: 4px;
+  color: #828282;
+  cursor: pointer;
+}
+
+.filter-controls {
+  display: flex;
+  align-items: center;
+}
+
+.guest-count {
+  margin: 0 15px;
+}
+
+.filter__body--guests {
+  box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.1);
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
+}
+
+.filter__body--options {
+  flex: 1;
+  margin: 10px 0;
+}
+
+.filter__body--search {
+  display: flex;
+  justify-content: center;
+}
+
+.filter__body--search button {
+  color: #f2f2f2;
+  padding: 14px 18px;
+  font-size: 14px;
+  line-height: 18px;
+  background: rgba(235, 87, 87, 0.9);
+  box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 16px;
+  display: inline-flex;
+  align-items: center;
+  border: none;
+  transition: all 0.3s;
+}
+
+.filter__body--search button:focus {
+  outline: none;
+}
+
+.filter__body--search button:hover {
+  outline: none;
+  transform: translateY(-2px);
+  box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.4);
+}
+
+/* Filter End */
+
+/* Header Start */
 .header-container {
   display: flex;
   flex-direction: column;
@@ -24,7 +238,7 @@
 
 .header__filter {
   width: 80%;
-  min-height: 55px;
+  height: 55px;
   box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.1);
   border-radius: 16px;
   display: flex;
@@ -35,7 +249,6 @@
 
 .header__filter .header__filter--location,
 .header__filter .header__filter--guests {
-  display: block;
   border-right: 1px solid #f2f2f2;
   padding: 20px;
 }
@@ -52,6 +265,8 @@
   font-size: 14px;
   line-height: 18px;
   color: black;
+  display: inline-flex;
+  align-items: center;
 }
 
 .header__filter--guests {
@@ -62,6 +277,8 @@
   font-size: 14px;
   line-height: 18px;
   color: #bdbdbd;
+  display: inline-flex;
+  align-items: center;
 }
 
 .header__filter .search-icon {
@@ -70,6 +287,8 @@
   align-self: center;
   text-align: center;
 }
+
+/* Header end */
 
 @media screen and (min-width: 576px) {
   .header-container {
@@ -106,6 +325,60 @@
   .header__filter .header__filter--location,
   .header__filter .header__filter--guests {
     padding: 20px;
+  }
+
+  .filter-container--show {
+    height: 60vh;
+    padding: 30px 60px;
+  }
+
+  .filter__header--heading {
+    opacity: 0;
+  }
+
+  .filter__body {
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 20px 40px;
+  }
+
+  .filter__body--location {
+    flex: 1;
+    box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.1);
+    border-top-left-radius: 16px;
+    border-bottom-left-radius: 16px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  .filter__body--guests {
+    flex: 1;
+    box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 0;
+  }
+
+  .filter__body--search {
+    flex: 1;
+    box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.1);
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-top-right-radius: 16px;
+    border-bottom-right-radius: 16px;
+    height: 55px;
+    padding: 8px 0;
+  }
+
+  .filter__body--options {
+    position: absolute;
+    top: 80px;
+  }
+
+  .filter-options--location {
+    left: 5%;
+  }
+
+  .filter-options--guests {
+    left: 38%;
   }
 }
 

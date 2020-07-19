@@ -8,6 +8,7 @@ export interface IFilterOptions {
   guests: {
     adult: number | null;
     children: number | null;
+    description: string | null;
   };
 }
 
