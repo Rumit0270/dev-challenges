@@ -1,0 +1,122 @@
+.filter-backdrop {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.header-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 120px;
+  padding: 10px 25px;
+}
+
+.header__img {
+  width: 100px;
+  align-self: flex-start;
+}
+
+.header__filter {
+  width: 80%;
+  min-height: 55px;
+  box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 16px;
+  display: flex;
+  align-items: stretch;
+  cursor: pointer;
+  margin: 40px 0 20px;
+}
+
+.header__filter .header__filter--location,
+.header__filter .header__filter--guests {
+  display: block;
+  border-right: 1px solid #f2f2f2;
+  padding: 20px;
+}
+
+.header__filter {
+  text-align: center;
+}
+
+.header__filter--location {
+  flex: 4;
+  font-family: var(--font-muli);
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 18px;
+  color: black;
+}
+
+.header__filter--guests {
+  flex: 4;
+  font-family: var(--font-muli);
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 18px;
+  color: #bdbdbd;
+}
+
+.header__filter .search-icon {
+  flex: 2;
+  color: rgba(235, 87, 87, 0.9);
+  align-self: center;
+  text-align: center;
+}
+
+@media screen and (min-width: 576px) {
+  .header-container {
+    flex-direction: row;
+  }
+
+  .header__img {
+    align-self: center;
+  }
+
+  .header__filter {
+    width: 40%;
+    margin: 0;
+    min-height: 40px;
+  }
+
+  .header__filter .header__filter--location,
+  .header__filter .header__filter--guests {
+    padding: 15px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .header-container {
+    padding: 15px 30px;
+  }
+
+  .header__filter {
+    width: 40%;
+    margin: 0;
+    min-height: 55px;
+  }
+
+  .header__filter .header__filter--location,
+  .header__filter .header__filter--guests {
+    padding: 20px;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .header-container {
+    padding: 20px 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .header__filter {
+    width: 30%;
+  }
+}
