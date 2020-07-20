@@ -1,6 +1,8 @@
 .main-container {
   width: 100%;
   padding: 10px 25px;
+  margin-bottom: 20px;
+  min-height: 75vh;
 }
 
 .main-header {
@@ -49,6 +51,7 @@
     width: 100%;
     padding: 15px 30px;
     max-width: 1400px;
+    margin-bottom: 40px;
   }
 
   .main-header__heading {

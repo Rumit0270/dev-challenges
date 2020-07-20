@@ -40,7 +40,7 @@ const Main: React.FC = (): JSX.Element => {
   }, [state, location, guests]);
 
   const renderStays = () => {
-    return fileredStays.map((stay) => <Stay stay={stay} />);
+    return fileredStays.map((stay) => <Stay stay={stay} key={stay.title} />);
   };
 
   return (

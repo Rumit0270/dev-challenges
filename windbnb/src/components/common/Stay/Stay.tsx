@@ -20,7 +20,7 @@ interface StayProps {
 
 const Stay: React.FC<StayProps> = ({ stay }) => {
   return (
-    <div className="stay-container">
+    <div className="stays-container">
       <img src={stay.photo} alt={stay.title} className="stay__photo" />
       <div className="stay-body">
         <div className="stay__description">
