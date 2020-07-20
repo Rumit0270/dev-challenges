@@ -1,0 +1,22 @@
+.footer-text {
+  display: block;
+  padding: 20px 10px 10px;
+  width: 70%;
+  margin: 10px auto;
+  text-align: center;
+  font-family: var(--font-montserrat);
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 14px;
+  color: #a9a9a9;
+  border-top: 1px solid #bdbdbd;
+}
+
+@media screen and (min-width: 768px) {
+  .footer-text {
+    width: 40%;
+    font-size: 14px;
+    line-height: 17px;
+  }
+}

@@ -33,6 +33,7 @@
 
 .filter-container--show {
   height: 80vh;
+  padding: 15px;
   opacity: 1;
 }
 
@@ -385,7 +386,7 @@
 @media screen and (min-width: 992px) {
   .header-container {
     padding: 20px 40px;
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
   }
 

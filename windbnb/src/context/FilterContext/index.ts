@@ -22,5 +22,5 @@ const filterReducer = (state: IFilterOptions, action: FilterAction) => {
 export const { Provider, Context } = createDataContext<IFilterOptions>(
   filterReducer,
   { applyFilter, resetFilter },
-  { location: '', guests: { adult: 0, children: 0, description: '' } }
+  { location: '', guests: { adult: 1, children: 0, description: '1 adult' } }
 );
