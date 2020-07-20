@@ -1,0 +1,279 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&family=Playfair+Display:wght@400;500;700&display=swap");
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.header-container {
+  padding: 15px 10px;
+}
+
+.main-container {
+  padding: 5px 10px;
+}
+
+.header__title {
+  margin: 8px 0 10px;
+  font-family: "Playfair Display", serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 32px;
+  color: black;
+}
+
+.header-description {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+.header-description__icon {
+  width: 15px;
+  height: 15px;
+}
+.header-description__text {
+  font-family: "Montserrat", sans-serif;
+  font-style: italic;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 15px;
+  color: #4f4f4f;
+  flex: 1;
+  margin: 0;
+  margin-left: 10px;
+}
+
+.header-image-container {
+  margin: 0;
+}
+
+.header-image {
+  width: 100%;
+  max-height: 550px;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.recipe-info__item {
+  min-width: 33.33%;
+  height: 30px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.recipe-info__item-icon {
+  margin: 0 5px;
+  color: #4f4f4f;
+}
+
+.recipe-info__item-icon--highlight {
+  color: #f2994a;
+}
+
+.recipe-info__item-text {
+  flex: 1;
+  font-family: "Montserrat", sans-serif;
+}
+.recipe-info__item-text p {
+  margin: 0;
+}
+
+.recipe-info__heading {
+  height: 50%;
+  font-weight: bold;
+  font-size: 8px;
+  line-height: 10px;
+  text-transform: uppercase;
+  color: #bdbdbd;
+}
+
+.recipe-info__subheading {
+  height: 50%;
+  font-family: Montserrat;
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 12px;
+  color: #333333;
+}
+
+.recipe-info__subheading--highlight {
+  color: #f2994a;
+}
+
+.recipe-info-container1 {
+  display: flex;
+  margin: 14px 0 12px;
+}
+
+.recipe-info-container2 {
+  display: flex;
+  margin: 0px 0 14px;
+}
+
+.ingredients__title {
+  font-family: "Playfair Display", serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 24px;
+  color: #333333;
+}
+
+.ingredient__title {
+  font-family: "Playfair Display", serif;
+  font-style: italic;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 21px;
+  color: #333333;
+  margin: 18px 0;
+}
+
+.ingredient-step {
+  display: flex;
+  margin: 10px 0;
+}
+.ingredient-step__check {
+  margin-right: 5px;
+}
+.ingredient-step__description {
+  flex: 1;
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 25px;
+  color: #333333;
+}
+
+.text-bold {
+  font-weight: bold;
+}
+
+@media screen and (min-width: 576px) {
+  .header__title {
+    font-family: "Playfair Display", serif;
+    font-size: 36px;
+    line-height: 48px;
+  }
+
+  .header-description {
+    width: 90%;
+  }
+  .header-description__text {
+    font-size: 14px;
+    line-height: 16px;
+  }
+
+  .header-image {
+    width: 100%;
+  }
+}
+@media screen and (min-width: 768px) {
+  .header__title {
+    font-family: "Playfair Display", serif;
+    font-size: 48px;
+    line-height: 64px;
+  }
+
+  .header-description {
+    width: 70%;
+    margin-bottom: 25px;
+  }
+  .header-description__text {
+    font-size: 14px;
+    line-height: 17px;
+  }
+
+  .header-image {
+    width: 100%;
+  }
+
+  .recipe-info__heading {
+    font-size: 9px;
+    line-height: 11px;
+  }
+
+  .recipe-info__subheading {
+    font-size: 13px;
+    line-height: 16px;
+  }
+}
+@media screen and (min-width: 992px) {
+  .header-container,
+.main-container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .header-description {
+    width: 40%;
+    margin-bottom: 30px;
+  }
+
+  .header-image {
+    width: 100%;
+  }
+
+  .main-container {
+    flex-direction: row;
+  }
+
+  .recipe-main {
+    order: 1;
+    flex: 7;
+    padding-right: 40%;
+  }
+
+  .recipe-info {
+    order: 2;
+    flex: 3;
+    background: #ffffff;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.12);
+    border-radius: 12px;
+  }
+
+  .recipe-info-container1,
+.recipe-info-container2 {
+    flex-direction: column;
+  }
+
+  .recipe-info-container1 {
+    margin-bottom: 0;
+  }
+
+  .recipe-info__item {
+    margin: 20px auto;
+  }
+
+  .recipe-info__heading {
+    font-size: 10px;
+    line-height: 12px;
+  }
+
+  .recipe-info__subheading {
+    font-size: 14px;
+    line-height: 17px;
+  }
+
+  .recipe-info__item--highlight p {
+    display: inline-block;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .header-container,
+.main-container {
+    max-width: 1400px;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */
