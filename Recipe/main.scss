@@ -10,6 +10,7 @@ $color-text-primary: #333333;
 $color-text-secondary: #4f4f4f;
 $color-text-grey: #bdbdbd;
 $color-text-highlight: #f2994a;
+$color-text-footer: #a9a9a9;
 
 * {
   box-sizing: border-box;
@@ -160,7 +161,9 @@ body {
   margin: 10px 0;
 
   &__check {
-    margin-right: 5px;
+    margin-right: 10px;
+    height: 16px;
+    width: 16px;
   }
 
   &__description {
@@ -175,13 +178,90 @@ body {
   }
 }
 
+.ingredient-toppings {
+  font-weight: 500;
+  font-style: italic;
+}
+
 .text-bold {
   font-weight: bold;
+}
+
+.instructions {
+  margin: 20px 0 30px;
+
+  &__title {
+    font-family: $font-playfair-display;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 32px;
+    color: $color-text-primary;
+  }
+}
+
+.instruction {
+  display: flex;
+  font-family: $font-montserrat;
+  align-items: flex-start;
+  margin-bottom: 20px;
+
+  &__step {
+    width: 36px;
+    height: 36px;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 32px;
+    border-radius: 6px;
+    background-color: $color-text-highlight;
+    color: white;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 12px;
+  }
+
+  &__description {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 150%;
+    color: black;
+    margin: 0;
+    flex: 1;
+  }
+}
+
+.source {
+  font-family: $font-montserrat;
+  font-style: italic;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 150%;
+  color: $color-text-grey;
+  margin: 20px 0 40px;
+}
+
+.footer__text {
+  font-family: $font-montserrat;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 17px;
+  color: $color-text-footer;
+  text-align: center;
+  margin: 20px 0 16px;
 }
 
 // main end
 
 @media screen and (min-width: $layout-breakpoint-small) {
+  .header-container,
+  .main-container {
+    padding: 10px 20px;
+  }
+
   .header__title {
     font-family: $font-playfair-display;
     font-size: 36px;
@@ -203,6 +283,11 @@ body {
 }
 
 @media screen and (min-width: $layout-breakpoint-medium) {
+  .header-container,
+  .main-container {
+    padding: 15px 30px;
+  }
+
   .header__title {
     font-family: $font-playfair-display;
     font-size: 48px;
@@ -239,6 +324,7 @@ body {
   .main-container {
     max-width: 1200px;
     margin: 0 auto;
+    padding: 20px 40px;
   }
 
   .header-description {
@@ -257,7 +343,7 @@ body {
   .recipe-main {
     order: 1;
     flex: 7;
-    padding-right: 40%;
+    padding-right: 30%;
   }
 
   .recipe-info {
@@ -266,6 +352,7 @@ body {
     background: #ffffff;
     box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.12);
     border-radius: 12px;
+    align-self: flex-start;
   }
 
   .recipe-info-container1,
