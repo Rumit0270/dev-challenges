@@ -5,6 +5,7 @@
 - 404 Not Found: https://excellent-division.surge.sh/
 - My Team Page: https://ethereal-goose.surge.sh/
 - Interior Consultant: https://educated-station.surge.sh/
+- Recipe Challenge: https://absurd-food.surge.sh/
 
 ## Frontend Section
 
