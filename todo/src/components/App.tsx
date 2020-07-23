@@ -1,8 +1,12 @@
 import React from 'react';
-import './App.css';
+import Todos from './Todos/Todos';
 
 function App() {
-  return <div>App Component</div>;
+  return (
+    <>
+      <Todos />
+    </>
+  );
 }
 
 export default App;
