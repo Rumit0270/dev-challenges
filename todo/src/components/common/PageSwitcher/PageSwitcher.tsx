@@ -8,7 +8,6 @@ export interface Page {
   id: number;
   title: string;
 }
-
 interface PageSwitcherProps {
   pages: Page[];
   onPageSwitch: (pageId: number) => void;
@@ -25,30 +24,32 @@ const PageSwitcher: React.FC<PageSwitcherProps> = ({
 
   useEffect(() => {
     const firstRef = indicatorRefs[0];
-    if (firstRef) {
-      const { left, width } = firstRef.current.getBoundingClientRect();
-      const newIndicatorX = left + width / 2 - INDICATOR_WIDTH / 2;
-      setIndicatorX(newIndicatorX);
-    }
+    handleIndicatorPosition(firstRef, inidicatorContainerRef);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const handleOnPageSwitch = (pageId: number, pageIndex: number) => {
-    const clickedRef = indicatorRefs[pageIndex];
-
-    if (clickedRef && inidicatorContainerRef.current) {
-      let {
+  const handleIndicatorPosition = (
+    ref: React.RefObject<any>,
+    containerRef: React.RefObject<any>
+  ) => {
+    if (ref.current && containerRef.current) {
+      const {
         left: containerLeft,
-      } = inidicatorContainerRef.current.getBoundingClientRect();
+      } = containerRef.current.getBoundingClientRect();
 
-      const { left, width } = clickedRef.current.getBoundingClientRect();
+      const { left, width } = ref.current.getBoundingClientRect();
 
       // some math to position the indication exactly below the title
       const newIndicatorX =
         left - containerLeft + width / 2 - INDICATOR_WIDTH / 2;
-
       setIndicatorX(newIndicatorX);
     }
+  };
+
+  const handleOnPageSwitch = (pageId: number, pageIndex: number) => {
+    const clickedRef = indicatorRefs[pageIndex];
+
+    handleIndicatorPosition(clickedRef, inidicatorContainerRef);
     setActiveIndex(pageIndex);
     onPageSwitch(pageId);
   };

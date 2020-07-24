@@ -1,0 +1,45 @@
+.todo-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 10px;
+  margin: 10px 0;
+}
+
+.todo {
+  display: inline-flex;
+  align-items: center;
+}
+
+.todo__check {
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+  border-radius: 4px;
+}
+
+.todo__check:focus {
+  outline: none;
+}
+
+.todo__check:checked {
+  color: #6da6f2;
+}
+
+.todo__title {
+  font-family: var(--font-montserrata);
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 22px;
+  color: #000000;
+}
+
+.todo__title--completed {
+  text-decoration: line-through;
+}
+
+.todo__delete {
+  color: var(--color-highlight);
+  cursor: pointer;
+}

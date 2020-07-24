@@ -1,5 +1,6 @@
 export interface Todo {
-  title: number;
+  id: number;
+  title: string;
   isCompleted: boolean;
 }
 
@@ -27,7 +28,7 @@ export const getAllTodos = (): Todo[] => {
   return todos;
 };
 
-export const getCompletedTodos = (): Todo[] => {
+export const deleteTodo = (todoId: number) => {
   let todos: Todo[] = [];
 
   const todosValue = localStorage.getItem('todos');
@@ -35,10 +36,16 @@ export const getCompletedTodos = (): Todo[] => {
     todos = JSON.parse(todosValue);
   }
 
-  return todos.filter((todo) => todo.isCompleted);
+  todos = todos.filter((savedTodo) => savedTodo.id !== todoId);
+
+  localStorage.setItem('todos', JSON.stringify(todos));
 };
 
-export const getActiveTodos = (): Todo[] => {
+export const deleteAllTodos = () => {
+  localStorage.removeItem('todos');
+};
+
+export const checkTodo = (id: number, isCompleted: boolean) => {
   let todos: Todo[] = [];
 
   const todosValue = localStorage.getItem('todos');
@@ -46,5 +53,10 @@ export const getActiveTodos = (): Todo[] => {
     todos = JSON.parse(todosValue);
   }
 
-  return todos.filter((todo) => !todo.isCompleted);
+  let todo = todos.find((item) => item.id === id);
+  if (todo) {
+    todo.isCompleted = isCompleted;
+  }
+
+  localStorage.setItem('todos', JSON.stringify(todos));
 };

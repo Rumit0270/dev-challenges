@@ -1,9 +1,21 @@
 import React from 'react';
 
 import './ActiveTodos.css';
+import { Todo } from '../../../utils/todos';
+import TodoComponent from '../../common/Todo/Todo';
 
-const ActiveTodos: React.FC = () => {
-  return <div>ActiveTodos Component</div>;
+interface ActiveTodosProps {
+  todos: Todo[];
+  onCheck: (id: number, isCompleted: boolean) => void;
+}
+
+const ActiveTodos: React.FC<ActiveTodosProps> = ({ todos, onCheck }) => {
+  const renderTodos = () => {
+    return todos.map((todo) => (
+      <TodoComponent todo={todo} key={todo.id} onCheck={onCheck} />
+    ));
+  };
+  return <>{renderTodos()}</>;
 };
 
 export default ActiveTodos;
