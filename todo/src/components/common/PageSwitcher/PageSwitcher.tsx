@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 
 import './PageSwitcher.css';
 
@@ -18,6 +18,7 @@ const PageSwitcher: React.FC<PageSwitcherProps> = ({
   pages,
   onPageSwitch,
 }): JSX.Element => {
+  let inidicatorContainerRef = useRef<HTMLDivElement>(null);
   let indicatorRefs: any[] = [];
   const [indicatorX, setIndicatorX] = useState<number>(0);
   const [activeIndex, setActiveIndex] = useState<number>(0);
@@ -35,12 +36,17 @@ const PageSwitcher: React.FC<PageSwitcherProps> = ({
   const handleOnPageSwitch = (pageId: number, pageIndex: number) => {
     const clickedRef = indicatorRefs[pageIndex];
 
-    if (clickedRef) {
+    if (clickedRef && inidicatorContainerRef.current) {
+      let {
+        left: containerLeft,
+      } = inidicatorContainerRef.current.getBoundingClientRect();
+
       const { left, width } = clickedRef.current.getBoundingClientRect();
 
-      const newIndicatorX = left + width / 2 - INDICATOR_WIDTH / 2;
+      // some math to position the indication exactly below the title
+      const newIndicatorX =
+        left - containerLeft + width / 2 - INDICATOR_WIDTH / 2;
 
-      console.log(clickedRef.current.getBoundingClientRect());
       setIndicatorX(newIndicatorX);
     }
     setActiveIndex(pageIndex);
@@ -73,7 +79,7 @@ const PageSwitcher: React.FC<PageSwitcherProps> = ({
   }
 
   return (
-    <div className="page-switcher-container">
+    <div className="page-switcher-container" ref={inidicatorContainerRef}>
       {renderPageNavigators()}
       <span
         className="page-navigator__indicator"
