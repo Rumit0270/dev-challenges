@@ -1,0 +1,9 @@
+.app-footer {
+  padding: 10px 20px;
+  font-family: var(--font-montserrat);
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 17px;
+  color: var(--color-grey);
+}

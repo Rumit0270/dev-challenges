@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 
 import './PageSwitcher.css';
 
-const INDICATOR_WIDTH = 90;
+const INDICATOR_WIDTH = 85;
 
 export interface Page {
   id: number;

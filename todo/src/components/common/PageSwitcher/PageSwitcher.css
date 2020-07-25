@@ -37,7 +37,7 @@
   position: absolute;
   bottom: 0;
   left: 0;
-  width: 100px;
+  width: 85px;
   height: 5px;
   border-radius: 4px 4px 0px 0px;
   background-color: var(--color-info);

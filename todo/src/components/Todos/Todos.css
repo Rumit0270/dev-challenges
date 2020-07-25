@@ -1,6 +1,7 @@
 .todos-container {
   padding: 10px 15px;
   width: 100%;
+  flex: 1;
 }
 
 .todos__title {

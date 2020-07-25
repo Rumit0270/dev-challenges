@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 
 import './Todo.css';
 import { Todo as ITodo } from '../../../utils/todos';
+import Checkbox from '../Checkbox/Checkbox';
 
 interface TodoProps {
   todo: ITodo;
@@ -25,9 +26,8 @@ const Todo: React.FC<TodoProps> = ({
   return (
     <div className="todo-container">
       <div className="todo">
-        <input
-          type="checkbox"
-          className="todo__check"
+        <Checkbox
+          inputStyle="todo__check"
           checked={checked}
           onChange={handleCheckClick}
         />
