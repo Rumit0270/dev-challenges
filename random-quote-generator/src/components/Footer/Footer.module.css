@@ -1,0 +1,10 @@
+.footer__text {
+  font-family: var(--font-montserrat);
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 17px;
+  color: var(--color-grey);
+  padding: 8px 12px;
+  text-align: center;
+}

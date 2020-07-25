@@ -1,3 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Raleway:wght@300;400;600;700&display=swap');
+
+:root {
+  --font-montserrat: 'Montserrat', sans-serif;
+  --font-raleway: 'Raleway', sans-serif;
+  --color-grey: #a9a9a9;
+  --color-secondary: #4f4f4f;
+}
+
 * {
   box-sizing: border-box;
 }

@@ -1,9 +1,10 @@
 import apiService from './apiService';
 
-interface Quote {
+export interface Quote {
   _id: string;
   quoteText: string;
   quoteAuthor: string;
+  quoteGenre: string;
 }
 
 interface IRandomQuoteResponse {
