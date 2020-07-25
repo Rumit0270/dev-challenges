@@ -1,0 +1,30 @@
+.quotes-container {
+  flex: 1;
+  flex-direction: column;
+  margin-bottom: 40px;
+}
+
+.author__name {
+  margin: 20px 0 80px;
+  padding-left: 30px;
+  margin-left: 30px;
+  font-family: Raleway;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 30px;
+  line-height: 36px;
+  color: var(--color-black);
+}
+
+@media screen and (min-width: 768px) {
+  .author__name {
+    margin: 40px 0 120px;
+    padding-left: 80px;
+    font-size: 36px;
+    line-height: 42px;
+  }
+
+  .quotes-container {
+    margin-bottom: 80px;
+  }
+}

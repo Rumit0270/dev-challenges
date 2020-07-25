@@ -1,6 +1,7 @@
 .container {
   display: flex;
   justify-content: flex-end;
+  padding: 5px 10px;
 }
 
 .refresh {
@@ -12,11 +13,12 @@
   font-size: 16px;
   line-height: 80%;
   color: var(--color-secondary);
-  padding: 8px;
+  padding: 8px 12px;
   border: none;
   border-radius: 8px;
   cursor: pointer;
   transition: box-shadow 0.4s;
+  background-color: #cdcdcd;
 }
 
 .refresh:hover {
@@ -40,10 +42,14 @@
 }
 
 @media screen and (min-width: 768px) {
+  .container {
+    padding: 10px 20px;
+  }
+
   .refresh {
     font-size: 18px;
     line-height: 120%;
-    padding: 10px;
+    padding: 10px 14px;
   }
 }
 

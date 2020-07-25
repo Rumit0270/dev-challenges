@@ -26,7 +26,7 @@ export const getRandomQuote = () => {
 export const getQuotesByAuthor = (
   authorName: string,
   page: number = 1,
-  limit: number = 10
+  limit: number = 3
 ) => {
   return apiService.get<IQuotesByAuthorResponse>(
     `/authors/${authorName}?page=${page}&limit=${limit}`

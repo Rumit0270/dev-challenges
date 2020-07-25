@@ -1,9 +1,12 @@
 .loading {
-  align-self: center;
+  position: fixed;
   font-size: 16px;
   line-height: 18px;
   letter-spacing: 1px;
   color: var(--color-light-grey);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 @media screen and (min-width: 768px) {

@@ -20,7 +20,7 @@ const Header: React.FC<HeaderProps> = ({
         disabled={loading}
         onClick={onMorePress}
       >
-        Next{' '}
+        Random{' '}
         <span
           className={`material-icons ${styles['refresh__icon']} ${iconAnimateClass} `}
         >
