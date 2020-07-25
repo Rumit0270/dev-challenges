@@ -13,3 +13,4 @@
 - Reusable Components (React): https://abusive-space.surge.sh
 - Windbnb Challenge (React): https://adaptable-dime.surge.sh/
 - Todo (React): https://defeated-answer.surge.sh/
+- Random Quote Generator (React): https://maddening-grade.surge.sh/
