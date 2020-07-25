@@ -5,6 +5,10 @@
   --font-raleway: 'Raleway', sans-serif;
   --color-grey: #a9a9a9;
   --color-secondary: #4f4f4f;
+  --color-yellow: #f7df94;
+  --color-light-grey: #828282;
+  --color-black: #333333;
+  --color-light: #f2f2f2;
 }
 
 * {

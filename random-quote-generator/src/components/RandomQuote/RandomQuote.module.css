@@ -1,0 +1,74 @@
+.quote-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.details-container {
+  margin-left: 20px;
+  margin-top: 30px;
+  padding: 40px 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.4s, color 0.7s, opacity 0.7s;
+}
+
+.quote-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-family: var(--font-raleway);
+  font-style: normal;
+}
+
+.quote__author {
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 24px;
+  color: var(--color-secondary);
+  margin-bottom: 5px;
+}
+
+.quote__genre {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+  color: var(--color-light-grey);
+}
+
+.quote-info__icon {
+  font-size: 24px;
+  opacity: 0;
+}
+
+.details-container:hover {
+  background-color: var(--color-black);
+}
+
+.details-container:hover .quote__author {
+  color: var(--color-light);
+}
+
+.details-container:hover .quote-info__icon {
+  opacity: 1;
+  color: var(--color-light);
+}
+
+@media screen and (min-width: 768px) {
+  .details-container {
+    margin-left: 50px;
+    margin-top: 50px;
+  }
+
+  .quote__author {
+    font-size: 24px;
+    line-height: 28px;
+  }
+
+  .quote-info__icon {
+    font-size: 36px;
+  }
+}
