@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+$font-montserrat: 'Montserrat', sans-serif;
+$color-secondary: #a9a9a9;
+
+footer {
+  font-family: $font-montserrat;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 17px;
+  color: $color-secondary;
+  text-align: center;
+  padding: 10px 0;
+}
