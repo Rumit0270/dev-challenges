@@ -8,7 +8,9 @@ interface QuoteProps {
 }
 
 const Quote: React.FC<QuoteProps> = ({ quote }): JSX.Element => {
-  return <blockquote className={styles['quote']}>{quote.quoteText}</blockquote>;
+  return (
+    <blockquote className={styles['quote']}>"{quote.quoteText}"</blockquote>
+  );
 };
 
 export default Quote;
