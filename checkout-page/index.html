@@ -12,7 +12,131 @@
     <title>Checkout</title>
   </head>
   <body>
-    <main></main>
+    <main>
+      <h1 class="heading">Checkout</h1>
+      <div class="container">
+        <div class="checkout-container">
+          <div class="checkout-item">
+            <img
+              src="assets/images/photo1.png"
+              alt="Vintage bag"
+              class="checkout-item__image"
+            />
+            <div class="checkout-item-info">
+              <div>
+                <h4 class="checkout-item-info__title">Vintage Backbag</h4>
+                <span class="checkout-item-info__new-price">$54.99</span>
+                <span class="checkout-item-info__old-price">$94.99</span>
+              </div>
+              <div class="checkout-item-info__control">
+                <span class="checkout-item-info__control--decrement">-</span>
+                <span class="checkout-item-info__control--count">1</span>
+                <span class="checkout-item-info__control--increment">+</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="checkout-item">
+            <img
+              src="assets/images/photo2.png"
+              alt="Vintage bag"
+              class="checkout-item__image"
+            />
+            <div class="checkout-item-info">
+              <div>
+                <h5 class="checkout-item-info__title">Levi Shoes</h5>
+                <span class="checkout-item-info__new-price">$74.99 </span>
+                <span class="checkout-item-info__old-price"> $124.99 </span>
+              </div>
+              <div class="checkout-item-info__control">
+                <span class="checkout-item-info__control--decrement">-</span>
+                <span class="checkout-item-info__control--count">1</span>
+                <span class="checkout-item-info__control--increment">+</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="price-info price-info1">
+            <span>Shipping</span>
+            <span>$19</span>
+          </div>
+
+          <div class="price-info">
+            <span>Total</span>
+            <span>$148.98</span>
+          </div>
+        </div>
+        <div class="form-container">
+          <fieldset class="contact-info">
+            <h5 class="form__title">Contact infomation</h5>
+            <label for="email">E-mail</label>
+            <div class="form__input-container">
+              <span class="material-icons form__input-icon">
+                email
+              </span>
+              <input
+                type="email"
+                class="form__input"
+                placeholder="Enter your email..."
+                name="email"
+              />
+            </div>
+            <label for="phone">Phone</label>
+            <div class="form__input-container">
+              <span class="material-icons form__input-icon">
+                phone
+              </span>
+              <input
+                type="text"
+                class="form__input"
+                placeholder="Enter your phone..."
+                name="phone"
+              />
+            </div>
+          </fieldset>
+
+          <fieldset class="shipping-info">
+            <h5 class="form__title">Shipping address</h5>
+            <label for="fullname">Full name</label>
+            <div class="form__input-container">
+              <span class="material-icons form__input-icon">
+                account_circle
+              </span>
+              <input
+                type="text"
+                class="form__input"
+                placeholder="Your full name"
+                name="fullname"
+              />
+            </div>
+            <label for="address">Address</label>
+            <div class="form__input-container">
+              <span class="material-icons form__input-icon">
+                home
+              </span>
+              <input
+                type="text"
+                class="form__input"
+                placeholder="Your address"
+                name="address"
+              />
+            </div>
+            <label for="city">City</label>
+            <div class="form__input-container">
+              <span class="material-icons form__input-icon">
+                apartment
+              </span>
+              <input
+                type="text"
+                class="form__input"
+                placeholder="Your city"
+                name="city"
+              />
+            </div>
+          </fieldset>
+        </div>
+      </div>
+    </main>
     <footer>Rumit Tandukar @ DevChallenges.io</footer>
   </body>
 </html>
