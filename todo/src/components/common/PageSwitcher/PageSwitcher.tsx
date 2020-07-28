@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 
 import './PageSwitcher.css';
+import { useRefSize } from '../../../hooks/useRefSize';
 
 const INDICATOR_WIDTH = 85;
 
@@ -19,14 +20,15 @@ const PageSwitcher: React.FC<PageSwitcherProps> = ({
 }): JSX.Element => {
   let inidicatorContainerRef = useRef<HTMLDivElement>(null);
   let indicatorRefs: any[] = [];
+
+  const [dimensions] = useRefSize<HTMLDivElement>(inidicatorContainerRef);
   const [indicatorX, setIndicatorX] = useState<number>(0);
   const [activeIndex, setActiveIndex] = useState<number>(0);
 
   useEffect(() => {
-    const firstRef = indicatorRefs[0];
-    handleIndicatorPosition(firstRef, inidicatorContainerRef);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+    const clickedRef = indicatorRefs[activeIndex];
+    handleIndicatorPosition(clickedRef, inidicatorContainerRef);
+  }, [dimensions, activeIndex, indicatorRefs]);
 
   const handleIndicatorPosition = (
     ref: React.RefObject<any>,
@@ -47,9 +49,6 @@ const PageSwitcher: React.FC<PageSwitcherProps> = ({
   };
 
   const handleOnPageSwitch = (pageId: number, pageIndex: number) => {
-    const clickedRef = indicatorRefs[pageIndex];
-
-    handleIndicatorPosition(clickedRef, inidicatorContainerRef);
     setActiveIndex(pageIndex);
     onPageSwitch(pageId);
   };
