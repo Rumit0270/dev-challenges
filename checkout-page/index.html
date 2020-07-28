@@ -13,186 +13,188 @@
   </head>
   <body>
     <main>
-      <h1 class="heading">Checkout</h1>
-      <div class="container">
-        <div class="checkout-container">
-          <div class="checkout-item">
-            <img
-              src="assets/images/photo1.png"
-              alt="Vintage bag"
-              class="checkout-item__image"
-            />
-            <div class="checkout-item-info">
-              <div>
-                <h4 class="checkout-item-info__title">Vintage Backbag</h4>
-                <span class="checkout-item-info__new-price">$54.99</span>
-                <span class="checkout-item-info__old-price">$94.99</span>
-              </div>
-              <div class="checkout-item-info__control">
-                <span class="checkout-item-info__control--decrement">-</span>
-                <span class="checkout-item-info__control--count">1</span>
-                <span class="checkout-item-info__control--increment">+</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="checkout-item">
-            <img
-              src="assets/images/photo2.png"
-              alt="Vintage bag"
-              class="checkout-item__image"
-            />
-            <div class="checkout-item-info">
-              <div>
-                <h5 class="checkout-item-info__title">Levi Shoes</h5>
-                <span class="checkout-item-info__new-price">$74.99 </span>
-                <span class="checkout-item-info__old-price"> $124.99 </span>
-              </div>
-              <div class="checkout-item-info__control">
-                <span class="checkout-item-info__control--decrement">-</span>
-                <span class="checkout-item-info__control--count">1</span>
-                <span class="checkout-item-info__control--increment">+</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="price-info price-info1">
-            <span>Shipping</span>
-            <span>$19</span>
-          </div>
-
-          <div class="price-info">
-            <span>Total</span>
-            <span>$148.98</span>
-          </div>
-        </div>
-        <div class="form-container">
-          <form onsubmit="javascript:alert('Validation complete')">
-            <fieldset class="contact-info">
-              <h5 class="form__title">Contact infomation</h5>
-              <label for="email">E-mail</label>
-              <div class="form__input-container">
-                <span class="material-icons form__input-icon">
-                  email
-                </span>
-                <input
-                  type="email"
-                  class="form__input"
-                  placeholder="Enter your email..."
-                  name="email"
-                  required
-                />
-              </div>
-              <label for="phone">Phone</label>
-              <div class="form__input-container">
-                <span class="material-icons form__input-icon">
-                  phone
-                </span>
-                <input
-                  type="number"
-                  class="form__input"
-                  placeholder="Enter your phone..."
-                  name="phone"
-                  required
-                />
-              </div>
-            </fieldset>
-
-            <fieldset class="shipping-info">
-              <h5 class="form__title">Shipping address</h5>
-              <label for="fullname">Full name</label>
-              <div class="form__input-container">
-                <span class="material-icons form__input-icon">
-                  account_circle
-                </span>
-                <input
-                  type="text"
-                  class="form__input"
-                  placeholder="Your full name.."
-                  name="fullname"
-                  required
-                />
-              </div>
-              <label for="address">Address</label>
-              <div class="form__input-container">
-                <span class="material-icons form__input-icon">
-                  home
-                </span>
-                <input
-                  type="text"
-                  class="form__input"
-                  placeholder="Your address.."
-                  name="address"
-                  required
-                />
-              </div>
-              <label for="city">City</label>
-              <div class="form__input-container">
-                <span class="material-icons form__input-icon">
-                  apartment
-                </span>
-                <input
-                  type="text"
-                  class="form__input"
-                  placeholder="Your city.."
-                  name="city"
-                  required
-                />
-              </div>
-
-              <div class="form__input-group">
-                <div class="form__input-group--country">
-                  <label for="country">Country</label>
-                  <div class="form__input-container">
-                    <span class="material-icons form__input-icon">
-                      apartment
-                    </span>
-                    <input
-                      type="text"
-                      class="form__input"
-                      placeholder="Your country.."
-                      name="country"
-                      required
-                      list="countries-list"
-                    />
-                    <datalist id="countries-list">
-                      <option value="Nepal"></option>
-                      <option value="Canada"></option>
-                      <option value="Norway"></option>
-                      <option value="Germany"></option>
-                      <option value="Japan"></option>
-                    </datalist>
-                  </div>
+      <div class="top-container">
+        <h1 class="heading">Checkout</h1>
+        <div class="container">
+          <div class="checkout-container">
+            <div class="checkout-item">
+              <img
+                src="assets/images/photo1.png"
+                alt="Vintage bag"
+                class="checkout-item__image"
+              />
+              <div class="checkout-item-info">
+                <div>
+                  <h4 class="checkout-item-info__title">Vintage Backbag</h4>
+                  <span class="checkout-item-info__new-price">$54.99</span>
+                  <span class="checkout-item-info__old-price">$94.99</span>
                 </div>
-
-                <div class="form__input-group--postal">
-                  <label for="postalcode">Postal code</label>
-                  <div class="form__input-container">
-                    <span class="material-icons form__input-icon">
-                      markunread_mailbox
-                    </span>
-                    <input
-                      type="number"
-                      class="form__input"
-                      placeholder="Your postal code.."
-                      name="postalcode"
-                      min="0"
-                      required
-                    />
-                  </div>
+                <div class="checkout-item-info__control">
+                  <span class="checkout-item-info__control--decrement">-</span>
+                  <span class="checkout-item-info__control--count">1</span>
+                  <span class="checkout-item-info__control--increment">+</span>
                 </div>
               </div>
-            </fieldset>
-
-            <div class="check-group">
-              <input type="checkbox" />
-              <span> Save this information for next time</span>
             </div>
 
-            <div class="btn-container">
-              <button class="btn-continue" type="submit">Continue</button>
+            <div class="checkout-item">
+              <img
+                src="assets/images/photo2.png"
+                alt="Vintage bag"
+                class="checkout-item__image"
+              />
+              <div class="checkout-item-info">
+                <div>
+                  <h5 class="checkout-item-info__title">Levi Shoes</h5>
+                  <span class="checkout-item-info__new-price">$74.99 </span>
+                  <span class="checkout-item-info__old-price"> $124.99 </span>
+                </div>
+                <div class="checkout-item-info__control">
+                  <span class="checkout-item-info__control--decrement">-</span>
+                  <span class="checkout-item-info__control--count">1</span>
+                  <span class="checkout-item-info__control--increment">+</span>
+                </div>
+              </div>
             </div>
-          </form>
+
+            <div class="price-info price-info1">
+              <span>Shipping</span>
+              <span>$19</span>
+            </div>
+
+            <div class="price-info">
+              <span>Total</span>
+              <span>$148.98</span>
+            </div>
+          </div>
+          <div class="form-container">
+            <form onsubmit="javascript:alert('Validation complete')">
+              <fieldset class="contact-info">
+                <h5 class="form__title">Contact infomation</h5>
+                <label for="email">E-mail</label>
+                <div class="form__input-container">
+                  <span class="material-icons form__input-icon">
+                    email
+                  </span>
+                  <input
+                    type="email"
+                    class="form__input"
+                    placeholder="Enter your email..."
+                    name="email"
+                    required
+                  />
+                </div>
+                <label for="phone">Phone</label>
+                <div class="form__input-container">
+                  <span class="material-icons form__input-icon">
+                    phone
+                  </span>
+                  <input
+                    type="number"
+                    class="form__input"
+                    placeholder="Enter your phone..."
+                    name="phone"
+                    required
+                  />
+                </div>
+              </fieldset>
+
+              <fieldset class="shipping-info">
+                <h5 class="form__title">Shipping address</h5>
+                <label for="fullname">Full name</label>
+                <div class="form__input-container">
+                  <span class="material-icons form__input-icon">
+                    account_circle
+                  </span>
+                  <input
+                    type="text"
+                    class="form__input"
+                    placeholder="Your full name.."
+                    name="fullname"
+                    required
+                  />
+                </div>
+                <label for="address">Address</label>
+                <div class="form__input-container">
+                  <span class="material-icons form__input-icon">
+                    home
+                  </span>
+                  <input
+                    type="text"
+                    class="form__input"
+                    placeholder="Your address.."
+                    name="address"
+                    required
+                  />
+                </div>
+                <label for="city">City</label>
+                <div class="form__input-container">
+                  <span class="material-icons form__input-icon">
+                    apartment
+                  </span>
+                  <input
+                    type="text"
+                    class="form__input"
+                    placeholder="Your city.."
+                    name="city"
+                    required
+                  />
+                </div>
+
+                <div class="form__input-group">
+                  <div class="form__input-group--country">
+                    <label for="country">Country</label>
+                    <div class="form__input-container">
+                      <span class="material-icons form__input-icon">
+                        apartment
+                      </span>
+                      <input
+                        type="text"
+                        class="form__input"
+                        placeholder="Your country.."
+                        name="country"
+                        required
+                        list="countries-list"
+                      />
+                      <datalist id="countries-list">
+                        <option value="Nepal"></option>
+                        <option value="Canada"></option>
+                        <option value="Norway"></option>
+                        <option value="Germany"></option>
+                        <option value="Japan"></option>
+                      </datalist>
+                    </div>
+                  </div>
+
+                  <div class="form__input-group--postal">
+                    <label for="postalcode">Postal code</label>
+                    <div class="form__input-container">
+                      <span class="material-icons form__input-icon">
+                        markunread_mailbox
+                      </span>
+                      <input
+                        type="number"
+                        class="form__input"
+                        placeholder="Your postal code.."
+                        name="postalcode"
+                        min="0"
+                        required
+                      />
+                    </div>
+                  </div>
+                </div>
+              </fieldset>
+
+              <div class="check-group">
+                <input type="checkbox" />
+                <span> Save this information for next time</span>
+              </div>
+
+              <div class="btn-container">
+                <button class="btn-continue" type="submit">Continue</button>
+              </div>
+            </form>
+          </div>
         </div>
       </div>
     </main>

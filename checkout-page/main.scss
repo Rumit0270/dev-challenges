@@ -9,6 +9,7 @@ $color-border-grey: #828282;
 $color-black: #333333;
 $color-muted: #bdbdbd;
 $color-medium-dark-grey: #4f4f4f;
+$color-light: #e0e0e0;
 
 body {
   padding: 0;
@@ -21,7 +22,10 @@ body {
 
 main {
   flex: 1;
-  margin: 20px 10px 30px;
+}
+
+.top-container {
+  padding: 20px 10px 30px;
 }
 
 .heading {
@@ -36,6 +40,8 @@ main {
 
 .container {
   margin-bottom: 50px;
+  display: flex;
+  flex-direction: column;
 }
 
 .checkout-container {
@@ -43,6 +49,7 @@ main {
   border-radius: 12px;
   padding: 20px 20px 10px;
   margin-bottom: 40px;
+  max-width: 300px;
 }
 
 .checkout-item {
@@ -74,7 +81,7 @@ main {
     line-height: 15px;
     color: $color-primary;
     transform: rotate(-0.02deg);
-    margin: 0 0 16px;
+    margin: 0 0 12px;
   }
 
   &__new-price {
@@ -106,7 +113,7 @@ main {
   &__control--decrement,
   &__control--increment {
     color: $color-border-grey;
-    background: #e0e0e0;
+    background: $color-light;
     border-radius: 4px;
     font-size: 17px;
     padding: 1px 5px;
@@ -116,7 +123,7 @@ main {
     font-weight: 600;
     font-size: 16px;
     line-height: 20px;
-    color: #333333;
+    color: $color-black;
   }
 }
 
@@ -201,6 +208,8 @@ fieldset label {
   border-radius: 12px;
   padding: 10px 20px;
   text-indent: 30px;
+  font-size: 12px;
+  line-height: 15px;
   color: $color-black;
 }
 
@@ -228,11 +237,11 @@ fieldset label {
   align-items: center;
 
   & input[type='checkbox'] {
-    /* Gray 3 */
-
     border: 1px solid $color-border-grey;
     box-sizing: border-box;
     border-radius: 4px;
+    width: 16px;
+    height: 16px;
   }
 
   & span {
@@ -286,22 +295,103 @@ footer {
   padding: 10px 0;
 }
 
-// Small devices (landscape phones, 576px and up)
 @media (min-width: 576px) {
+  .top-container {
+    max-width: 540px;
+    margin: 0 auto 80px;
+  }
 }
 
-// Medium devices (tablets, 768px and up)
-@media (min-width: 768px) {
-}
-
-// Large devices (desktops, 992px and up)
 @media (min-width: 992px) {
   .heading {
     font-size: 36px;
     line-height: 44px;
   }
-}
 
-// Extra large devices (large desktops, 1200px and up)
-@media (min-width: 1200px) {
+  .top-container {
+    max-width: 1200px;
+    padding: 20px 30px;
+  }
+
+  .container {
+    flex-direction: row;
+  }
+
+  .form-container {
+    margin-right: 100px;
+    order: 1;
+    flex: 1;
+    max-width: 520px;
+  }
+
+  .checkout-container {
+    order: 2;
+    flex: 1;
+    max-height: 420px;
+    padding: 20px 20px 30px;
+  }
+
+  .heading {
+    font-size: 36px;
+    line-height: 44px;
+  }
+
+  .form__title {
+    font-size: 18px;
+    line-height: 22px;
+  }
+
+  .form__input {
+    min-height: 36px;
+    padding: 11px 22px;
+    text-indent: 32px;
+    font-size: 14px;
+    line-height: 18px;
+  }
+
+  fieldset label {
+    font-size: 12px;
+    line-height: 15px;
+    margin: 18px 0 8px;
+  }
+
+  .contact-info {
+    margin-bottom: 50px;
+  }
+
+  .check-group {
+    margin-top: 16px;
+
+    & input[type='checkbox'] {
+      width: 18px;
+      height: 18px;
+    }
+
+    & span {
+      font-size: 12px;
+      line-height: 15px;
+    }
+  }
+
+  .checkout-item-info {
+    &__title {
+      font-size: 16px;
+      line-height: 20px;
+    }
+
+    &__new-price {
+      font-size: 16px;
+      line-height: 20px;
+    }
+
+    &__old-price {
+      font-size: 12px;
+      line-height: 15px;
+    }
+  }
+
+  .price-info span:nth-child(1) {
+    font-size: 16px;
+    line-height: 20px;
+  }
 }
