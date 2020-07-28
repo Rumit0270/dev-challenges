@@ -7,6 +7,7 @@
 - Interior Consultant: https://educated-station.surge.sh/
 - Recipe Challenge: https://absurd-food.surge.sh/
 - My Gallery: https://acceptable-silk.surge.sh/
+- Checkout page: https://romantic-honey.surge.sh/
 
 ## Frontend Section
 
