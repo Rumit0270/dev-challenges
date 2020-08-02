@@ -1,0 +1,10 @@
+.quiz-container {
+  border-radius: 24px;
+}
+
+.quiz-logo {
+  right: 0;
+  top: -50%;
+  width: 150px;
+  height: 150px;
+}
