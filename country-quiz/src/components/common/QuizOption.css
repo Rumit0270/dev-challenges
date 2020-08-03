@@ -1,0 +1,32 @@
+.quiz-option {
+  background: white;
+  border: 2px solid rgba(96, 102, 208, 0.7);
+  border-radius: 12px;
+  transition: all 0.3s;
+}
+
+.quiz-option:not(.answer-selected):hover {
+  background-color: #f9a826;
+  border-color: #f9a826;
+}
+
+.quiz-option:hover span {
+  color: white;
+}
+
+.quiz-option--correct,
+.quiz-option--correct:hover {
+  background-color: #60bf88;
+  border-color: #60bf88;
+}
+
+.quiz-option--wrong,
+.quiz-option--wrong:hover {
+  background-color: #ea8282;
+  border-color: #ea8282;
+}
+
+.quiz-option--correct span,
+.quiz-option--wrong span {
+  color: white;
+}

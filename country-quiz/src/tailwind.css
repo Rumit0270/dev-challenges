@@ -5,3 +5,4 @@
 @tailwind utilities;
 
 @import './components/Quiz/Quiz.css';
+@import './components//common//QuizOption.css';
