@@ -190,6 +190,7 @@ const Quiz: React.FC = (): JSX.Element => {
           showCorrect={showShowCorrect(option)}
           showWrong={shouldShowWrong(option)}
           onClick={onOptionSelect}
+          index={index}
         />
       );
     });
@@ -219,8 +220,9 @@ const Quiz: React.FC = (): JSX.Element => {
             {renderOptions()}
             <div className="flex justify-end">
               <button
-                className="font-poppins font-bold text-white text-lg leading-7 bg-warn py-3 px-8 next-button"
+                className="font-poppins font-bold text-white text-lg leading-7 bg-warn py-3 px-8 focus:shadow-outline next-button"
                 onClick={onNextClick}
+                tabIndex={5}
               >
                 Next
               </button>
@@ -240,8 +242,9 @@ const Quiz: React.FC = (): JSX.Element => {
               correct answers
             </p>
             <button
-              className="font-poppins font-semibold text-dark text-base md:text-lg leading-7 border-dark border-2 rounded-lg px-10 md:px-12 py-3 md:py-4 focus:outline-none"
+              className="font-poppins font-semibold text-dark text-base md:text-lg leading-7 border-dark border-2 rounded-lg px-10 md:px-12 py-3 md:py-4 focus:shadow-outline"
               onClick={restartQuiz}
+              tabIndex={0}
             >
               Try again
             </button>

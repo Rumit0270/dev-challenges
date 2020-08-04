@@ -3,6 +3,7 @@
   border: 2px solid rgba(96, 102, 208, 0.7);
   border-radius: 12px;
   transition: all 0.3s;
+  width: 100%;
 }
 
 .quiz-option:not(.answer-selected):hover {

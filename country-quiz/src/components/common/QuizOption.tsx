@@ -7,6 +7,7 @@ interface QuizOptionProps {
   showCorrect: boolean;
   showWrong: boolean;
   onClick: (selectedDetail: CountryDetail) => void;
+  index: number;
 }
 
 const QuizOption: React.FC<QuizOptionProps> = ({
@@ -14,6 +15,7 @@ const QuizOption: React.FC<QuizOptionProps> = ({
   country,
   showCorrect,
   showWrong,
+  index,
   onClick,
 }): JSX.Element => {
   let correctClass = showCorrect ? 'quiz-option--correct' : '';
@@ -22,9 +24,10 @@ const QuizOption: React.FC<QuizOptionProps> = ({
   let answerClass = answerClicked ? 'answer-selected' : '';
 
   return (
-    <div
-      className={`my-6 px-3 md:px-4 py-2 md:py-3 flex flex-row justify-between items-center cursor-pointer quiz-option ${correctClass} ${wrongClass} ${answerClass}`}
+    <button
+      className={`my-6 px-3 md:px-4 py-2 md:py-3 flex flex-row justify-between items-center cursor-pointer focus:shadow-outline quiz-option ${correctClass} ${wrongClass} ${answerClass}`}
       onClick={() => onClick(country)}
+      tabIndex={index + 1}
     >
       <div className="flex items-center">
         <span className="mr-8 text-primary text-opacity-75 leading-9 font-poppins text-xl md:text-2xl">
@@ -45,7 +48,7 @@ const QuizOption: React.FC<QuizOptionProps> = ({
           <span className="material-icons text-white ml-3">highlight_off</span>
         ) : null}
       </div>
-    </div>
+    </button>
   );
 };
 

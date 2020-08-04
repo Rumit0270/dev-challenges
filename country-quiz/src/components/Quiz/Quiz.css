@@ -19,10 +19,12 @@
 .next-button {
   box-shadow: 0px 2px 4px rgba(252, 168, 47, 0.4);
   border-radius: 12px;
+  transition: transform 0.3s;
 }
 
-.next-button:focus {
-  outline: none;
+.next-button:hover {
+  background-color: rgba(249, 168, 38, 0.95);
+  transform: translateY(-1px);
 }
 
 .winners-img {
