@@ -1,5 +1,5 @@
 import React from 'react';
-import { CountryDetail } from '../../api/countryApiService';
+import { CountryDetail } from '../../../api/countryApiService';
 
 interface QuizOptionProps {
   sn: string;
@@ -25,12 +25,12 @@ const QuizOption: React.FC<QuizOptionProps> = ({
 
   return (
     <button
-      className={`my-6 px-3 md:px-4 py-2 md:py-3 flex flex-row justify-between items-center cursor-pointer focus:shadow-outline quiz-option ${correctClass} ${wrongClass} ${answerClass}`}
+      className={`my-5 px-2 md:px-4 py-2 md:py-3 flex flex-row justify-between items-center cursor-pointer focus:shadow-outline quiz-option ${correctClass} ${wrongClass} ${answerClass}`}
       onClick={() => onClick(country)}
       tabIndex={index + 1}
     >
       <div className="flex items-center">
-        <span className="mr-8 text-primary text-opacity-75 leading-9 font-poppins text-xl md:text-2xl">
+        <span className="mr-8 text-primary text-opacity-75 leading-9 font-poppins text-lg md:text-2xl">
           {sn}
         </span>
         <span className="text-primary text-opacity-75 leading-7 font-poppins text-base md:text-lg">

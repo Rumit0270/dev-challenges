@@ -3,9 +3,9 @@ import Quiz from '../Quiz/Quiz';
 
 const Main: React.FC = () => {
   return (
-    <div className="flex-1 flex justify-center items-center">
+    <main className="flex-1 flex justify-center items-center">
       <Quiz />
-    </div>
+    </main>
   );
 };
 

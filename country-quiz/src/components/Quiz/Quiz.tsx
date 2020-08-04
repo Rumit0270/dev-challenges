@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+
 import quizLogo from '../../images/undraw_adventure_4hum 1.svg';
 import resultImg from '../../images/undraw_winners_ao2o 2.svg';
 import { generateNumberBetween } from '../../utils';
@@ -6,7 +7,10 @@ import {
   CountryDetail,
   fetchCountryDetails,
 } from '../../api/countryApiService';
-import QuizOption from '../common/QuizOption';
+import useRandomQuizOptions from '../../hooks/useRandomQuizOptions';
+import QuizOption from './QuizOption/QuizOption';
+
+const NUMBER_OF_OPTIONS = 4;
 
 enum QuestionType {
   CAPITAL = 'CAPITAL',
@@ -29,7 +33,11 @@ const Quiz: React.FC = (): JSX.Element => {
     selectedCountryDetail,
     setSelectedCountryDetail,
   ] = useState<CountryDetail | null>(null);
-  const [options, setOptions] = useState<CountryDetail[]>([]);
+  const [options] = useRandomQuizOptions(
+    NUMBER_OF_OPTIONS,
+    currentCountryDetail,
+    countryDetails
+  );
 
   /// Randomly assign new country for quiz
   const selectRandomCountryDetail = (): void => {
@@ -68,24 +76,6 @@ const Quiz: React.FC = (): JSX.Element => {
     showNextQuestion();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [countryDetails]);
-
-  // Generate Options for a question
-  useEffect(() => {
-    // randomly generate the options
-    if (!currentCountryDetail) {
-      return;
-    }
-
-    let options: CountryDetail[] = [];
-    for (let i = 0; i < 4; i++) {
-      let randomIndex = generateNumberBetween(0, countryDetails.length);
-      options.push(countryDetails[randomIndex]);
-    }
-
-    let correctAnsIndex = generateNumberBetween(0, 4);
-    options[correctAnsIndex] = { ...currentCountryDetail };
-    setOptions(options);
-  }, [currentCountryDetail, countryDetails]);
 
   /// Restart the game
   const restartQuiz = () => {
@@ -203,7 +193,7 @@ const Quiz: React.FC = (): JSX.Element => {
   }
 
   return (
-    <div>
+    <div className="m-3">
       <div className="relative flex">
         <h1 className="font-poppins font-bold uppercase text-2xl md:text-4xl text-light mr-40 md:mr-48">
           Country Quiz
@@ -213,14 +203,14 @@ const Quiz: React.FC = (): JSX.Element => {
         ) : null}
       </div>
 
-      <div className="quiz-container bg-white mt-2 pt-16 px-5 pb-8 md:px-8 md:pb-10">
+      <div className="quiz-container bg-white mt-2 pt-16 px-4 pb-6 md:px-8 md:pb-10">
         {!gameOver ? (
           <>
             {renderQuestion()}
             {renderOptions()}
             <div className="flex justify-end">
               <button
-                className="font-poppins font-bold text-white text-lg leading-7 bg-warn py-3 px-8 focus:shadow-outline next-button"
+                className="font-poppins font-bold text-white text-base  md:text-lg leading-7 bg-warn py-2 md:py-3 px-6 md:px-8 focus:shadow-outline next-button"
                 onClick={onNextClick}
                 tabIndex={5}
               >
