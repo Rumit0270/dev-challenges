@@ -25,12 +25,12 @@ const QuizOption: React.FC<QuizOptionProps> = ({
 
   return (
     <button
-      className={`my-5 px-2 md:px-4 py-2 md:py-3 flex flex-row justify-between items-center cursor-pointer focus:shadow-outline quiz-option ${correctClass} ${wrongClass} ${answerClass}`}
+      className={`my-4 md:my-5 px-2 md:px-4 py-2 md:py-3 flex flex-row justify-between items-center cursor-pointer focus:shadow-outline quiz-option ${correctClass} ${wrongClass} ${answerClass}`}
       onClick={() => onClick(country)}
       tabIndex={index + 1}
     >
       <div className="flex items-center">
-        <span className="mr-8 text-primary text-opacity-75 leading-9 font-poppins text-lg md:text-2xl">
+        <span className="mr-6 md:mr-8 text-primary text-opacity-75 leading-9 font-poppins text-lg md:text-2xl">
           {sn}
         </span>
         <span className="text-primary text-opacity-75 leading-7 font-poppins text-base md:text-lg">
@@ -39,13 +39,15 @@ const QuizOption: React.FC<QuizOptionProps> = ({
       </div>
       <div className="flex items-center">
         {showCorrect ? (
-          <span className="material-icons text-white ml-3">
+          <span className="material-icons text-white ml-2 md:ml-3">
             check_circle_outline
           </span>
         ) : null}
 
         {showWrong ? (
-          <span className="material-icons text-white ml-3">highlight_off</span>
+          <span className="material-icons text-white ml-2 md:ml-3">
+            highlight_off
+          </span>
         ) : null}
       </div>
     </button>

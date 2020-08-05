@@ -128,7 +128,7 @@ const Quiz: React.FC = (): JSX.Element => {
 
     if (questionType === QuestionType.CAPITAL) {
       return (
-        <h2 className="font-poppins text-tropaz text-xl md:text-2xl font-bold mb-3">
+        <h2 className="font-poppins text-tropaz text-xl md:text-2xl font-bold mb-2 md:mb-3">
           {currentCountryDetail.capital} is the capital of
         </h2>
       );
@@ -139,7 +139,7 @@ const Quiz: React.FC = (): JSX.Element => {
         <img
           src={currentCountryDetail.flag}
           alt="Flag of current quiz question"
-          className="country-flag mb-4"
+          className="country-flag mb-3 md:mb-4"
         />
         <h2 className="font-poppins text-dark text-xl md:text-2xl font-bold leading-9">
           Which country does this flag belong to ?
@@ -174,7 +174,7 @@ const Quiz: React.FC = (): JSX.Element => {
 
       return (
         <QuizOption
-          key={option.name}
+          key={`${option.name}${index}`}
           sn={sn}
           country={option}
           showCorrect={showShowCorrect(option)}
@@ -203,14 +203,14 @@ const Quiz: React.FC = (): JSX.Element => {
         ) : null}
       </div>
 
-      <div className="quiz-container bg-white mt-2 pt-16 px-4 pb-6 md:px-8 md:pb-10">
+      <div className="quiz-container bg-white mt-2 pt-12 md:pt-16 px-4 pb-6 md:px-8 md:pb-10">
         {!gameOver ? (
           <>
             {renderQuestion()}
             {renderOptions()}
             <div className="flex justify-end">
               <button
-                className="font-poppins font-bold text-white text-base  md:text-lg leading-7 bg-warn py-2 md:py-3 px-6 md:px-8 focus:shadow-outline next-button"
+                className="font-poppins font-bold text-white text-base  md:text-lg leading-6 md:leading-7 bg-warn py-2 md:py-3 px-6 md:px-8 focus:shadow-outline next-button"
                 onClick={onNextClick}
                 tabIndex={5}
               >
