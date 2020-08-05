@@ -1,0 +1,169 @@
+header {
+  width: 100%;
+  padding: 16px 8px;
+}
+
+.navbar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  vertical-align: middle;
+
+  &__brand {
+    display: inline-block;
+    color: $color-primary;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 35px;
+    text-decoration: none;
+    font-family: $font-heebo;
+    font-weight: 800;
+  }
+}
+
+.hamburger {
+  display: inline-block;
+  background-color: transparent;
+  z-index: 300;
+
+  &__line {
+    display: block;
+    width: 20px;
+    height: 2px;
+    margin: 4px;
+    background-color: black;
+    transition: all 0.4s;
+  }
+}
+
+.nav__links {
+  position: fixed;
+  height: 100vh;
+  width: 0;
+  top: 0;
+  right: 0;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+  transition: all 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  li {
+    list-style: none;
+  }
+}
+
+.nav__link {
+  display: inline-block;
+  text-decoration: none;
+  font-family: $font-poppins;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 28px;
+  color: $color-primary;
+  margin: 16px 0;
+  border-radius: 12px;
+  padding: 8px 12px;
+  transition: all 0.3s;
+
+  &:hover {
+    background-color: rgba($color: $color-primary, $alpha: 0.8);
+    color: white;
+  }
+}
+
+.backdrop {
+  opacity: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  background-color: rgba(79, 79, 79, 0.3);
+  z-index: 100;
+}
+
+// Css rules to apply when the toggler icon is pressed
+// to expand navbar
+
+.navbar-expand {
+  .backdrop {
+    opacity: 1;
+    width: 100%;
+    height: 100vh;
+  }
+
+  .hamburger__line--one {
+    transform: rotate(-45deg) translate(-5px, 4px);
+  }
+
+  .hamburger__line--two {
+    opacity: 0;
+  }
+
+  .hamburger__line--three {
+    transform: rotate(45deg) translate(-5px, -4px);
+  }
+
+  .nav__links {
+    width: 60%;
+    background-color: white;
+    z-index: 200;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+///
+
+@media screen and (min-width: $layout-breakpoint-md) {
+  header {
+    padding: 32px 36px;
+  }
+
+  .navbar {
+    &__brand {
+      font-size: 36px;
+      line-height: 53px;
+    }
+  }
+
+  .hamburger {
+    display: none;
+    pointer-events: none;
+  }
+
+  .nav__links {
+    display: flex;
+    position: static;
+    height: auto;
+    width: auto;
+    flex-direction: row;
+  }
+
+  .nav__link {
+    margin: 0;
+    margin-right: 20px;
+    font-size: 20px;
+    line-height: 28px;
+    padding: 6px 10px;
+  }
+}
+
+@media screen and (min-width: $layout-breakpoint-lg) {
+  header {
+    padding: 36px 56px;
+  }
+
+  .nav__link {
+    margin-right: 30px;
+    font-size: 24px;
+    line-height: 36px;
+  }
+}

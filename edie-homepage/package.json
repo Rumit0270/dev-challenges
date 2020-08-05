@@ -12,8 +12,7 @@
     "gulp-sass": "^4.1.0",
     "gulp-size": "^3.0.0",
     "gulp-sourcemaps": "^2.6.5",
-    "postcss-assets": "^5.0.0",
-    "usedcss": "^1.0.7"
+    "postcss-assets": "^5.0.0"
   },
   "name": "edie-homepage",
   "version": "1.0.0",

@@ -13,9 +13,6 @@ const imgDest = 'public/images/';
 const sassSrc = 'sass/**/*.scss';
 const cssDest = 'public/css/';
 const postCSSConfig = [
-  require('usedcss')({
-    html: ['index.html'],
-  }),
   require('postcss-assets')({
     loadPaths: [imgDest],
   }),
