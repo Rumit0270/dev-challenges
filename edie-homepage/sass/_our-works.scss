@@ -1,0 +1,126 @@
+.our-works {
+  padding: 90px 8px 10px;
+  font-family: $font-poppins;
+  max-width: $layout-breakpoint-sm-mw;
+  margin: auto;
+
+  &__title {
+    max-width: 450px;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 36px;
+    margin: 0;
+    color: $color-primary;
+  }
+
+  &__action-container {
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  &__action-link {
+    font-family: $font-poppins;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 27px;
+    color: $color-blue;
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+  &__action-link:hover {
+    color: rgba($color: $color-blue, $alpha: 0.8);
+  }
+}
+
+.our-works-cards {
+  margin: 30px 0;
+  display: grid;
+  grid-template-columns: 100%;
+}
+
+.our-work-card {
+  max-width: 100%;
+  margin: 5px auto 25px;
+  font-family: $font-poppins;
+
+  &__image {
+    max-width: 400px;
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    border-radius: 12px;
+  }
+
+  &__category {
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 18px;
+    color: $color-gray;
+    display: block;
+  }
+
+  &__title {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 27px;
+    color: $color-primary;
+    margin: 3px 0;
+  }
+}
+
+@media screen and (min-width: $layout-breakpoint-md) {
+  .our-works {
+    padding: 20px 80px;
+    max-width: $layout-breakpoint-md-mw;
+
+    &__title {
+      font-size: 32px;
+      line-height: 48px;
+    }
+
+    &__action-container {
+      justify-content: flex-end;
+    }
+  }
+
+  .our-works-cards {
+    grid-template-columns: auto auto;
+    column-gap: 20px;
+  }
+
+  .our-work-card:nth-child(odd) {
+    margin-top: 120px;
+  }
+}
+
+@media screen and (min-width: $layout-breakpoint-lg) {
+  .our-works {
+    max-width: $layout-breakpoint-lg-mw;
+    padding: 24px 120px;
+
+    &__title {
+      font-size: 36px;
+      line-height: 54px;
+    }
+  }
+
+  .our-works-cards {
+    column-gap: 10px;
+  }
+
+  .our-work-card {
+    margin: 5px auto 25px;
+
+    &__image {
+      max-width: 900px;
+      height: 450px;
+    }
+  }
+
+  .our-work-card:nth-child(odd) {
+    margin-top: 140px;
+  }
+}
