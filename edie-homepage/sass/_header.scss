@@ -1,6 +1,13 @@
 header {
   width: 100%;
   padding: 16px 8px;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: white;
+  max-width: $layout-breakpoint-sm-mw;
+  margin: 0 auto;
 }
 
 .navbar {
@@ -13,7 +20,6 @@ header {
   &__brand {
     display: inline-block;
     color: $color-primary;
-    font-weight: 500;
     font-size: 24px;
     line-height: 35px;
     text-decoration: none;
@@ -66,13 +72,14 @@ header {
   line-height: 28px;
   color: $color-primary;
   margin: 16px 0;
-  border-radius: 12px;
   padding: 8px 12px;
   transition: all 0.3s;
+  border-bottom: 2px solid white;
 
   &:hover {
-    background-color: rgba($color: $color-primary, $alpha: 0.8);
-    color: white;
+    border-bottom-color: rgba($color: $color-primary, $alpha: 0.8);
+    color: rgba($color: $color-primary, $alpha: 0.8);
+    transform: translateY(-2px);
   }
 }
 
@@ -89,7 +96,6 @@ header {
 
 // Css rules to apply when the toggler icon is pressed
 // to expand navbar
-
 .navbar-expand {
   .backdrop {
     opacity: 1;
@@ -125,6 +131,7 @@ header {
 @media screen and (min-width: $layout-breakpoint-md) {
   header {
     padding: 32px 36px;
+    max-width: $layout-breakpoint-md-mw;
   }
 
   .navbar {
@@ -159,6 +166,7 @@ header {
 @media screen and (min-width: $layout-breakpoint-lg) {
   header {
     padding: 36px 56px;
+    max-width: $layout-breakpoint-lg-mw;
   }
 
   .nav__link {
