@@ -8,6 +8,12 @@
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+      integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
+      crossorigin="anonymous"
+    />
     <link rel="stylesheet" href="public/css/main.css" />
     <title>Edie - Homepage</title>
   </head>
@@ -238,7 +244,58 @@
       </div>
     </section>
 
-    <footer id="contact" class="contact">contact</footer>
+    <footer id="contact" class="contact">
+      <div class="contact__wrapper">
+        <ul class="contact__nav-links">
+          <li>
+            <a href="#home" class="contact__nav-link">Home</a>
+          </li>
+          <li>
+            <a href="#services" class="contact__nav-link">Services</a>
+          </li>
+          <li>
+            <a href="#our-works" class="contact__nav-link">Our Works</a>
+          </li>
+          <li>
+            <a href="#clients" class="contact__nav-link">Clients</a>
+          </li>
+          <li>
+            <a href="#contact" class="contact__nav-link">Contact</a>
+          </li>
+        </ul>
+
+        <div class="contact__social">
+          <h3 class="contact__social-title">Edie</h3>
+          <i class="fab fa-instagram fa-lg contact__social-icon"></i>
+          <i class="fab fa-linkedin fa-lg contact__social-icon"></i>
+          <i class="fab fa-twitter fa-lg contact__social-icon"></i>
+        </div>
+
+        <div class="contact__form">
+          <form>
+            <label class="contact__form--label" for="email"
+              >Want us to contact you?
+            </label>
+            <div class="home__contact-input-group form-small">
+              <input
+                type="email"
+                name="email"
+                placeholder="Email"
+                class="home__contact-input-group--input"
+                required
+              />
+              <div class="btn-join-wrapper">
+                <button type="submit" class="home__contact-input-group--button">
+                  Join
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <p class="footer__text">Rumit Tandukar @ DevChallenges.io</p>
+    </footer>
 
     <script src="main.js"></script>
   </body>

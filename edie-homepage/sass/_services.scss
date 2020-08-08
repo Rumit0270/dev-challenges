@@ -89,7 +89,7 @@
 
 @media screen and (min-width: $layout-breakpoint-md) {
   .services {
-    padding: 20px 80px;
+    padding: 120px 80px 20px;
     max-width: $layout-breakpoint-md-mw;
 
     &__title {
@@ -106,7 +106,7 @@
 @media screen and (min-width: $layout-breakpoint-lg) {
   .services {
     max-width: $layout-breakpoint-lg-mw;
-    padding: 24px 120px;
+    padding: 120px 120px 25px;
 
     &__title {
       font-size: 36px;

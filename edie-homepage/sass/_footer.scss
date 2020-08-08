@@ -1,0 +1,116 @@
+.contact {
+  padding: 30px 30px 0;
+  font-family: $font-poppins;
+  width: 100%;
+  background-color: $color-dark;
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__nav-links {
+    padding: 0;
+    margin: 0 0 30px;
+
+    li {
+      list-style: none;
+    }
+  }
+
+  &__nav-link {
+    text-decoration: none;
+    font-size: 16px;
+    line-height: 200%;
+    color: white;
+  }
+
+  &__nav-link:hover {
+    color: rgba($color: #ffffff, $alpha: 0.8);
+  }
+
+  &__social {
+    color: $color-white-smoke;
+    margin: 0 0 30px;
+  }
+
+  &__social-title {
+    margin: 0;
+    font-family: $font-heebo;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 24px;
+    line-height: 48px;
+  }
+
+  &__social-icon {
+    margin-right: 8px;
+  }
+
+  &__form {
+    padding: 0;
+    max-width: 400px;
+  }
+
+  &__form--label {
+    font-weight: 500;
+    font-size: 10px;
+    line-height: 15px;
+    color: $color-gray;
+  }
+
+  form {
+    font-family: $font-poppins;
+  }
+}
+
+.form-small {
+  height: 42px;
+}
+
+.footer__text {
+  font-family: $font-montserrat;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 17px;
+  color: $color-dark-gray;
+  text-align: center;
+  margin: 80px 0 0;
+  padding: 30px 0;
+}
+
+@media screen and (min-width: $layout-breakpoint-md) {
+  .contact {
+    padding: 60px 80px 0;
+
+    &__wrapper {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+}
+
+@media screen and (min-width: $layout-breakpoint-lg) {
+  .contact {
+    padding: 80px 120px 0;
+
+    &__nav-link {
+      font-size: 18px;
+    }
+
+    &__social-title {
+      font-size: 36px;
+      line-height: 53px;
+    }
+  }
+
+  .form-small {
+    height: 50px;
+  }
+
+  .footer__text {
+    font-size: 15px;
+    line-height: 24px;
+  }
+}

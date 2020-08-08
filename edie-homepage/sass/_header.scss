@@ -99,7 +99,8 @@ header {
 .navbar-expand {
   .backdrop {
     opacity: 1;
-    width: 100%;
+    left: -200px;
+    width: 200%;
     height: 100vh;
   }
 
@@ -120,6 +121,8 @@ header {
     background-color: white;
     z-index: 200;
     display: flex;
+    right: -80px;
+    padding-right: 80px;
     flex-direction: column;
     justify-content: center;
     align-items: center;
