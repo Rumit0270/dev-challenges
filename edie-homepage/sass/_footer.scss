@@ -32,6 +32,10 @@
   &__social {
     color: $color-white-smoke;
     margin: 0 0 30px;
+
+    a {
+      color: inherit;
+    }
   }
 
   &__social-title {
