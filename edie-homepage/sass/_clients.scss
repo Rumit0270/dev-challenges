@@ -1,0 +1,171 @@
+.clients {
+  padding: 100px 8px 50px;
+  font-family: $font-poppins;
+  max-width: $layout-breakpoint-sm-mw;
+  margin: auto;
+}
+
+.team {
+  display: flex;
+  flex-direction: column;
+}
+
+.team-intro {
+  font-family: $font-poppins;
+  padding-right: 70px;
+
+  &__heading {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 27px;
+    color: $color-red;
+  }
+
+  &__subheading {
+    font-weight: 500;
+    font-size: 36px;
+    line-height: 54px;
+    color: $color-primary;
+    margin: 10px 0;
+  }
+
+  &__description {
+    font-size: 16px;
+    line-height: 24px;
+    color: $color-secondary;
+  }
+}
+
+.team-images {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+  &__image {
+    height: 180px;
+    width: 180px;
+    border-radius: 24px;
+    margin: 5px 0;
+  }
+
+  &__wrapper {
+    display: flex;
+    padding-left: 10px;
+    flex-direction: column;
+  }
+}
+
+.review {
+  margin-top: 90px;
+  font-family: $font-poppins;
+
+  &__text {
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 36px;
+    color: $color-primary;
+    margin: 10px 0;
+  }
+
+  &__user-wrapper {
+    display: flex;
+    margin: 30px 0;
+  }
+
+  &__user-img {
+    width: 64px;
+    height: 64px;
+    border-radius: 8px;
+  }
+
+  &__user {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin-left: 30px;
+  }
+
+  &__user-name {
+    margin: 0;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 36px;
+    color: $color-primary;
+  }
+
+  &__user-designation {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 27px;
+    color: $color-gray;
+  }
+}
+
+@media screen and (min-width: $layout-breakpoint-sm) {
+  .team-images__image {
+    width: 240px;
+    height: 240px;
+  }
+}
+
+@media screen and (min-width: $layout-breakpoint-md) {
+  .clients {
+    padding: 90px 80px;
+    max-width: $layout-breakpoint-md-mw;
+  }
+
+  .review {
+    padding-right: 100px;
+
+    &__text {
+      font-size: 30px;
+      line-height: 48px;
+    }
+  }
+}
+
+@media screen and (min-width: $layout-breakpoint-lg) {
+  .clients {
+    max-width: $layout-breakpoint-lg-mw;
+    padding: 180px 120px 130px;
+  }
+
+  .team {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .team-intro {
+    padding-right: 200px;
+
+    &__heading {
+      font-size: 24px;
+      line-height: 32px;
+    }
+
+    &__subheading {
+      font-weight: 500;
+      font-size: 48px;
+      line-height: 62px;
+      color: $color-primary;
+      margin: 10px 0;
+    }
+
+    &__description {
+      font-size: 18px;
+      line-height: 32px;
+      color: $color-secondary;
+    }
+  }
+
+  .review {
+    padding-right: 300px;
+
+    &__text {
+      font-size: 36px;
+      line-height: 54px;
+    }
+  }
+}
