@@ -8,6 +8,7 @@
 - Recipe Challenge: https://absurd-food.surge.sh/
 - My Gallery: https://acceptable-silk.surge.sh/
 - Checkout page: https://romantic-honey.surge.sh/
+- Edie Homepage: https://hot-quill.surge.sh/
 
 ## Frontend Section
 
