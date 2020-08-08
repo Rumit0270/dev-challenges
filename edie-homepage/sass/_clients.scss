@@ -47,6 +47,7 @@
     width: 180px;
     border-radius: 24px;
     margin: 5px 0;
+    object-fit: cover;
   }
 
   &__wrapper {
@@ -77,6 +78,7 @@
     width: 64px;
     height: 64px;
     border-radius: 8px;
+    object-fit: cover;
   }
 
   &__user {
