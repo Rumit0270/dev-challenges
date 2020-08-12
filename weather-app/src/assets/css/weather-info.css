@@ -1,0 +1,9 @@
+.current-location-button {
+  border-radius: 50%;
+}
+
+@media screen and (min-width: 1024px) {
+  .weather-info {
+    margin-left: 33.33%;
+  }
+}

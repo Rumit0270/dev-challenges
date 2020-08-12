@@ -12,8 +12,16 @@ module.exports = {
       raleway: ['Raleway', 'sans-serif'],
       montserrat: ['Montserrat', 'sans-serif'],
     },
-    colors: {},
-    textColor: {},
+    colors: {
+      mirage: '#1E213A',
+      'dark-gray': '#6E707A',
+      white: '#E7E7EB',
+    },
+    textColor: {
+      mirage: '#1E213A',
+      'dark-gray': '#6E707A',
+      white: '#E7E7EB',
+    },
   },
   variants: {},
   plugins: [],
