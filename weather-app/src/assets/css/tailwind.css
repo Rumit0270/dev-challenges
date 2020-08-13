@@ -5,3 +5,4 @@
 @tailwind utilities;
 
 @import 'weather-info.css';
+@import 'current-weather.css';
