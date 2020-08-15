@@ -1,6 +1,7 @@
 import React from 'react';
 import { useRecoilValue } from 'recoil';
 
+import { getFormattedDate } from '../utils/date';
 import { currentWeatherDetailState } from '../store/selector';
 
 const CurrentWeather: React.FC = (): JSX.Element => {
@@ -69,8 +70,9 @@ const CurrentWeather: React.FC = (): JSX.Element => {
         <div className="flex flex-col text-dark-gray3 text-center">
           <p className="mb-5 font-medium">
             Today <span className="mx-2">•</span>
+            {getFormattedDate(currentWeatherDetail.date)}
           </p>
-          <p className="mb-0 font-semibold inline-flex items-center">
+          <p className="mb-0 font-semibold inline-flex items-center justify-center">
             <span className="material-icons mr-1">location_on</span>
             {currentWeatherDetail.city}
           </p>
