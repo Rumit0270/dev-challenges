@@ -2,7 +2,7 @@ import { selector } from 'recoil';
 
 import { weatherDetailState } from './atom';
 
-interface ICurrentWeatherDetail {
+export interface ICurrentWeatherDetail {
   weatherState: string;
   currentTemp: number;
   city: string;
