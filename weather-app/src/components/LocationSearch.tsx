@@ -31,6 +31,12 @@ const LocationSearch: React.FC<LocationSearchProps> = ({
     }
   };
 
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === 'Enter') {
+      handleSearchClick();
+    }
+  };
+
   const renderLocations = () => {
     if (loading) {
       return (
@@ -67,6 +73,8 @@ const LocationSearch: React.FC<LocationSearchProps> = ({
             className="absolute top-0 h-full text-white search-input focus:outline-none"
             value={searchInputText}
             onChange={(event) => setSearchInputText(event.target.value)}
+            onKeyDown={(e) => handleKeyDown(e)}
+            disabled={loading}
           />
         </div>
 

@@ -18,9 +18,12 @@
   color: #e7e7eb;
 }
 
+.todays-stat {
+  min-width: 320px;
+}
+
 .weather-card-container {
   min-width: 140px;
-  margin-right: 20px;
   margin-bottom: 20px;
   justify-content: center;
 }
@@ -28,6 +31,31 @@
 .weather-card-image {
   width: 80px;
   height: 80px;
+}
+
+.wind-icon-container {
+  transform: rotate(-45deg);
+}
+
+.wind-icon {
+  margin-right: 5px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  padding: 4px;
+}
+
+.progress-bar-wrapper {
+  width: 200px;
+}
+
+.progress-total {
+  border-radius: 5px;
+  height: 8px;
+}
+
+.progress {
+  background-color: #ffec65;
+  border-radius: 5px;
 }
 
 @media screen and (min-width: 1024px) {

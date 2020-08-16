@@ -26,7 +26,7 @@ const WeatherCard: React.FC<WeatherCardProps> = ({
       : getFahrenheitValue(weather.min_temp);
 
   return (
-    <div className="flex flex-col items-center p-4 font-raleway bg-mirage flex-1 weather-card-container">
+    <div className="flex flex-col items-center p-4 font-raleway bg-mirage flex-1 mr-6 weather-card-container">
       <span className="text-white text-center text-base font-medium leading-5">
         {timestamp}
       </span>

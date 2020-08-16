@@ -69,9 +69,13 @@ const CurrentWeather: React.FC = (): JSX.Element => {
 
     if (error || !currentWeatherDetail) {
       return (
-        <span className="text-3xl text-dark-gray2">
-          Something went wrong. Please make sure you have enabled location.
-        </span>
+        <div className="flex flex-col items-center">
+          <span className="material-icons text-white text-6xl">error</span>
+          <p className="text-xl text-dark-gray2 text-justify p-6">
+            Something went wrong. Please make sure you have enabled location
+            services.
+          </p>
+        </div>
       );
     }
   };
