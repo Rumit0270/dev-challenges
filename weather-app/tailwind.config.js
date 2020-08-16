@@ -18,6 +18,8 @@ module.exports = {
       'dark-gray2': '#A09FB1',
       'dark-gray3': '#88869D',
       white: '#E7E7EB',
+      blue: '#3C47E9',
+      comet: '#616475',
     },
     textColor: {
       mirage: '#1E213A',
@@ -25,6 +27,8 @@ module.exports = {
       'dark-gray2': '#A09FB1',
       'dark-gray3': '#88869D',
       white: '#E7E7EB',
+      blue: '#3C47E9',
+      comet: '#616475',
     },
   },
   variants: {},

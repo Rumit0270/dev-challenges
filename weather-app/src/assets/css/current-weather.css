@@ -14,3 +14,29 @@
   font-size: 144px;
   line-height: 169px;
 }
+
+.location-search__container {
+  transition: all 0.4s;
+}
+
+.search-input {
+  left: 48px;
+  width: calc(100% - 48px);
+  background-color: transparent;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+}
+
+.search-input-group {
+  border-width: 1px;
+}
+
+.search-input-group:focus-within {
+  outline: 1px solid #3c47e9;
+  border: none;
+}
+
+.search-button:disabled {
+  opacity: 0.8;
+}

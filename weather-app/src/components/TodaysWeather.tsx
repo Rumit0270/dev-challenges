@@ -43,7 +43,7 @@ const TodaysWeather: React.FC<TodaysWeatherProps> = ({
 
       <div className="flex flex-col">
         <h1 className="text-white mb-8 current-temperature text-center">
-          {currentWeatherDetail.currentTemp}
+          {currentWeatherDetail.currentTemp.toFixed(2)}
           <span className="text-5xl text-dark-gray2">℃</span>
         </h1>
         <span className="text-dark-gray2 text-3xl text-center leading-10">

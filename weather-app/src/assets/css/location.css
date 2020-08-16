@@ -1,0 +1,12 @@
+.location-container {
+  transition: all 0.2s;
+  border: 1px solid transparent;
+}
+
+.location-container:hover {
+  border: 1px solid #616475;
+}
+
+.location-container:hover .material-icons {
+  opacity: 1;
+}

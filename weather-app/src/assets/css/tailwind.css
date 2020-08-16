@@ -4,5 +4,7 @@
 @tailwind components;
 @tailwind utilities;
 
+@import 'common.css';
 @import 'weather-info.css';
 @import 'current-weather.css';
+@import 'location.css';

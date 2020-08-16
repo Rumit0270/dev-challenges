@@ -1,19 +1,60 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { useRecoilValue } from 'recoil';
 
-import TodaysWeather from '../components/TodaysWeather';
+import { useWeatherDetail } from '../hooks/useWeatherDetail';
+import { ILocation } from '../api/weatherApiService';
+import { useSetRecoilState } from 'recoil';
+import { getCurrentLocation } from '../utils/location';
+import { getLocationByLatLng } from '../api/weatherApiService';
+import { weatherDetailState } from '../store/atom';
 import { currentWeatherDetailState } from '../store/selector';
-import { useCurrentWeatherDetail } from '../hooks/useCurrentWeatherDetail';
+import TodaysWeather from '../components/TodaysWeather';
 import LocationSearch from '../components/LocationSearch';
 
 const CurrentWeather: React.FC = (): JSX.Element => {
   const weatherDetail = useRecoilValue(currentWeatherDetailState);
-  const [fetchData, setFetchData] = useState<boolean>(true);
+  const setWeatherDetail = useSetRecoilState(weatherDetailState);
   const [showSearch, setShowSearch] = useState<boolean>(false);
+  const [location, setLocation] = useState<ILocation | null>(null);
 
-  useCurrentWeatherDetail(fetchData);
+  const setCurrentLocation = useCallback(async () => {
+    try {
+      setWeatherDetail((detail) => ({
+        ...detail,
+        loading: true,
+      }));
+
+      let latlng = await getCurrentLocation();
+      let locationsRes = await getLocationByLatLng(latlng.lat, latlng.lng);
+      let locations = locationsRes.data;
+      let currentLocation = locations.length > 0 ? locations[0] : null;
+
+      setLocation(currentLocation);
+
+      setWeatherDetail((detail) => ({
+        ...detail,
+        loading: false,
+      }));
+    } catch (err) {
+      setWeatherDetail((detail) => ({
+        ...detail,
+        loading: false,
+      }));
+    }
+  }, [setWeatherDetail]);
+
+  useWeatherDetail(location);
+
+  useEffect(() => {
+    setCurrentLocation();
+  }, [setCurrentLocation]);
 
   const { loading, currentWeatherDetail, error } = weatherDetail;
+
+  const handleLocationClick = (location: ILocation) => {
+    setLocation(location);
+    setShowSearch(false);
+  };
 
   const renderLoading = () => {
     if (loading) {
@@ -35,7 +76,19 @@ const CurrentWeather: React.FC = (): JSX.Element => {
     }
   };
 
-  const renderSearch = () => {};
+  const renderSearch = () => {
+    let searchWidthClass = showSearch ? 'w-full lg:w-1/3' : 'w-0';
+    return (
+      <div
+        className={`h-screen ${searchWidthClass} fixed left-0 top-0 py-4 lg:py-10 z-10 overflow-hidden bg-mirage location-search__container`}
+      >
+        <LocationSearch
+          onClose={() => setShowSearch(false)}
+          onLocationClick={handleLocationClick}
+        />
+      </div>
+    );
+  };
 
   const renderWeather = () => {
     if (!currentWeatherDetail || loading) {
@@ -45,7 +98,7 @@ const CurrentWeather: React.FC = (): JSX.Element => {
     return (
       <TodaysWeather
         currentWeatherDetail={currentWeatherDetail}
-        onLocationClick={() => setFetchData((prev) => !prev)}
+        onLocationClick={() => setCurrentLocation()}
         onSearchClick={() => {
           setShowSearch(true);
         }}
