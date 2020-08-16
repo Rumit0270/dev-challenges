@@ -1,18 +1,13 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+# Weather App Challenge
 
-In the project directory, you can run:
+The code is for the challenge on Weather app. I used the third party API at https://www.metaweather.com/api for accessing weather and location data. I used cors anywhere (https://cors-anywhere.herokuapp.com/) to bypass browser CORS policy. A working page is deployed on: https://undesirable-icicle.surge.sh/
 
-### `yarn start`
+## Technologies used
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- TypeScript
+- React
+- CSS
+- Tailwind
+- Recoil
