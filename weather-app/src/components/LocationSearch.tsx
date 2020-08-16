@@ -57,12 +57,9 @@ const LocationSearch: React.FC<LocationSearchProps> = ({
 
   return (
     <div className="w-full h-full px-3 lg:px-10 flex flex-col items-stretch font-raleway">
-      <span
-        className="material-icons self-end text-white cursor-pointer"
-        onClick={onClose}
-      >
-        close
-      </span>
+      <button className="self-end text-white cursor-pointer" onClick={onClose}>
+        <span className="material-icons">close</span>
+      </button>
 
       <div className="flex flex-row items-stretch h-12 mt-6 mb-16">
         <div className="relative flex-1 flex items-center px-3 border-white border-opacity-100 border-solid search-input-group">

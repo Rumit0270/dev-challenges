@@ -11,8 +11,8 @@ const Location: React.FC<LocationProps> = ({
   onClick,
 }): JSX.Element => {
   return (
-    <div
-      className="flex justify-between px-4 py-6 mb-6 cursor-pointer font-raleway location-container"
+    <button
+      className=" w-full flex justify-between px-4 py-6 mb-6 cursor-pointer font-raleway location-container"
       onClick={() => onClick(location)}
     >
       <span className="text-white font-medium text-base leading-5">
@@ -21,7 +21,7 @@ const Location: React.FC<LocationProps> = ({
       <span className="material-icons text-comet text-lg opacity-0">
         arrow_forward_ios
       </span>
-    </div>
+    </button>
   );
 };
 
