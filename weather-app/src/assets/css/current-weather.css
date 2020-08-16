@@ -8,6 +8,10 @@
   height: 340px;
 }
 
+.current-location-button {
+  border-radius: 50%;
+}
+
 .current-temperature {
   font-family: Raleway;
   font-weight: 500;

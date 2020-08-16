@@ -1,7 +1,9 @@
 import React from 'react';
-
+import { useRecoilValue } from 'recoil';
 import { getFormattedDate } from '../utils/date';
 import { ICurrentWeatherDetail } from '../store/selector';
+import { temperatureUnitState, TemperateUnit } from '../store/atom';
+import { getFahrenheitValue } from '../utils/temperature';
 
 interface TodaysWeatherProps {
   currentWeatherDetail: ICurrentWeatherDetail;
@@ -14,6 +16,11 @@ const TodaysWeather: React.FC<TodaysWeatherProps> = ({
   onLocationClick,
   onSearchClick,
 }) => {
+  const temperatureUnit = useRecoilValue(temperatureUnitState);
+  let temperature =
+    temperatureUnit === TemperateUnit.celsius
+      ? currentWeatherDetail.currentTemp
+      : getFahrenheitValue(currentWeatherDetail.currentTemp);
   let weatherStateImg = currentWeatherDetail.weatherState.replace(' ', '');
 
   return (
@@ -43,8 +50,8 @@ const TodaysWeather: React.FC<TodaysWeatherProps> = ({
 
       <div className="flex flex-col">
         <h1 className="text-white mb-8 current-temperature text-center">
-          {currentWeatherDetail.currentTemp.toFixed(2)}
-          <span className="text-5xl text-dark-gray2">℃</span>
+          {Math.round(temperature)}
+          <span className="text-5xl text-dark-gray2">{temperatureUnit}</span>
         </h1>
         <span className="text-dark-gray2 text-3xl text-center leading-10">
           {currentWeatherDetail.weatherState}

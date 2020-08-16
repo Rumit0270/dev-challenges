@@ -1,5 +1,21 @@
-.current-location-button {
+.temperature-button {
   border-radius: 50%;
+  width: 42px;
+  height: 42px;
+  padding: 8px;
+  margin-left: 12px;
+  font-size: 18px;
+  line-height: 21px;
+}
+
+.temperature-button--active {
+  background-color: #e7e7eb;
+  color: #110e3c;
+}
+
+.temperature-button--inactive {
+  background-color: #585676;
+  color: #e7e7eb;
 }
 
 @media screen and (min-width: 1024px) {

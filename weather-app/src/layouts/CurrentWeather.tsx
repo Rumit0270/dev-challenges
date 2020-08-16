@@ -108,9 +108,9 @@ const CurrentWeather: React.FC = (): JSX.Element => {
 
   return (
     <section
-      className={`h-screen w-full lg:w-1/3 static lg:fixed lg:left-0 lg:top-0 py-4 lg:py-10 bg-mirage flex flex-col ${
+      className={`h-screen w-full lg:w-1/3 static lg:fixed lg:left-0 lg:top-0 py-4 lg:py-10 pb-6 lg:pb-8 bg-mirage flex flex-col ${
         currentWeatherDetail && !loading ? 'justify-between' : 'justify-center'
-      } items-center font-raleway mb-6`}
+      } items-center font-raleway`}
     >
       {renderLoading()}
       {renderError()}
