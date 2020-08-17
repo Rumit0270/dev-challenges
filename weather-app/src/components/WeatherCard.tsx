@@ -21,7 +21,7 @@ const WeatherCard: React.FC<WeatherCardProps> = ({
       ? weather.max_temp
       : getFahrenheitValue(weather.max_temp);
   let minTemp =
-    temperatureUnit === TemperateUnit.fahrenheit
+    temperatureUnit === TemperateUnit.celsius
       ? weather.min_temp
       : getFahrenheitValue(weather.min_temp);
 
