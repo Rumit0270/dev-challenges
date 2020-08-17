@@ -187,19 +187,6 @@ const WeatherInfo: React.FC = (): JSX.Element => {
 
       <footer className="text-center font-montserrat font-semibold text-sm leading-5 text-comet">
         Rumit Tandukar @ DevChallenges.io
-        <div className="text-sm">
-          Icons made by
-          <a
-            href="https://www.flaticon.com/free-icon/sun_2917249"
-            title="Good Ware"
-          >
-            Good Ware
-          </a>
-          from
-          <a href="https://www.flaticon.com/" title="Flaticon">
-            www.flaticon.com
-          </a>
-        </div>
       </footer>
     </section>
   );
