@@ -25,7 +25,7 @@ const WeatherInfo: React.FC = (): JSX.Element => {
         className={`flex justify-end mb-4 mr-6 ${temperatureButtonWrapperClass}`}
       >
         <button
-          className={`text-lg font-bold leading-5 temperature-button ${
+          className={`text-base md:text-lg font-bold leading-5 temperature-button ${
             temperatureUnit === TemperateUnit.celsius
               ? 'temperature-button--active'
               : 'temperature-button--inactive'
@@ -35,7 +35,7 @@ const WeatherInfo: React.FC = (): JSX.Element => {
           {TemperateUnit.celsius}
         </button>
         <button
-          className={`text-lg font-bold leading-5 temperature-button ${
+          className={`text-base md:text-lg font-bold leading-5 temperature-button ${
             temperatureUnit === TemperateUnit.fahrenheit
               ? 'temperature-button--active'
               : 'temperature-button--inactive'
@@ -86,7 +86,7 @@ const WeatherInfo: React.FC = (): JSX.Element => {
 
     return (
       <div className="text-white font-raleway mb-4">
-        <h1 className="font-bold text-3xl leading-6 mb-4">
+        <h1 className="font-bold text-lg md:text-3xl leading-6 mb-4">
           Today's Highlights
         </h1>
         <div className="flex flex-wrap">
@@ -94,7 +94,7 @@ const WeatherInfo: React.FC = (): JSX.Element => {
             <span className="font-medium text-base leading-5 text-center">
               Wind Status
             </span>
-            <p className="font-bold text-6xl mb-1">
+            <p className="font-bold text-4xl md:text-6xl mb-1">
               {Math.round(todaysWeather.wind_speed)}
               <span className="text-4xl font-semibold ml-2">mph</span>
             </p>
@@ -111,7 +111,7 @@ const WeatherInfo: React.FC = (): JSX.Element => {
                   near_me
                 </span>
               </div>
-              <span className="text-lg font-medium">
+              <span className="text-base md:text-lg font-medium">
                 {todaysWeather.wind_direction_compass}
               </span>
             </div>
@@ -121,9 +121,9 @@ const WeatherInfo: React.FC = (): JSX.Element => {
             <span className="font-medium text-base leading-5 text-center">
               Humidity
             </span>
-            <p className="font-bold text-6xl mb-1">
+            <p className="font-bold text-4xl md:text-6xl mb-1">
               {Math.round(todaysWeather.humidity)}
-              <span className="text-4xl font-semibold ml-2">%</span>
+              <span className="text-lg md:text-4xl font-semibold ml-2">%</span>
             </p>
             <div className="progress-bar-wrapper text-dark-gray2">
               <div className="flex font-bold text-sm leading-3 justify-between">
@@ -149,9 +149,11 @@ const WeatherInfo: React.FC = (): JSX.Element => {
             <span className="font-medium text-base leading-5 text-center">
               Visibility
             </span>
-            <p className="font-bold text-6xl mb-1">
+            <p className="font-bold text-4xl md:text-6xl mb-1">
               {todaysWeather.visibility.toFixed(2)}
-              <span className="text-4xl font-semibold ml-2">miles</span>
+              <span className="text-lg md:text-4xl font-semibold ml-2">
+                miles
+              </span>
             </p>
           </div>
 
@@ -159,9 +161,9 @@ const WeatherInfo: React.FC = (): JSX.Element => {
             <span className="font-medium text-base leading-5 text-center">
               Air Pressure
             </span>
-            <p className="font-bold text-6xl mb-1">
+            <p className="font-bold text-4xl md:text-6xl mb-1">
               {Math.round(todaysWeather.air_pressure)}
-              <span className="text-4xl font-semibold ml-2">mb</span>
+              <span className="text-lg md:text-4xl font-semibold ml-2">mb</span>
             </p>
           </div>
         </div>

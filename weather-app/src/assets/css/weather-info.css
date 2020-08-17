@@ -19,7 +19,7 @@
 }
 
 .todays-stat {
-  min-width: 320px;
+  min-width: 200px;
 }
 
 .weather-card-container {
@@ -56,6 +56,12 @@
 .progress {
   background-color: #ffec65;
   border-radius: 5px;
+}
+
+@media screen and (min-width: 500px) {
+  .todays-stat {
+    min-width: 320px;
+  }
 }
 
 @media screen and (min-width: 1024px) {
