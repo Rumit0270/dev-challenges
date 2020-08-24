@@ -15,25 +15,25 @@ export interface IJob {
 }
 
 export const getJobs = (
-  page: number,
+  page: number = 1,
   fullTime: boolean = false,
   description?: string,
   location?: string
 ) => {
   let url = '/positions.json?';
   if (description) {
-    url = url + `description=${description}&`;
+    url = `${url  }description=${description}&`;
   }
 
   if (fullTime) {
-    url = url + `full_time=${fullTime}&`;
+    url = `${url  }full_time=${fullTime}&`;
   }
 
   if (location) {
-    url = url + `location=${location}&`;
+    url = `${url  }location=${location}&`;
   }
 
-  url = url + `page=${page}`;
+  url = `${url  }page=${page}`;
 
   return apiService.get<IJob[]>(url);
 };

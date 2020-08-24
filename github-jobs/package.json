@@ -1,49 +1,67 @@
 {
-  "name": "github-jobs",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.3.2",
-    "@testing-library/user-event": "^7.1.2",
-    "@types/jest": "^24.0.0",
-    "@types/node": "^12.0.0",
-    "@types/react": "^16.9.0",
-    "@types/react-dom": "^16.9.0",
-    "axios": "^0.20.0",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "react-scripts": "3.4.3",
-    "typescript": "~3.7.2"
-  },
-  "scripts": {
-    "start:react": "react-scripts start",
-    "start": "npm-run-all build:css --parallel watch:css start:react",
-    "build": "npm run build:css && react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "build:css": "postcss src/assets/css/tailwind.css -o src/main.css",
-    "watch:css": "postcss src/assets/css/tailwind.css -o src/main.css -w"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
-  "devDependencies": {
-    "autoprefixer": "^9.8.6",
-    "npm-run-all": "^4.1.5",
-    "postcss-cli": "^7.1.1",
-    "tailwindcss": "^1.7.3"
-  }
+    "name": "github-jobs",
+    "version": "0.1.0",
+    "private": true,
+    "dependencies": {
+        "@testing-library/jest-dom": "^4.2.4",
+        "@testing-library/react": "^9.3.2",
+        "@testing-library/user-event": "^7.1.2",
+        "@types/jest": "^24.0.0",
+        "@types/node": "^12.0.0",
+        "@types/react": "^16.9.0",
+        "@types/react-dom": "^16.9.0",
+        "axios": "^0.20.0",
+        "react": "^16.13.1",
+        "react-dom": "^16.13.1",
+        "react-scripts": "3.4.3",
+        "typescript": "~3.7.2"
+    },
+    "scripts": {
+        "start:react": "react-scripts start",
+        "start": "npm-run-all build:css --parallel watch:css start:react",
+        "build": "npm run build:css && react-scripts build",
+        "test": "react-scripts test",
+        "eject": "react-scripts eject",
+        "build:css": "postcss src/assets/css/tailwind.css -o src/main.css",
+        "watch:css": "postcss src/assets/css/tailwind.css -o src/main.css -w"
+    },
+    "eslintConfig": {
+        "extends": "react-app"
+    },
+    "browserslist": {
+        "production": [
+            ">0.2%",
+            "not dead",
+            "not op_mini all"
+        ],
+        "development": [
+            "last 1 chrome version",
+            "last 1 firefox version",
+            "last 1 safari version"
+        ]
+    },
+    "devDependencies": {
+        "autoprefixer": "^9.8.6",
+        "eslint-config-prettier": "^6.11.0",
+        "eslint-plugin-prettier": "^3.1.4",
+        "husky": "^4.2.5",
+        "lint-staged": "^10.2.11",
+        "npm-run-all": "^4.1.5",
+        "postcss-cli": "^7.1.1",
+        "prettier": "2.0.5",
+        "tailwindcss": "^1.7.3"
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "lint-staged"
+        }
+    },
+    "lint-staged": {
+        "*.{js,ts,tsx}": [
+            "eslint --quiet --fix"
+        ],
+        "*.{json,md,html}": [
+            "prettier --write"
+        ]
+    }
 }
