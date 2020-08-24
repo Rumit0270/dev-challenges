@@ -1,0 +1,9 @@
+.root-container {
+  max-width: 1400px;
+}
+
+@media screen and (min-width: 1400px) {
+  .root-container {
+    max-width: 1600px;
+  }
+}
