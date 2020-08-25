@@ -1,0 +1,40 @@
+.job-search-container {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.3)),
+    url('../images/backgroundImg.png');
+  background-position: bottom;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 130px;
+}
+
+.job-search {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 760px;
+  height: 48px;
+  background-color: white;
+}
+
+.job-search-input::placeholder {
+  color: #b9bdcf;
+}
+
+.job-search-input:focus {
+  outline-color: #1e86ff;
+}
+
+.job-search-button {
+  color: white;
+  background-color: rgba(30, 134, 255, 0.9);
+}
+
+.job-search-button:hover {
+  background-color: #1e86ff;
+}
+
+@media screen and (min-width: 1400px) {
+  .job-search {
+    max-width: 840px;
+  }
+}
