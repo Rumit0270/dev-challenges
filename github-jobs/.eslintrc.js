@@ -21,6 +21,7 @@ module.exports = {
     radix: 'error',
     'import/prefer-default-export': 'off',
     'react/prop-types': 'off',
+    'no-unused-vars': 'off',
   },
   overrides: [
     {

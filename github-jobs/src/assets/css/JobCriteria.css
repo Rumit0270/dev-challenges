@@ -1,0 +1,37 @@
+.location-input-group {
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.05);
+  min-width: 280px;
+}
+
+.location-input {
+  font-size: 12px;
+  line-height: 14px;
+}
+
+.location-input:focus {
+  outline-color: #1e86ff;
+}
+
+.location-input::placeholder {
+  color: #b9bdcf;
+}
+
+@media screen and (min-width: 768px) {
+  .location-input-group {
+    margin-right: 18px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .location-input-group {
+    min-width: 320px;
+    margin-right: 24px;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  .location-input-group {
+    min-width: 360px;
+    margin-right: 28px;
+  }
+}

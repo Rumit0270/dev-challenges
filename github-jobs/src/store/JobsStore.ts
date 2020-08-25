@@ -1,5 +1,4 @@
-import { observable, action, computed } from 'mobx';
-// eslint-disable-next-line no-unused-vars
+import { observable, computed } from 'mobx';
 import { IJob } from '../api/jobsApiService';
 
 class JobsStore {
@@ -8,14 +7,6 @@ class JobsStore {
 
   @computed get jobsCount() {
     return this.jobs.length;
-  }
-
-  @action setJobs(jobs: IJob[]) {
-    this.jobs = jobs;
-  }
-
-  @action setLoading(loading: boolean) {
-    this.loading = loading;
   }
 }
 
