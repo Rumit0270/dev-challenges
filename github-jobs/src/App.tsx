@@ -1,30 +1,13 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { HashRouter as Router } from 'react-router-dom';
-import { useLocalStore } from 'mobx-react';
 
 import Header from './components/Header';
 import Main from './layouts/Main';
 import Footer from './components/Footer';
-import { getJobs } from './api/jobsApiService';
-import jobsInitializer from './store/JobsStore';
+import useJobsDataFetch from './hooks/useJobsDataFetch';
 
 const App: React.FC = (): JSX.Element => {
-  const jobsState = useLocalStore(jobsInitializer);
-
-  useEffect(() => {
-    (async () => {
-      try {
-        jobsState.loading = true;
-        let res = await getJobs();
-        let jobs = res.data;
-        jobsState.jobs = jobs;
-        jobsState.loading = false;
-      } catch (err) {
-        jobsState.loading = false;
-        jobsState.jobs = [];
-      }
-    })();
-  }, [jobsState]);
+  useJobsDataFetch();
 
   return (
     <Router>

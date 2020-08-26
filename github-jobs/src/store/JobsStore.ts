@@ -1,13 +1,28 @@
-import { observable, computed } from 'mobx';
+import { observable, action } from 'mobx';
 import { IJob } from '../api/jobsApiService';
 
-class JobsStore {
-  @observable jobs: IJob[] = [];
-  @observable loading: boolean = false;
-
-  @computed get jobsCount() {
-    return this.jobs.length;
-  }
+interface IJobStore {
+  jobs: IJob[];
+  loading: boolean;
+  readonly jobsCount: number;
+  setJobs: (jobs: IJob[]) => void;
 }
 
-export default () => new JobsStore();
+export default observable<IJobStore>(
+  {
+    jobs: [],
+    loading: false,
+
+    // computed property
+    get jobsCount() {
+      return this.jobs.length;
+    },
+
+    setJobs(jobs: IJob[]) {
+      this.jobs = jobs;
+    },
+  },
+  {
+    setJobs: action,
+  },
+);

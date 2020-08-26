@@ -1,12 +1,18 @@
-import React from 'react';
+import React, { useContext } from 'react';
 
 import JobSearch from '../components/JobSearch';
 import JobCriteria from '../components/JobCriteria';
 import JobListing from '../components/JobListing';
+import { JobCriteriaContext } from '../context/JobCriteriaContext';
 
 const Home: React.FC = (): JSX.Element => {
+  const jobCriteria = useContext(JobCriteriaContext);
+
   const handleJobSearchByTag = (jobText: string) => {
-    console.log(jobText);
+    if (jobCriteria.jobDescription === jobText) {
+      return;
+    }
+    jobCriteria.setJobDescription(jobText);
   };
 
   return (
