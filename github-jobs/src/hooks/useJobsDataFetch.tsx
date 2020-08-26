@@ -9,25 +9,28 @@ const useJobsDataFetch = () => {
   const jobCriteriaState = useContext(JobCriteriaContext);
 
   useEffect(() => {
-    autorun(async () => {
-      console.log('Fetching jobs');
-
-      try {
-        jobsState.loading = true;
-        let res = await getJobs(
-          1,
-          jobCriteriaState.fullTime,
-          jobCriteriaState.jobDescription,
-          jobCriteriaState.location,
-        );
-        let jobs = res.data;
-        jobsState.jobs = jobs;
-        jobsState.loading = false;
-      } catch (err) {
-        jobsState.loading = false;
-        jobsState.jobs = [];
-      }
-    });
+    autorun(
+      async () => {
+        try {
+          jobsState.loading = true;
+          let res = await getJobs(
+            1,
+            jobCriteriaState.fullTime,
+            jobCriteriaState.jobDescription,
+            jobCriteriaState.location,
+          );
+          let jobs = res.data;
+          jobsState.jobs = jobs;
+          jobsState.loading = false;
+        } catch (err) {
+          jobsState.loading = false;
+          jobsState.jobs = [];
+        }
+      },
+      {
+        delay: 500,
+      },
+    );
   }, [jobsState, jobCriteriaState]);
 };
 
