@@ -11,7 +11,7 @@ const Main: React.FC = (): JSX.Element => {
       <JobCriteriaProvider>
         <Switch>
           <Route path="/" component={Home} exact />
-          <Route path="/job/:id" component={JobDetail} exact />
+          <Route path="/jobs/:id" component={JobDetail} exact />
         </Switch>
       </JobCriteriaProvider>
     </JobsProvider>

@@ -1,0 +1,9 @@
+.job-listing-container {
+  min-height: 200px;
+}
+
+@media screen and (min-width: 1024px) {
+  .job-listing-container {
+    min-height: 400px;
+  }
+}

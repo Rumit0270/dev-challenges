@@ -55,10 +55,10 @@ const JobCriteria: React.FC = () => {
         onChange={(event) => onLocationCheckboxChange(event.target.checked, 'Amsterdam')}
       />
       <Checkbox
-        labelText="New York"
+        labelText="Munich"
         containerStyle="mb-3"
-        checked={isChecked('New York')}
-        onChange={(event) => onLocationCheckboxChange(event.target.checked, 'New York')}
+        checked={isChecked('Munich')}
+        onChange={(event) => onLocationCheckboxChange(event.target.checked, 'Munich')}
       />
       <Checkbox
         labelText="Berlin"

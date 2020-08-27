@@ -13,7 +13,7 @@ export default observable<IJobCriteriaStore>(
   {
     jobDescription: '',
     fullTime: false,
-    location: 'London',
+    location: 'Amsterdam',
 
     setJobDescription(description: string) {
       this.jobDescription = description;
