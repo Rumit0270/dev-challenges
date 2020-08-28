@@ -46,6 +46,7 @@
     ]
   },
   "devDependencies": {
+    "@types/lodash": "^4.14.160",
     "@types/react-router-dom": "^5.1.5",
     "autoprefixer": "^9.8.6",
     "eslint-config-prettier": "^6.11.0",

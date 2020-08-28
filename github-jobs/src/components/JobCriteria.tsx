@@ -1,10 +1,11 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { observer } from 'mobx-react';
 import Checkbox from './Checkbox';
 import { JobCriteriaContext } from '../context/JobCriteriaContext';
 
 const JobCriteria: React.FC = () => {
   const jobCriteria = useContext(JobCriteriaContext);
+  const [location, setLocation] = useState<string>(jobCriteria.location);
 
   const isChecked = (label: string) => {
     return jobCriteria.location.toLowerCase() === label.toLowerCase();
@@ -15,6 +16,12 @@ const JobCriteria: React.FC = () => {
       jobCriteria.location = location;
     } else {
       jobCriteria.location = '';
+    }
+  };
+
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === 'Enter') {
+      jobCriteria.location = location;
     }
   };
 
@@ -37,8 +44,9 @@ const JobCriteria: React.FC = () => {
           name="location"
           placeholder="City, state, zip code or country"
           className="font-roboto py-2 px-3 flex-1 text-steel-gray location-input"
-          value={jobCriteria.location}
-          onChange={(event) => (jobCriteria.location = event.target.value)}
+          value={location}
+          onChange={(event) => setLocation(event.target.value)}
+          onKeyDown={(e) => handleKeyDown(e)}
         />
       </div>
 
