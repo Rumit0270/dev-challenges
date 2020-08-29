@@ -10,3 +10,8 @@
 @import 'JobListing.css';
 @import 'Job.css';
 @import 'JobDetail.css';
+@import 'Pagination.css';
+
+html {
+  scroll-behavior: smooth;
+}

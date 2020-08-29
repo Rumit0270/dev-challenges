@@ -1,0 +1,36 @@
+.pagination-item {
+  font-family: 'Roboto', 'sans-serif';
+  color: #b9bdcf;
+  border: 1px solid #b7bcce;
+  text-align: center;
+  font-size: 12px;
+  line-height: 14px;
+  border-radius: 4px;
+  outline-color: #1e86ff;
+  width: 36px;
+  height: 36px;
+}
+
+.pagination-item:focus {
+  outline-color: #1482ff;
+}
+
+.pagination-item:hover {
+  color: #1e86ff;
+  background: transparent;
+  border: 1px solid #1e86ff;
+}
+
+.pagination-item--active {
+  color: white;
+  background: #1e86ff;
+  border: 1px solid #1e86ff;
+}
+
+.pagination-item__separator {
+  color: #b7bcce;
+  height: 36px;
+  width: 36px;
+  font-size: 12px;
+  line-height: 14px;
+}
