@@ -24,7 +24,7 @@
   },
   "scripts": {
     "start:react": "react-scripts start",
-    "start": "PORT=5986 npm-run-all build:css --parallel watch:css start:react",
+    "start": "npm-run-all build:css --parallel watch:css start:react",
     "build": "npm run build:css && react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",

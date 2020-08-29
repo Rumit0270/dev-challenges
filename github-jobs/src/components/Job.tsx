@@ -27,7 +27,7 @@ const Job: React.FC<JobProps> = ({ job }): JSX.Element => {
         </h4>
         <div className="flex flex-col md:flex-row md:items-center md:justify-between w-full">
           {isFullTime && (
-            <span className="inline-block self-start p-2 rounded font-bold text-xs leading-3 text-chambray mb-4 md:mb-0 full-time-indicator">
+            <span className="inline-block self-start p-2 rounded font-bold text-xs leading-3 text-chambray mb-4 md:mb-0 mr-2 full-time-indicator">
               Full time
             </span>
           )}
@@ -35,11 +35,11 @@ const Job: React.FC<JobProps> = ({ job }): JSX.Element => {
           <div className="py-2 self-stretch md:self-start flex items-center justify-between text-heather2">
             <div className="inline-flex items-center mr-5 md:mr-8">
               <span className="material-icons mr-2 text-base">public</span>
-              <span className="text-sm leading-3">{job.location}</span>
+              <span className="text-xs sm:text-sm leading-3">{job.location}</span>
             </div>
             <div className="inline-flex items-center">
               <span className="material-icons mr-2 text-base">access_time</span>
-              <span className="text-sm leading-3">{jobDate}</span>
+              <span className="text-xs sm:text-sm leading-3">{jobDate}</span>
             </div>
           </div>
         </div>

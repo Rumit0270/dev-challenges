@@ -3,9 +3,16 @@ import { BeatLoader } from 'react-spinners';
 import { observer } from 'mobx-react';
 import { JobsContext } from '../context/JobsContext';
 import Job from './Job';
+import Pagination from './Pagination/Pagination';
 
 const JobListing: React.FC = () => {
-  const { visibleJobs, loading, currentPage, setCurrentPage } = useContext(JobsContext);
+  const jobsState = useContext(JobsContext);
+  const { visibleJobs, loading, currentPage, totalPage } = jobsState;
+
+  const handlePageChange = (page: number) => {
+    jobsState.setCurrentPage(page);
+    window.scrollTo(0, 0);
+  };
 
   const renderJobs = () => {
     if (visibleJobs.length === 0) {
@@ -31,6 +38,12 @@ const JobListing: React.FC = () => {
   return (
     <div className="flex-1 job-listing-container">
       <div className="mb-3">{renderJobs()}</div>
+      <Pagination
+        className="mt-8 mb-12"
+        currentPage={currentPage}
+        totalPage={totalPage}
+        onPageClick={handlePageChange}
+      />
     </div>
   );
 };

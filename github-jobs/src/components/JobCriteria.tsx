@@ -1,11 +1,17 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import { observer } from 'mobx-react';
 import Checkbox from './Checkbox';
 import { JobCriteriaContext } from '../context/JobCriteriaContext';
+import { JobsContext } from '../context/JobsContext';
 
 const JobCriteria: React.FC = () => {
   const jobCriteria = useContext(JobCriteriaContext);
+  const jobs = useContext(JobsContext);
   const [location, setLocation] = useState<string>(jobCriteria.location);
+
+  useEffect(() => {
+    setLocation(jobCriteria.location);
+  }, [jobCriteria.location]);
 
   const isChecked = (label: string) => {
     return jobCriteria.location.toLowerCase() === label.toLowerCase();
@@ -13,16 +19,23 @@ const JobCriteria: React.FC = () => {
 
   const onLocationCheckboxChange = (checked: boolean, location: string) => {
     if (checked) {
-      jobCriteria.location = location;
+      jobCriteria.setLocation(location);
     } else {
-      jobCriteria.location = '';
+      jobCriteria.setLocation('');
     }
+    jobs.setCurrentPage(1);
   };
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === 'Enter') {
-      jobCriteria.location = location;
+      jobCriteria.setLocation(location);
+      jobs.setCurrentPage(1);
     }
+  };
+
+  const onFulltimeCheckboxChange = (checked: boolean) => {
+    jobCriteria.setFullTime(checked);
+    jobs.setCurrentPage(1);
   };
 
   return (
@@ -31,7 +44,7 @@ const JobCriteria: React.FC = () => {
         labelText="Full Time"
         containerStyle="mb-5"
         checked={jobCriteria.fullTime}
-        onChange={(event) => (jobCriteria.fullTime = event.target.checked)}
+        onChange={(event) => onFulltimeCheckboxChange(event.target.checked)}
       />
 
       <label htmlFor="location" className="uppercase font-bold text-sm leading-5 text-heather">

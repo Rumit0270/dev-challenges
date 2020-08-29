@@ -15,8 +15,8 @@ const JobSearch: React.FC<JobSearchProps> = ({ onJobSearch }): JSX.Element => {
 
   return (
     <div className="h- w-full relative rounded-lg mb-6 md:mb-8 font-roboto job-search-container">
-      <div className="w-4/5 p-1 mx-auto absolute rounded job-search flex">
-        <div className="flex-1 py-1 px-2 text-heather flex items-center job-search-input-group">
+      <div className="w-11/12 p-1 mx-auto absolute rounded job-search flex">
+        <div className="flex-1 py-1 px-2 text-heather flex items-center">
           <span className="material-icons">work_outline</span>
           <input
             type="text"

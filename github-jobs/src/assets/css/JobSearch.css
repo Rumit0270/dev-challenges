@@ -1,5 +1,5 @@
 .job-search-container {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.3)),
+  background-image: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.2)),
     url('../images/backgroundImg.png');
   background-position: bottom;
   background-size: cover;

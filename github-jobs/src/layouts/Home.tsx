@@ -4,15 +4,18 @@ import JobSearch from '../components/JobSearch';
 import JobCriteria from '../components/JobCriteria';
 import JobListing from '../components/JobListing';
 import { JobCriteriaContext } from '../context/JobCriteriaContext';
+import { JobsContext } from '../context/JobsContext';
 
 const Home: React.FC = (): JSX.Element => {
   const jobCriteria = useContext(JobCriteriaContext);
+  const jobs = useContext(JobsContext);
 
   const handleJobSearchByTag = (jobText: string) => {
     if (jobCriteria.jobDescription === jobText) {
       return;
     }
     jobCriteria.setJobDescription(jobText);
+    jobs.setCurrentPage(1);
   };
 
   return (

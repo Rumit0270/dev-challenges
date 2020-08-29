@@ -2,6 +2,11 @@
   min-height: 300px;
 }
 
+.job-detail__aside {
+  max-width: 500px;
+  overflow-wrap: break-word;
+}
+
 .back-icon {
   transform: rotateZ(180deg);
 }

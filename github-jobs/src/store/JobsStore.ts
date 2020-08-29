@@ -6,6 +6,7 @@ interface IJobStore {
   jobs: IJob[];
   readonly visibleJobs: IJob[];
   currentPage: number;
+  totalPage: number;
   loading: boolean;
   readonly jobsCount: number;
   setJobs: (jobs: IJob[]) => void;
@@ -29,6 +30,10 @@ export default observable<IJobStore>(
       let endIndex = startIndex + ROWS_PER_PAGE;
 
       return this.jobs.slice(startIndex, endIndex);
+    },
+
+    get totalPage() {
+      return Math.ceil(this.jobsCount / ROWS_PER_PAGE);
     },
 
     setJobs(jobs: IJob[]) {
