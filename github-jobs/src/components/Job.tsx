@@ -17,7 +17,7 @@ const Job: React.FC<JobProps> = ({ job }): JSX.Element => {
       className="flex mb-5 p-3 pr-5 md:p-5 md:pb-2 bg-white rounded w-full font-roboto job"
     >
       <div
-        className="mr-4 company__logo"
+        className="mr-5 company__logo"
         style={{ backgroundImage: `url(${job.company_logo})` }}
       ></div>
       <div className="w-full">

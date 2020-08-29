@@ -1,0 +1,76 @@
+.job-detail {
+  min-height: 300px;
+}
+
+.back-icon {
+  transform: rotateZ(180deg);
+}
+
+.how-to-apply a {
+  color: rgba(30, 134, 255, 0.8);
+}
+
+.how-to-apply a:hover {
+  color: #1e86ff;
+}
+
+.company-logo {
+  width: 64px;
+  height: 64px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  border-radius: 4px;
+}
+
+.job-description {
+  line-height: 150%;
+}
+
+.job-description p {
+  margin-bottom: 10px;
+  margin-top: 20px;
+}
+
+.job-description h1,
+.job-description h2,
+.job-description h3 .job-description h4,
+.job-description h5,
+.job-description h6 {
+  margin-bottom: 16px;
+}
+
+.job-description ul,
+.job-description li {
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+
+.job-description a {
+  color: rgba(30, 134, 255, 0.8);
+}
+
+.job-description a:hover {
+  color: #1e86ff;
+}
+
+@media screen and (min-width: 768px) {
+  .job-detail__aside {
+    flex: 3;
+  }
+
+  .job-detail__main {
+    flex: 7;
+  }
+
+  .company-logo {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .job-detail {
+    min-height: 600px;
+  }
+}
