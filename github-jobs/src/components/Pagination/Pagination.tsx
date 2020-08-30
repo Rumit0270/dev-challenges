@@ -68,7 +68,7 @@ const Pagination: React.FC<PaginationProps> = ({
   };
 
   return (
-    <ul className={`list-none flex items-center w-100 justify-end ${className}`}>
+    <ul className={`list-none flex flex-wrap items-center w-100 justify-end ${className}`}>
       {activePage !== 1 ? (
         <Control iconName="keyboard_arrow_left" onClick={handleLeftControlClick} />
       ) : null}
