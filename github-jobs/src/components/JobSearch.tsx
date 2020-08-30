@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
+import { JobCriteriaContext } from '../context/JobCriteriaContext';
 
 interface JobSearchProps {
   onJobSearch: (jobText: string) => void;
@@ -6,6 +7,11 @@ interface JobSearchProps {
 
 const JobSearch: React.FC<JobSearchProps> = ({ onJobSearch }): JSX.Element => {
   const [searchText, setSearchText] = useState<string>('');
+  const jobCriteria = useContext(JobCriteriaContext);
+
+  useEffect(() => {
+    setSearchText(jobCriteria.jobDescription);
+  }, [jobCriteria.jobDescription]);
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === 'Enter') {
