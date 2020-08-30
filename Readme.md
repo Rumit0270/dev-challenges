@@ -1,5 +1,3 @@
-# This repository contains the solutions for the design challenges on https://devchallenges.io
-
 ## Responsive Section
 
 - 404 Not Found: https://excellent-division.surge.sh/
@@ -18,3 +16,4 @@
 - Random Quote Generator (React): https://maddening-grade.surge.sh/
 - Country Quiz (React): https://standing-drop.surge.sh/
 - Weather App (React): https://undesirable-icicle.surge.sh/
+- Github Jobs (React): https://steady-fiction.surge.sh/
