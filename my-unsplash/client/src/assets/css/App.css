@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap');
+
+:root {
+  --font-noto-sans: 'Noto Sans', sans-serif;
+  --layout-breakpoint-sm: 640px;
+  --layout-breakpoint-md: 768px;
+  --layout-breakpoint-lg: 1024px;
+  --layout-breakpoint-xl: 1280px;
+  --color-silver: #bdbdbd;
+  --color-ocean-green: #3db46d;
+  --color-emperor: #4f4f4f;
+  --color-burnt-sienna: #eb5757;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-noto-sans);
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100vh;
+  padding: 4px 8px;
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+@media screen and (min-width: 768px) {
+  .app-container {
+    padding: 8px 16px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .app-container {
+    padding: 20px 40px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .app-container {
+    max-width: 1400px;
+  }
+}
