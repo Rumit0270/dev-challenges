@@ -2,7 +2,7 @@
 
 :root {
   --font-noto-sans: 'Noto Sans', sans-serif;
-  --layout-breakpoint-sm: 640px;
+  --layout-breakpoint-sm: 576px;
   --layout-breakpoint-md: 768px;
   --layout-breakpoint-lg: 1024px;
   --layout-breakpoint-xl: 1280px;
@@ -10,6 +10,7 @@
   --color-ocean-green: #3db46d;
   --color-emperor: #4f4f4f;
   --color-burnt-sienna: #eb5757;
+  --color-mine-shaft: #333333;
 }
 
 * {
@@ -27,7 +28,7 @@ body {
   flex-direction: column;
   width: 100%;
   min-height: 100vh;
-  padding: 4px 8px;
+  padding: 0px 8px 5px;
   max-width: 980px;
   margin: 0 auto;
 }
@@ -40,7 +41,7 @@ body {
 
 @media screen and (min-width: 1024px) {
   .app-container {
-    padding: 20px 40px;
+    padding: 12px 40px;
   }
 }
 
