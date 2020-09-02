@@ -1,6 +1,6 @@
 import apiService from './apiService';
 
-interface IImage {
+export interface IImage {
   id?: string;
   label: string;
   imageUrl: string;
