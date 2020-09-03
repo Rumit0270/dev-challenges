@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { ChangeEvent } from 'react';
 
 import '../../assets/css/Input.css';
 
@@ -19,7 +18,6 @@ interface IInputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   endIcon?: string;
   inputSize?: InputSize;
   className?: string;
-  handleInputChange?: (event: ChangeEvent<HTMLInputElement>) => void;
 }
 
 type InputProps = IInputProps &
@@ -34,7 +32,6 @@ const Input: React.FC<InputProps> = ({
   endIcon = null,
   inputSize = 'md',
   className = '',
-  handleInputChange = () => {},
   ...props
 }): JSX.Element => {
   const errorClass = error ? 'input--error' : '';
@@ -67,7 +64,6 @@ const Input: React.FC<InputProps> = ({
           className={`base-input-style ${errorClass} ${inputSizeClass} ${className}`}
           placeholder={placeholder}
           {...props}
-          onChange={handleInputChange}
         />
         {iconEnd}
       </div>
