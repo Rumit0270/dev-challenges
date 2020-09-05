@@ -11,7 +11,7 @@
   font-family: var(--font-nots-sans);
   font-size: 14px;
   line-height: 19px;
-  font-weight: 600;
+  font-weight: 500;
   color: var(--color-emperor);
   display: table-header-group;
   margin: 5px 0;
@@ -30,6 +30,7 @@
   font-size: 14px;
   line-height: 19px;
   filter: drop-shadow(0px 1px 6px rgba(0, 0, 0, 0.1));
+  width: 100%;
 }
 
 .base-input-style:focus {

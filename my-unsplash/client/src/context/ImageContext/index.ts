@@ -16,6 +16,7 @@ const imageReducer = (state: IImageState, action: ImageAction): IImageState => {
       return {
         ...state,
         allImages: action.payload,
+        loading: false,
       };
     case ImageActionTypes.DELETE_IMAGE_REQUEST:
       return { ...state, loading: true };
@@ -25,14 +26,19 @@ const imageReducer = (state: IImageState, action: ImageAction): IImageState => {
         allImages: state.allImages.filter(
           (image) => image.id !== action.payload
         ),
+        loading: false,
       };
     case ImageActionTypes.ADD_IMAGE_REQUEST:
       return { ...state, loading: true };
     case ImageActionTypes.ADD_IMAGE_COMPLETE:
       if (action.payload) {
-        return { ...state, allImages: [action.payload, ...state.allImages] };
+        return {
+          ...state,
+          allImages: [action.payload, ...state.allImages],
+          loading: false,
+        };
       }
-      return state;
+      return { ...state, loading: false };
     default:
       return state;
   }

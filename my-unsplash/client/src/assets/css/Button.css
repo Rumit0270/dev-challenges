@@ -14,6 +14,13 @@
   border: 1px solid var(--color-mine-shaft);
 }
 
+.btn:disabled {
+  background: #e6e6ee;
+  box-shadow: none;
+  border: 1px solid #e6e6ee;
+  color: var(--color-silver);
+}
+
 .btn--success {
   background-color: var(--color-ocean-green);
   box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.1);
@@ -21,7 +28,7 @@
   border: 1px solid var(--color-ocean-green);
 }
 
-.btn--success:hover {
+.btn--success:not([disabled]):hover {
   background-color: #37a06d;
 }
 
@@ -32,7 +39,7 @@
   border: 1px solid var(--color-burnt-sienna);
 }
 
-.btn--danger:hover {
+.btn--danger:not([disabled]):hover {
   background-color: #d75757;
 }
 
@@ -47,6 +54,6 @@
   border: 1px solid transparent;
 }
 
-.btn--text:hover {
+.btn--text:not([disabled]):hover {
   background-color: #eeeeee;
 }

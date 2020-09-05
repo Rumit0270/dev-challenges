@@ -1,8 +1,8 @@
 import React, { useContext, useEffect, useState, useCallback } from 'react';
 import './assets/css/App.css';
-import Header from './components/Header';
-import Main from './components/Main';
-import Footer from './components/Footer';
+import Header from './layouts/Header';
+import Main from './layouts/Main';
+import Footer from './layouts/Footer';
 import { ImageContext } from './context';
 
 const App: React.FC = (): JSX.Element => {
@@ -22,7 +22,11 @@ const App: React.FC = (): JSX.Element => {
   return (
     <div className="app-container">
       <Header onSearchInputChange={onSearchInputChange} />
-      <Main images={state.allImages} seachText={searchText} />
+      <Main
+        images={state.allImages}
+        seachText={searchText}
+        loading={state.loading}
+      />
       <Footer />
     </div>
   );

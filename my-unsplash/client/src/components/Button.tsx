@@ -1,6 +1,6 @@
 import React from 'react';
 
-import '../../assets/css/Button.css';
+import '../assets/css/Button.css';
 
 type ButtonVariant = 'default' | 'text';
 type ButtonColor = 'success' | 'danger';

@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import '../../assets/css/Input.css';
+import '../assets/css/Input.css';
 
 type InputSize = 'sm' | 'md';
 
@@ -18,6 +18,7 @@ interface IInputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   endIcon?: string;
   inputSize?: InputSize;
   className?: string;
+  containerClassName?: string;
 }
 
 type InputProps = IInputProps &
@@ -32,6 +33,7 @@ const Input: React.FC<InputProps> = ({
   endIcon = null,
   inputSize = 'md',
   className = '',
+  containerClassName = '',
   ...props
 }): JSX.Element => {
   const errorClass = error ? 'input--error' : '';
@@ -55,7 +57,7 @@ const Input: React.FC<InputProps> = ({
 
   return (
     <div
-      className={`input-container ${hasHelperText} ${hasStartIcon} ${hasEndIcon}`}
+      className={`input-container ${hasHelperText} ${hasStartIcon} ${hasEndIcon} ${containerClassName}`}
     >
       <div className="input-group">
         {iconStart}
