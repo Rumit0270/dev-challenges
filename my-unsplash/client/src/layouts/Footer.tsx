@@ -4,7 +4,7 @@ import '../assets/css/Footer.css';
 const Footer: React.FC = (): JSX.Element => {
   return (
     <footer className="footer">
-      <p>Rumit Tandukar @ DevChallenges.io</p>
+      <p className="footer-text"> Rumit Tandukar @ DevChallenges.io</p>
     </footer>
   );
 };

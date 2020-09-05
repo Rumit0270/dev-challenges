@@ -1,5 +1,23 @@
 .main-container {
   flex: 1;
+  font-family: var(--font-noto-sans);
+  margin-bottom: 24px;
+}
+
+.flex-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.no-images-text {
+  color: var(--color-emperor);
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 18px;
+  margin: 0 16px;
+  text-align: center;
+  letter-spacing: 0.2px;
 }
 
 .my-masonry-grid {
@@ -9,18 +27,82 @@
   margin-left: -30px; /* gutter size offset */
   width: auto;
 }
+
 .my-masonry-grid_column {
   padding-left: 30px; /* gutter size */
   background-clip: padding-box;
 }
 
-.my-masonry-grid_column img {
-  background: grey;
+.my-masonry-grid_column .unsplash-image-container {
+  background: transparent;
   margin-bottom: 30px;
 }
 
-.my-masonry-grid img {
+.my-masonry-grid .unsplash-image {
   width: 100%;
   border-radius: 24px;
   filter: drop-shadow(0px 1px 6px rgba(0, 0, 0, 0.05));
+}
+
+.unsplash-image-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: 24px;
+  font-family: var(--font-noto-sans);
+}
+
+.unsplash-image__content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: all 0.3s;
+  transform: translateY(-100%);
+  padding: 24px;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4));
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.unsplash-image-container:hover .unsplash-image__content {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.unsplash-image__action {
+  align-self: flex-end;
+  color: var(--color-burnt-sienna);
+  border: 1px solid var(--color-burnt-sienna);
+  border-radius: 12px;
+  background: transparent;
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-weight: 600;
+}
+
+.unsplash-image__action:hover {
+  background: var(--color-burnt-sienna);
+  color: whitesmoke;
+}
+
+.unsplash-image__action:focus {
+  outline: none;
+}
+
+.unsplash-image__label {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 22px;
+  color: white;
+}
+
+@media screen and (min-width: 1024px) {
+  .no-images-text {
+    font-size: 16px;
+    line-height: 22px;
+  }
 }

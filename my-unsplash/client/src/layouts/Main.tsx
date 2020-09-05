@@ -8,6 +8,7 @@ import { IImage } from '../api/imageService';
 import Modal from '../components/Modal';
 import DeleteImageForm from '../components/DeleteImageForm';
 import { ImageContext } from '../context';
+import Loader from '../components/Loader';
 
 const breakpointColumnsObj = {
   default: 3,
@@ -74,11 +75,28 @@ const Main: React.FC<MainProps> = ({
       >
         {filteredImages.map((image) => {
           return (
-            <LazyLoadImage
-              src={image.imageUrl}
-              alt={image.label}
-              effect="blur"
-            />
+            <figure
+              className="unsplash-image-container"
+              key={image.id ? image.id : image.imageUrl}
+            >
+              <LazyLoadImage
+                src={image.imageUrl}
+                alt={image.label}
+                effect="blur"
+                className="unsplash-image"
+              />
+              <div className="unsplash-image__content">
+                <button
+                  className="unsplash-image__action"
+                  onClick={() => onImageDeleteClick(image)}
+                >
+                  delete
+                </button>
+                <figcaption className="unsplash-image__label">
+                  {image.label}
+                </figcaption>
+              </div>
+            </figure>
           );
         })}
       </Masonry>
@@ -86,7 +104,32 @@ const Main: React.FC<MainProps> = ({
   };
 
   if (loading) {
-    return <div className="main-container">loading</div>;
+    return (
+      <div className="main-container flex-container">
+        <Loader />
+      </div>
+    );
+  }
+
+  if (!loading && images.length === 0) {
+    return (
+      <div className="main-container flex-container">
+        <p className="no-images-text">
+          No images added yet. Added images will be shown here.
+        </p>
+      </div>
+    );
+  }
+
+  if (!loading && filteredImages.length === 0) {
+    return (
+      <div className="main-container flex-container">
+        <p className="no-images-text">
+          Oops! Image not found. Please alter your search criteria and try
+          again.
+        </p>
+      </div>
+    );
   }
 
   return (
