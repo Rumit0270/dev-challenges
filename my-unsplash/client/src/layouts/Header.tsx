@@ -19,7 +19,7 @@ const Header: React.FC<HeaderProps> = ({
 }): JSX.Element => {
   const { addImage } = useContext(ImageContext);
   const [showModal, setShowModal] = useState<boolean>(false);
-  const handleTextChange = debounce(onSearchInputChange, 300);
+  const handleTextChange = debounce(onSearchInputChange, 250);
 
   const onAddImage = (image: IImage) => {
     addImage(image);

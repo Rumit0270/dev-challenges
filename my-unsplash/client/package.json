@@ -10,6 +10,8 @@
     "lodash.debounce": "^4.0.8",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-lazy-load-image-component": "^1.5.0",
+    "react-masonry-css": "^1.0.14",
     "react-scripts": "3.4.3",
     "typescript": "~3.7.2"
   },
@@ -35,10 +37,11 @@
     ]
   },
   "devDependencies": {
-    "@types/lodash.debounce": "^4.0.6",
     "@types/jest": "^24.0.0",
+    "@types/lodash.debounce": "^4.0.6",
     "@types/node": "^12.0.0",
     "@types/react": "^16.9.0",
-    "@types/react-dom": "^16.9.0"
+    "@types/react-dom": "^16.9.0",
+    "@types/react-lazy-load-image-component": "^1.5.1"
   }
 }

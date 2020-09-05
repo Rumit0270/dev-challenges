@@ -1,9 +1,20 @@
 import React, { useState, useEffect, useContext } from 'react';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import 'react-lazy-load-image-component/src/effects/blur.css';
+import Masonry from 'react-masonry-css';
+
 import '../assets/css/Main.css';
 import { IImage } from '../api/imageService';
 import Modal from '../components/Modal';
 import DeleteImageForm from '../components/DeleteImageForm';
 import { ImageContext } from '../context';
+
+const breakpointColumnsObj = {
+  default: 3,
+  1600: 3,
+  850: 2,
+  500: 1,
+};
 
 interface MainProps {
   images: IImage[];
@@ -50,19 +61,37 @@ const Main: React.FC<MainProps> = ({
     setFilteredImages(filteredImages);
   }, [images, seachText]);
 
+  const renderImages = () => {
+    if (images.length <= 0) {
+      return;
+    }
+
+    return (
+      <Masonry
+        breakpointCols={breakpointColumnsObj}
+        className="my-masonry-grid"
+        columnClassName="my-masonry-grid_column"
+      >
+        {filteredImages.map((image) => {
+          return (
+            <LazyLoadImage
+              src={image.imageUrl}
+              alt={image.label}
+              effect="blur"
+            />
+          );
+        })}
+      </Masonry>
+    );
+  };
+
   if (loading) {
     return <div className="main-container">loading</div>;
   }
 
   return (
     <>
-      <main className="main-container">
-        {filteredImages.map((image) => (
-          <button key={image.label} onClick={() => onImageDeleteClick(image)}>
-            {image.label}
-          </button>
-        ))}
-      </main>
+      <main className="main-container">{renderImages()}</main>
       <Modal
         show={showModal}
         as={

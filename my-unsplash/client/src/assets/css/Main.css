@@ -1,3 +1,26 @@
 .main-container {
   flex: 1;
 }
+
+.my-masonry-grid {
+  display: -webkit-box; /* Not needed if autoprefixing */
+  display: -ms-flexbox; /* Not needed if autoprefixing */
+  display: flex;
+  margin-left: -30px; /* gutter size offset */
+  width: auto;
+}
+.my-masonry-grid_column {
+  padding-left: 30px; /* gutter size */
+  background-clip: padding-box;
+}
+
+.my-masonry-grid_column img {
+  background: grey;
+  margin-bottom: 30px;
+}
+
+.my-masonry-grid img {
+  width: 100%;
+  border-radius: 24px;
+  filter: drop-shadow(0px 1px 6px rgba(0, 0, 0, 0.05));
+}
