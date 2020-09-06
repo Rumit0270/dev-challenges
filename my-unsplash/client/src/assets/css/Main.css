@@ -49,6 +49,7 @@
   overflow: hidden;
   border-radius: 24px;
   font-family: var(--font-noto-sans);
+  cursor: zoom-in;
 }
 
 .unsplash-image__content {

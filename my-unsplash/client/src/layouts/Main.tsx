@@ -2,6 +2,8 @@ import React, { useState, useEffect, useContext } from 'react';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import 'react-lazy-load-image-component/src/effects/blur.css';
 import Masonry from 'react-masonry-css';
+import Lightbox from 'react-image-lightbox';
+import 'react-image-lightbox/style.css';
 
 import '../assets/css/Main.css';
 import { IImage } from '../api/imageService';
@@ -32,23 +34,8 @@ const Main: React.FC<MainProps> = ({
   const [filteredImages, setFilteredImages] = useState<IImage[]>([]);
   const [showModal, setShowModal] = useState<boolean>(false);
   const [deleteImage, setDeleteImage] = useState<IImage | null>(null);
-
-  const onCloseModal = () => {
-    setShowModal(false);
-  };
-
-  const onImageDelete = (image: IImage) => {
-    if (image.id) {
-      removeImage(image.id);
-    }
-
-    setShowModal(false);
-  };
-
-  const onImageDeleteClick = (image: IImage) => {
-    setDeleteImage(image);
-    setShowModal(true);
-  };
+  const [showLightBox, setShowLightBox] = useState<boolean>(false);
+  const [lightBoxImageIndex, setLightBoxImageIndex] = useState<number>(0);
 
   useEffect(() => {
     if (seachText === '') {
@@ -62,6 +49,32 @@ const Main: React.FC<MainProps> = ({
     setFilteredImages(filteredImages);
   }, [images, seachText]);
 
+  const onCloseModal = () => {
+    setShowModal(false);
+  };
+
+  const onImageDelete = (image: IImage) => {
+    if (image.id) {
+      removeImage(image.id);
+    }
+
+    setShowModal(false);
+  };
+
+  const onImageDeleteClick = (
+    event: React.MouseEvent<HTMLButtonElement, MouseEvent>,
+    image: IImage
+  ) => {
+    event.stopPropagation();
+    setDeleteImage(image);
+    setShowModal(true);
+  };
+
+  const openLightBox = (imageIndex: number) => {
+    setLightBoxImageIndex(imageIndex);
+    setShowLightBox(true);
+  };
+
   const renderImages = () => {
     if (images.length <= 0) {
       return;
@@ -73,7 +86,7 @@ const Main: React.FC<MainProps> = ({
         className="my-masonry-grid"
         columnClassName="my-masonry-grid_column"
       >
-        {filteredImages.map((image) => {
+        {filteredImages.map((image, index) => {
           return (
             <figure
               className="unsplash-image-container"
@@ -85,10 +98,13 @@ const Main: React.FC<MainProps> = ({
                 effect="blur"
                 className="unsplash-image"
               />
-              <div className="unsplash-image__content">
+              <div
+                className="unsplash-image__content"
+                onClick={() => openLightBox(index)}
+              >
                 <button
                   className="unsplash-image__action"
-                  onClick={() => onImageDeleteClick(image)}
+                  onClick={(event) => onImageDeleteClick(event, image)}
                 >
                   delete
                 </button>
@@ -100,6 +116,42 @@ const Main: React.FC<MainProps> = ({
           );
         })}
       </Masonry>
+    );
+  };
+
+  const renderLightbox = () => {
+    if (!showLightBox || lightBoxImageIndex > filteredImages.length) {
+      return null;
+    }
+
+    let currentImage = filteredImages[lightBoxImageIndex];
+    let nextImage =
+      filteredImages[(lightBoxImageIndex + 1) % filteredImages.length];
+    let prevImage =
+      filteredImages[
+        (lightBoxImageIndex + filteredImages.length - 1) % filteredImages.length
+      ];
+
+    return (
+      <Lightbox
+        mainSrc={currentImage.imageUrl}
+        nextSrc={nextImage.imageUrl}
+        prevSrc={prevImage.imageUrl}
+        onCloseRequest={() => setShowLightBox(false)}
+        onMovePrevRequest={() =>
+          setLightBoxImageIndex(
+            (prevIndex) =>
+              (prevIndex + filteredImages.length - 1) % filteredImages.length
+          )
+        }
+        onMoveNextRequest={() =>
+          setLightBoxImageIndex(
+            () => (lightBoxImageIndex + 1) % filteredImages.length
+          )
+        }
+        imageTitle={<h3>{currentImage.label}</h3>}
+        imagePadding={60}
+      />
     );
   };
 
@@ -134,7 +186,10 @@ const Main: React.FC<MainProps> = ({
 
   return (
     <>
-      <main className="main-container">{renderImages()}</main>
+      <main className="main-container">
+        {renderImages()}
+        {renderLightbox()}
+      </main>
       <Modal
         show={showModal}
         as={
