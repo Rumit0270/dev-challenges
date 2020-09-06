@@ -3,6 +3,10 @@ import { Request, Response } from 'express';
 
 import db from '../utils/db';
 
+const imageUrlRegex = RegExp(
+  '^(https://images.unsplash.com/photo-)([0-9])*-([0-9a-zA-Z])*?.*'
+);
+
 export const getImages = async (req: Request, res: Response) => {
   try {
     let data: any[] = [];
@@ -29,7 +33,7 @@ export const getImages = async (req: Request, res: Response) => {
 export const postImage = async (req: Request, res: Response) => {
   try {
     const { label, imageUrl } = req.body;
-    if (!label || !imageUrl) {
+    if (!label || !imageUrl || !imageUrlRegex.test(imageUrl)) {
       return res.status(400).json({
         error: 'Invalid request',
       });
