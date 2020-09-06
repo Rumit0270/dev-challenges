@@ -13,8 +13,8 @@ import { ImageContext } from '../context';
 import Loader from '../components/Loader';
 
 const breakpointColumnsObj = {
-  default: 3,
-  1600: 3,
+  default: 4,
+  2000: 3,
   850: 2,
   500: 1,
 };
@@ -54,6 +54,11 @@ const Main: React.FC<MainProps> = ({
   };
 
   const onImageDelete = (image: IImage) => {
+    if (images.length <= 10) {
+      setShowModal(false);
+      return;
+    }
+
     if (image.id) {
       removeImage(image.id);
     }
@@ -197,6 +202,7 @@ const Main: React.FC<MainProps> = ({
             onCancel={onCloseModal}
             onDelete={onImageDelete}
             image={deleteImage}
+            allowDeletion={images.length > 10}
           />
         }
       />

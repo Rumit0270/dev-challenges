@@ -4,6 +4,9 @@ import Input from './Input';
 import Button from './Button';
 import { IImage } from '../api/imageService';
 
+const imageUrlRegex = RegExp(
+  '^(https://images.unsplash.com/photo-)([0-9])*-([0-9a-zA-Z])*?.*'
+);
 interface AddImageFormProps {
   onCancel: () => void;
   onSubmit: (image: IImage) => void;
@@ -17,7 +20,11 @@ const AddImageForm: React.FC<AddImageFormProps> = ({
   const [imageUrl, setImageUrl] = useState<string>('');
 
   const isFormValid = (): boolean => {
-    return imageLabel.length > 0 && imageUrl.length > 0;
+    return (
+      imageLabel.length > 0 &&
+      imageUrl.length > 0 &&
+      imageUrlRegex.test(imageUrl)
+    );
   };
 
   const handleSubmit = () => {
@@ -49,6 +56,7 @@ const AddImageForm: React.FC<AddImageFormProps> = ({
         className="add-image__input"
         value={imageUrl}
         onChange={(e: any) => setImageUrl(e.target.value)}
+        helperText="Please enter a valid unsplash image URL. Other image URLs are not supported for now."
       />
 
       <div className="add-image__controls">

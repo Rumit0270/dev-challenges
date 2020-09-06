@@ -8,12 +8,14 @@ interface DeleteImageFormProps {
   onCancel: () => void;
   onDelete: (image: IImage) => void;
   image: IImage | null;
+  allowDeletion: boolean;
 }
 
 const DeleteImageForm: React.FC<DeleteImageFormProps> = ({
   onCancel,
   onDelete,
   image,
+  allowDeletion,
 }): JSX.Element => {
   const [imageLabel, setImageLabel] = useState<string>('');
 
@@ -21,7 +23,7 @@ const DeleteImageForm: React.FC<DeleteImageFormProps> = ({
     if (!image) {
       return false;
     }
-    return image.label === imageLabel;
+    return image.label === imageLabel && allowDeletion;
   };
 
   const handleSubmit = () => {
@@ -41,6 +43,11 @@ const DeleteImageForm: React.FC<DeleteImageFormProps> = ({
         className="delete-image__input"
         value={imageLabel}
         onChange={(e: any) => setImageLabel(e.target.value)}
+        helperText={
+          !allowDeletion
+            ? 'Deletion is disabled for now because there are less than 10 images in database.'
+            : ''
+        }
       />
 
       <div className="delete-image__controls">
