@@ -2,7 +2,7 @@
   padding: 10px 0;
   display: flex;
   align-items: center;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 }
 
 .header__logo {
@@ -19,29 +19,42 @@
 }
 
 .search-input {
-  margin-right: 8px !important;
+  padding: 8px !important;
 }
 
 .add-photo-button {
-  padding: 8px 10px !important;
+  padding: 3px 8px !important;
   font-size: 12px !important;
   line-height: 16px !important;
+  height: 40px !important;
+}
+
+header .input-container {
+  margin-right: 5px;
 }
 
 @media screen and (min-width: 576px) {
   .search-input {
     min-width: 240px;
     max-width: 500px;
+    padding: 14px !important;
+    padding-left: 40px !important;
   }
 
   .add-photo-button {
+    padding: 5px 10px !important;
     font-size: 14px !important;
     line-height: 19px !important;
     padding: 14px 22px !important;
+    height: 50px !important;
   }
 }
 
 @media screen and (min-width: 768px) {
+  .header {
+    margin-bottom: 40px;
+  }
+
   .header__logo {
     width: 140px;
     margin-right: 14px;

@@ -13,7 +13,7 @@ The repo contains the frontend code for My Unsplash Challenges.
 ## Libraries used
 
 - [lodash.debounce] - For debouncing user search
-- [react-image-lightbox] - M For image gallery
+- [react-image-lightbox] - For image gallery
 - [react-lazy-load-image-component] - For showing visual effects when images are loaded
 - [react-masonry-css] - For masonry layout of images
 

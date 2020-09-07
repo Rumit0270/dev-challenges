@@ -69,6 +69,7 @@
 .input-icon {
   color: var(--color-silver);
   z-index: 10;
+  opacity: 0;
 }
 
 .has-start-icon .input-icon {
@@ -105,4 +106,10 @@
 .input-small {
   padding: 8px;
   min-height: 40px;
+}
+
+@media screen and (min-width: 576px) {
+  .input-icon {
+    opacity: 1;
+  }
 }
