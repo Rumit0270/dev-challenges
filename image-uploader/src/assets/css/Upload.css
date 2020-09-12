@@ -38,6 +38,10 @@
   margin: 20px 0;
 }
 
+.upload__file-picker {
+  display: none;
+}
+
 @media screen and (min-width: 576px) {
   .upload {
     width: 420px;
