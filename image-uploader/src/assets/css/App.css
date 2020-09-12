@@ -10,6 +10,9 @@
   --color-gray: #828282;
   --color-silver: #bdbdbd;
   --color-royal-blue: #2f80ed;
+  --color-athens-gray: #fafafb;
+  --color-catskill-white: #f6f8fb;
+  --color-jordy-blue: #97bef4;
 }
 
 *,
@@ -22,4 +25,22 @@
 
 body {
   font-family: var(--font-poppins);
+}
+
+.button {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  text-align: center;
+  letter-spacing: -0.035em;
+  color: white;
+  border-radius: 8px;
+  background-color: var(--color-royal-blue);
+  padding: 8px 14px;
+  border: none;
+  transition: all 0.2s;
+}
+
+.button:hover {
+  background-color: #1d70e0;
 }

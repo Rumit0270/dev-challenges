@@ -1,8 +1,13 @@
 import React from 'react';
 import './assets/css/App.css';
+import Main from './layouts/Main';
 
 const App: React.FC = (): JSX.Element => {
-  return <div>App Component</div>;
+  return (
+    <>
+      <Main />
+    </>
+  );
 };
 
 export default App;

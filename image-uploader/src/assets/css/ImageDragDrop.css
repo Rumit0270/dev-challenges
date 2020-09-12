@@ -1,0 +1,27 @@
+.image-drag-drop {
+  width: 100%;
+  max-width: 800px;
+  border-radius: 12px;
+  background-color: var(--color-catskill-white);
+  border: 1px dashed var(--color-jordy-blue);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 36px 12px;
+}
+
+.image-drag-drop img {
+  width: 120px;
+  height: 90px;
+  margin-bottom: 32px;
+}
+
+.image-drag-drop p {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 18px;
+  letter-spacing: -0.035em;
+  color: var(--color-silver);
+  margin-bottom: 10px;
+}
