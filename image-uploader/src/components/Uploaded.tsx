@@ -21,8 +21,9 @@ const Uploaded: React.FC<UploadedProps> = ({ imageUrl }): JSX.Element => {
     <div className="uploaded">
       <span className="material-icons uploaded__icon">check_circle</span>
       <h3 className="uploaded__title">Uploaded Successfully!</h3>
-      <img src={imageUrl} alt="uploaded" className="uploaded__image" />
-
+      <div className="uploaded__image-wrapper">
+        <img src={imageUrl} alt="uploaded" className="uploaded__image" />
+      </div>
       <div className="uploaded__link">
         <input type="text" value={imageUrl} readOnly ref={inputLinkRef} />
         <button className="button" onClick={copyToClipboard}>

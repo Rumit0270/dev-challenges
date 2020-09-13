@@ -35,6 +35,11 @@
   margin-bottom: 28px;
 }
 
+.uploaded__image-wrapper {
+  min-height: 250px;
+  width: 100%;
+}
+
 .uploaded__link {
   display: flex;
   width: 100%;

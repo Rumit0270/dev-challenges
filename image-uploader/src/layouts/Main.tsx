@@ -5,6 +5,7 @@ import { uploadImage } from '../api/image';
 import Upload from '../components/Upload';
 import Uploading from '../components/Uploading';
 import Uploaded from '../components/Uploaded';
+import FadeTransition from '../components/FadeTransition';
 
 enum AppState {
   UPLOAD = 'UPLOAD',
@@ -31,14 +32,29 @@ const Main: React.FC = (): JSX.Element => {
 
   const renderUI = () => {
     if (appState === AppState.UPLOAD) {
-      return <Upload onImageSelect={handleImageSelect} />;
+      return (
+        <FadeTransition inProp={appState === AppState.UPLOAD} key="upload">
+          <Upload onImageSelect={handleImageSelect} />
+        </FadeTransition>
+      );
     }
 
     if (appState === AppState.UPLOADING) {
-      return <Uploading />;
+      return (
+        <FadeTransition
+          inProp={appState === AppState.UPLOADING}
+          key="uploading"
+        >
+          <Uploading />
+        </FadeTransition>
+      );
     }
 
-    return <Uploaded imageUrl={downloadUrl} />;
+    return (
+      <FadeTransition inProp={appState === AppState.UPLOADED} key="uploaded">
+        <Uploaded imageUrl={downloadUrl} key="uploaded" />
+      </FadeTransition>
+    );
   };
 
   return <main className="main">{renderUI()}</main>;
