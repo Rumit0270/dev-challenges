@@ -45,6 +45,7 @@ const Upload: React.FC<UploadProps> = ({ onImageSelect }): JSX.Element => {
       <span className="upload__option-text">Or</span>
       <input
         type="file"
+        accept="image/*"
         ref={filePickerRef}
         className="upload__file-picker"
         onChange={onFileChange}

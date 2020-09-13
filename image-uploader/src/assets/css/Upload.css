@@ -1,5 +1,5 @@
 .upload {
-  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
   border-radius: 12px;
   background-color: var(--color-athens-gray);
   display: flex;
