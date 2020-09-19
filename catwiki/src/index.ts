@@ -3,19 +3,19 @@ import helmet from 'helmet';
 import cors from 'cors';
 import compression from 'compression';
 import dotenv from 'dotenv';
-
-import logger from './utils/logger';
-
-console.log(process.env.NODE_ENV);
+import morgan from 'morgan';
 dotenv.config({
   path: `.env.${process.env.NODE_ENV}`,
 });
+
+import logger from './utils/logger';
 
 const app = express();
 
 app.use(helmet());
 app.use(cors());
 app.use(compression());
+app.use(morgan('short'));
 
 app.get('/', (req: Request, res: Response) => {
   return res.status(200).json({
