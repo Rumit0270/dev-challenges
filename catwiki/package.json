@@ -1,0 +1,35 @@
+{
+  "name": "catwiki",
+  "version": "1.0.0",
+  "description": "Get to know cats more",
+  "main": "index.ts",
+  "author": "Rumit Tandukar",
+  "license": "MIT",
+  "scripts": {
+    "start:dev": "export NODE_ENV=development && nodemon",
+    "build": "tsc",
+    "start": "export NODE_ENV=production && rimraf build && npm run build && pm2 start build/index.js"
+  },
+  "devDependencies": {
+    "@types/compression": "^1.7.0",
+    "@types/cors": "^2.8.7",
+    "@types/express": "^4.17.8",
+    "@types/node": "^14.11.1",
+    "@types/nodemon": "^1.19.0",
+    "nodemon": "^2.0.4",
+    "rimraf": "^3.0.2",
+    "ts-node": "^9.0.0",
+    "typescript": "^4.0.3"
+  },
+  "dependencies": {
+    "axios": "^0.20.0",
+    "compression": "^1.7.4",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "helmet": "^4.1.1",
+    "pm2": "^4.4.1",
+    "winston": "^3.3.3",
+    "winston-daily-rotate-file": "^4.5.0"
+  }
+}
