@@ -9,6 +9,7 @@ dotenv.config({
 });
 
 import logger from './utils/logger';
+import catRoutes from './routes/cats';
 
 const app = express();
 
@@ -16,6 +17,9 @@ app.use(helmet());
 app.use(cors());
 app.use(compression());
 app.use(morgan('short'));
+app.use(express.json());
+
+app.use('/api/breeds', catRoutes);
 
 app.get('/', (req: Request, res: Response) => {
   return res.status(200).json({
