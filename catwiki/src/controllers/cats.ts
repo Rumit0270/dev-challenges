@@ -1,6 +1,6 @@
 import { Request, Response, NextFunction } from 'express';
 
-import { searchBreedByName } from '../api/catApiService';
+import { searchBreedByName, fetchBreedImages } from '../api/catApiService';
 import FavouriteBreed from '../models/favouriteBreed';
 
 // Search a breed by given query string
@@ -92,6 +92,30 @@ export const postSearchBreed = async (
     return res.status(200).json({
       message: 'Success',
     });
+  } catch (err) {
+    return res.status(500).json({
+      error: 'Internal Server Error',
+    });
+  }
+};
+
+export const getBreedImages = async (
+  req: Request,
+  res: Response,
+  next: NextFunction
+) => {
+  try {
+    const breedId = req.query.breedId;
+
+    if (!breedId || typeof breedId !== 'string') {
+      return res.status(400).json({
+        error: 'Bad Request',
+      });
+    }
+
+    const images = await fetchBreedImages(breedId, 10);
+
+    return res.status(200).json(images);
   } catch (err) {
     return res.status(500).json({
       error: 'Internal Server Error',
