@@ -10,6 +10,8 @@ dotenv.config({
 
 import logger from './utils/logger';
 import catRoutes from './routes/cats';
+import connectDb from './utils/connectDb';
+import { seedFavouriteBreeds } from './utils/seeds';
 
 const app = express();
 
@@ -29,6 +31,15 @@ app.get('/', (req: Request, res: Response) => {
 
 const PORT = process.env.PORT || 5000;
 
-app.listen(PORT, () => {
-  logger.info(`Server listening at port: ${PORT}`);
+connectDb(async () => {
+  try {
+    await seedFavouriteBreeds();
+  } catch (err) {
+    logger.error(`Error seeding the database: ${err}`);
+    return;
+  }
+
+  app.listen(PORT, () => {
+    logger.info(`Server listening at port: ${PORT}`);
+  });
 });
