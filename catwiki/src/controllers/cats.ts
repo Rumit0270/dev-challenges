@@ -80,11 +80,19 @@ export const postSearchBreed = async (
       });
     }
 
+    // Get the image for this breed first. Save image of the breed in the document
+    // so client does not have to make multiple request
+
+    const breedImages = await fetchBreedImages(breedId);
+
+    const breedImage = breedImages[0];
+
     const newFavouriteBreed = new FavouriteBreed({
       name: breed.name,
       description: breed.description,
       breedId: breed.breedId,
       searchCount: 1,
+      imageUrl: breedImage,
     });
 
     await newFavouriteBreed.save();
@@ -99,6 +107,7 @@ export const postSearchBreed = async (
   }
 };
 
+// Get the image for a breed
 export const getBreedImages = async (
   req: Request,
   res: Response,

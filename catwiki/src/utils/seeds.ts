@@ -17,6 +17,7 @@ export const seedFavouriteBreeds = async () => {
         description: item.description,
         breedId: item.id,
         searchCount: 0,
+        imageUrl: item.imageUrl,
       });
     });
 

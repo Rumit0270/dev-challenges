@@ -38,7 +38,8 @@
       "imperial": "7  -  10",
       "metric": "3 - 5"
     },
-    "wikipedia_url": "https://en.wikipedia.org/wiki/Abyssinian_(cat)"
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Abyssinian_(cat)",
+    "imageUrl": "https://cdn2.thecatapi.com/images/xnzzM6MBI.jpg"
   },
   {
     "adaptability": 5,
@@ -76,7 +77,8 @@
       "imperial": "7 - 10",
       "metric": "3 - 5"
     },
-    "wikipedia_url": "https://en.wikipedia.org/wiki/Aegean_cat"
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Aegean_cat",
+    "imageUrl": "https://cdn2.thecatapi.com/images/uvt2Psd9O.jpg"
   },
   {
     "adaptability": 5,
@@ -117,7 +119,8 @@
       "imperial": "7 - 16",
       "metric": "3 - 7"
     },
-    "wikipedia_url": "https://en.wikipedia.org/wiki/American_Bobtail"
+    "wikipedia_url": "https://en.wikipedia.org/wiki/American_Bobtail",
+    "imageUrl": "https://cdn2.thecatapi.com/images/8r4M61iyS.jpg"
   },
   {
     "adaptability": 5,
@@ -158,7 +161,8 @@
       "imperial": "5 - 10",
       "metric": "2 - 5"
     },
-    "wikipedia_url": "https://en.wikipedia.org/wiki/American_Curl"
+    "wikipedia_url": "https://en.wikipedia.org/wiki/American_Curl",
+    "imageUrl": "https://cdn2.thecatapi.com/images/zeKI28A21.jpg"
   },
   {
     "adaptability": 5,
@@ -199,7 +203,8 @@
       "imperial": "8 - 15",
       "metric": "4 - 7"
     },
-    "wikipedia_url": "https://en.wikipedia.org/wiki/American_Shorthair"
+    "wikipedia_url": "https://en.wikipedia.org/wiki/American_Shorthair",
+    "imageUrl": "https://cdn2.thecatapi.com/images/SCHe-SekW.jpg"
   },
   {
     "adaptability": 5,
@@ -239,7 +244,8 @@
       "imperial": "8 - 15",
       "metric": "4 - 7"
     },
-    "wikipedia_url": "https://en.wikipedia.org/wiki/American_Wirehair"
+    "wikipedia_url": "https://en.wikipedia.org/wiki/American_Wirehair",
+    "imageUrl": "https://cdn2.thecatapi.com/images/bTo6m3PVg.jpg"
   },
   {
     "adaptability": 5,
@@ -277,7 +283,8 @@
       "imperial": "8 - 16",
       "metric": "4 - 7"
     },
-    "wikipedia_url": "https://en.wikipedia.org/wiki/Arabian_Mau"
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Arabian_Mau",
+    "imageUrl": "https://cdn2.thecatapi.com/images/mnD88Lsjd.jpg"
   },
   {
     "adaptability": 5,
@@ -315,7 +322,8 @@
       "imperial": "7 - 15",
       "metric": "3 - 7"
     },
-    "wikipedia_url": "https://en.wikipedia.org/wiki/Australian_Mist"
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Australian_Mist",
+    "imageUrl": "https://cdn2.thecatapi.com/images/zTiuUpmqf.jpg"
   },
   {
     "adaptability": 5,
@@ -355,7 +363,8 @@
       "imperial": "4 - 10",
       "metric": "2 - 5"
     },
-    "wikipedia_url": "https://en.wikipedia.org/wiki/Balinese_(cat)"
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Balinese_(cat)",
+    "imageUrl": "https://cdn2.thecatapi.com/images/DBmIBhhyv.jpg"
   },
   {
     "adaptability": 5,
@@ -393,6 +402,7 @@
       "imperial": "4 - 9",
       "metric": "2 - 4"
     },
-    "wikipedia_url": "https://en.wikipedia.org/wiki/Bambino_cat"
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Bambino_cat",
+    "imageUrl": "https://cdn2.thecatapi.com/images/5AdhMjeEu.jpg"
   }
 ]
