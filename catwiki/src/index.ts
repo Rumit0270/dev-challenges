@@ -31,6 +31,31 @@ app.get('/', (req: Request, res: Response) => {
 
 const PORT = process.env.PORT || 5000;
 
+if (process.env.NODE_ENV === 'development') {
+  const swaggerUi = require('swagger-ui-express');
+  const swaggerJsDoc = require('swagger-jsdoc');
+
+  const swaggerOptions = {
+    swaggerDefinition: {
+      info: {
+        title: 'Catwiki API',
+        description: 'Catwiki API definition',
+        version: '1.0.0',
+        contact: {
+          name: 'Rumit Tandukar',
+        },
+        servers: [`http://localhost:${PORT}`],
+      },
+    },
+
+    apis: ['**/routes/*.ts', '**/controllers/*.ts'],
+  };
+
+  const specs = swaggerJsDoc(swaggerOptions);
+
+  app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(specs));
+}
+
 connectDb(async () => {
   try {
     await seedFavouriteBreeds();

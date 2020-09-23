@@ -3,7 +3,23 @@ import { Request, Response, NextFunction } from 'express';
 import { searchBreedByName, fetchBreedImages } from '../api/catApiService';
 import FavouriteBreed from '../models/favouriteBreed';
 
-// Search a breed by given query string
+/**
+ * @swagger
+ * /api/breeds/search:
+ *   get:
+ *     summary: Search a breed by given query string
+ *     parameters:
+ *       - name: searchTerm
+ *         description: The term used to search for cat breed
+ *         in: query
+ *         required: true
+ *         schema:
+ *           type: string
+ *     responses:
+ *       '200': Success
+ *       '400': Bad Request
+ *       '500': Internal Server Error
+ */
 export const getSearchBreedByName = async (
   req: Request,
   res: Response,
@@ -27,7 +43,15 @@ export const getSearchBreedByName = async (
   }
 };
 
-// Get top 10 most searched breed
+/**
+ * @swagger
+ * /api/breeds/popular:
+ *   get:
+ *     summary: Get the top 10 most searched cat breed
+ *     responses:
+ *       '200': Success
+ *       '500': Internal Server Error
+ */
 export const getPopularBreeds = async (
   req: Request,
   res: Response,
@@ -49,7 +73,25 @@ export const getPopularBreeds = async (
   }
 };
 
-// Increment a search count of a breed when searched
+/**
+ * @swagger
+ * /api/breeds/popular:
+ *   post:
+ *     summary: Add a new breed to Favourites breed if it did not exist else increment the search count of the breed
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               breed:
+ *                 type: object
+ *     responses:
+ *       '200': Success
+ *       '400': Bad Request
+ *       '500': Internal Server Error
+ */
 export const postSearchBreed = async (
   req: Request,
   res: Response,
@@ -107,7 +149,23 @@ export const postSearchBreed = async (
   }
 };
 
-// Get the image for a breed
+/**
+ * @swagger
+ * /api/breeds/images:
+ *   get:
+ *     summary: Get the image(s) from the breed
+ *     parameters:
+ *       - name: breedId
+ *         description: The id of the breed
+ *         in: query
+ *         required: true
+ *         schema:
+ *           type: string
+ *     responses:
+ *       '200': Success
+ *       '400': Bad Request
+ *       '500': Internal Server Error
+ */
 export const getBreedImages = async (
   req: Request,
   res: Response,

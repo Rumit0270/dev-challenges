@@ -20,6 +20,8 @@
     "@types/nodemon": "^1.19.0",
     "nodemon": "^2.0.4",
     "rimraf": "^3.0.2",
+    "swagger-jsdoc": "^4.0.0",
+    "swagger-ui-express": "^4.1.4",
     "ts-node": "^9.0.0",
     "typescript": "^4.0.3"
   },
