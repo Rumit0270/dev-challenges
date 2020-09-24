@@ -3,4 +3,6 @@ node_modules
 logs
 *.log
 *-audit.json
+.env.production
 .env
+mongodb

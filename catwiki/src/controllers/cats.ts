@@ -15,10 +15,6 @@ import FavouriteBreed from '../models/favouriteBreed';
  *         required: true
  *         schema:
  *           type: string
- *     responses:
- *       '200': Success
- *       '400': Bad Request
- *       '500': Internal Server Error
  */
 export const getSearchBreedByName = async (
   req: Request,
@@ -48,9 +44,6 @@ export const getSearchBreedByName = async (
  * /api/breeds/popular:
  *   get:
  *     summary: Get the top 10 most searched cat breed
- *     responses:
- *       '200': Success
- *       '500': Internal Server Error
  */
 export const getPopularBreeds = async (
   req: Request,
@@ -78,19 +71,21 @@ export const getPopularBreeds = async (
  * /api/breeds/popular:
  *   post:
  *     summary: Add a new breed to Favourites breed if it did not exist else increment the search count of the breed
- *     requestBody:
- *       required: true
- *       content:
- *         application/json:
- *           schema:
- *             type: object
- *             properties:
- *               breed:
- *                 type: object
- *     responses:
- *       '200': Success
- *       '400': Bad Request
- *       '500': Internal Server Error
+ *     consumes:
+ *       - application/json
+ *     parameters:
+ *       - in: body
+ *         name: breed
+ *         required: true
+ *         schema:
+ *           type: object
+ *           properties:
+ *             breedId:
+ *               type: string
+ *             description:
+ *               type: string
+ *             name:
+ *               type: string
  */
 export const postSearchBreed = async (
   req: Request,
@@ -98,10 +93,9 @@ export const postSearchBreed = async (
   next: NextFunction
 ) => {
   try {
-    const breed = req.body.breed;
-    const breedId = breed.breedId;
+    const { breedId, name, description } = req.body;
 
-    if (!breed || !breed.name || !breed.description || !breed.breedId) {
+    if (!name || !description || !breedId) {
       return res.status(400).json({
         error: 'Bad Request',
       });
@@ -130,9 +124,9 @@ export const postSearchBreed = async (
     const breedImage = breedImages[0];
 
     const newFavouriteBreed = new FavouriteBreed({
-      name: breed.name,
-      description: breed.description,
-      breedId: breed.breedId,
+      name: name,
+      description: description,
+      breedId: breedId,
       searchCount: 1,
       imageUrl: breedImage,
     });
@@ -161,10 +155,6 @@ export const postSearchBreed = async (
  *         required: true
  *         schema:
  *           type: string
- *     responses:
- *       '200': Success
- *       '400': Bad Request
- *       '500': Internal Server Error
  */
 export const getBreedImages = async (
   req: Request,

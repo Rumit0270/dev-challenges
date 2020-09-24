@@ -1,0 +1,50 @@
+version: '3'
+
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    container_name: catwiki-api
+    restart: unless-stopped
+    env_file:
+      - .env.development
+    environment:
+      - MONGO_USER=$MONGO_USER
+      - MONGO_PASSWORD=$MONGO_PASSWORD
+      - MONGO_HOST=db
+      - MONGO_PORT=27017
+      - MONGO_DATABASE=$MONGO_DATABASE
+    ports:
+      - '4000:4000'
+    volumes:
+      - .:/app
+      - node_modules:/app/node_modules
+    networks:
+      - app-network
+    depends_on:
+      - db
+
+  db:
+    image: mongo
+    container_name: db
+    restart: unless-stopped
+    env_file:
+      - .env.development
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=$MONGO_USER
+      - MONGO_INITDB_ROOT_PASSWORD=$MONGO_PASSWORD
+    ports:
+      - '27018:27017'
+    volumes:
+      - ./mongodb/data/db:/data/db
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
+
+volumes:
+  mongodb:
+  node_modules:
