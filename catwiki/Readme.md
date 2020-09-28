@@ -1,12 +1,12 @@
-# Catwiki API
+# Catwiki Challenge
 
-## Features:
+## Catwiki API Features:
 
 - API docs with swagger-ui and swagger-jsdoc
 - Docker for local development
 - API logging support
 
-## Setup Local environment
+### Setup Local environment
 
 For ease of use, docker is used for running API locally. Once docker is installed in the system simply follow the following step.
 
@@ -15,4 +15,18 @@ For ease of use, docker is used for running API locally. Once docker is installe
 
 ```sh
 $ docker-compose up
+```
+
+### Run Integration Tests
+
+- Use the following command to run the intergration tests
+
+```sh
+$ docker-compose -f docker-compose.test.yml up --abort-on-container-exit
+```
+
+OR
+
+```sh
+$ yarn run docker-test
 ```

@@ -1,10 +1,8 @@
 import breeds from '../seeds/favouriteBreeds.json';
 import FavouriteBreed from '../models/favouriteBreed';
 
-const seedDb: boolean = process.env.SEED_DB === 'true' ? true : false;
-
-export const seedFavouriteBreeds = async () => {
-  if (!seedDb) {
+export const seedFavouriteBreeds = async (seedFavouritedBreed: boolean) => {
+  if (!seedFavouritedBreed) {
     return;
   }
 

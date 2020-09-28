@@ -57,8 +57,9 @@ if (process.env.NODE_ENV === 'development') {
 }
 
 connectDb(async () => {
+  const seedDb: boolean = process.env.SEED_DB === 'true' ? true : false;
   try {
-    await seedFavouriteBreeds();
+    await seedFavouriteBreeds(seedDb);
   } catch (err) {
     logger.error(`Error seeding the database: ${err}`);
     return;
@@ -68,3 +69,5 @@ connectDb(async () => {
     logger.info(`Server listening at port: ${PORT}`);
   });
 });
+
+export default app;
