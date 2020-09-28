@@ -1,0 +1,6 @@
+build
+node_modules
+.github
+tailwind.config.js
+postcss.config.js
+serviceWorker.ts
