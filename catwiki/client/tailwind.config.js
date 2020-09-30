@@ -22,6 +22,7 @@ module.exports = {
       'cannon-black': '#291507',
       cioccolato: '#4D270C',
       kabul: '#544439',
+      westar: '#E3E1DC',
     },
     textColor: {
       white: '#ffffff',
@@ -29,6 +30,7 @@ module.exports = {
       'cannon-black': '#291507',
       cioccolato: '#4D270C',
       kabul: '#544439',
+      westar: '#E3E1DC',
     },
   },
   variants: {},

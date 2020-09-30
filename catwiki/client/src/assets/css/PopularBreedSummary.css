@@ -1,0 +1,41 @@
+.popular-breed-summary {
+  border-bottom-left-radius: 42px;
+  border-bottom-right-radius: 42px;
+}
+
+.popular-breed-summary h1::after {
+  content: '';
+  background-color: #4d270c;
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0px;
+  height: 3px;
+  width: 48px;
+}
+
+.popular-breed-summary h2 {
+  max-width: 220px;
+}
+
+.see-more {
+  display: inline-flex;
+  align-items: center;
+  color: rgba(41, 21, 7, 0.6);
+  transition: color 0.3s;
+}
+
+.see-more:hover {
+  color: rgba(41, 21, 7, 0.75);
+}
+
+@media screen and (min-width: 840px) {
+  .popular-breed-summary h1::after {
+    width: 60px;
+    top: calc(100% + 8px);
+  }
+
+  .popular-breed-summary h2 {
+    line-height: 60px;
+    max-width: 520px;
+  }
+}

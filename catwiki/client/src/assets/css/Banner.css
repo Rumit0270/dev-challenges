@@ -1,0 +1,40 @@
+.banner {
+  background-image: url('../images/HeroImagesm.png');
+  background-position: right center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-origin: border-box;
+  border-top-left-radius: 42px;
+  border-top-right-radius: 42px;
+  height: 180px;
+}
+
+.banner__logo {
+  width: 100px;
+}
+
+.banner__title {
+  width: 150px;
+}
+
+@media screen and (min-width: 840px) {
+  .banner {
+    height: 320px;
+    background-image: url('../images/HeroImagemd.png');
+  }
+
+  .banner__logo {
+    width: 290px;
+  }
+
+  .banner__title {
+    width: 340px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .banner {
+    height: 480px;
+    background-image: url('../images/HeroImagelg.png');
+  }
+}
