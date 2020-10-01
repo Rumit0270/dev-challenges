@@ -7,7 +7,7 @@ import Main from './layouts/Main';
 const App: React.FC = (): JSX.Element => {
   return (
     <Router>
-      <div className="flex flex-col min-h-screen px-2 md:px-6 lg:px-8 xl:px-12 mx-auto app-container">
+      <div className="flex flex-col min-h-screen px-3 md:px-8 lg:px-10 mx-auto app-container">
         <Header />
         <main className="flex-1">
           <Main />

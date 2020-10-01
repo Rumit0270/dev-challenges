@@ -1,0 +1,37 @@
+.why-to-own-a-cat h2 {
+  line-height: 49px;
+  position: relative;
+  max-width: 440px;
+}
+
+.why-to-own-a-cat h2::before {
+  content: '';
+  position: absolute;
+  top: -16px;
+  left: 0px;
+  width: 50px;
+  height: 3px;
+  background-color: #4d270c;
+  border-radius: 77px;
+}
+
+.read-more {
+  display: inline-flex;
+  align-items: center;
+  color: rgba(41, 21, 7, 0.6);
+  transition: color 0.3s;
+}
+
+.read-more:hover {
+  color: rgba(41, 21, 7, 0.75);
+}
+
+@media screen and (min-width: 840px) {
+  .why-to-own-a-cat h2 {
+    line-height: 59px;
+  }
+
+  .why-to-own-a-cat h2::before {
+    width: 70px;
+  }
+}
