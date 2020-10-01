@@ -28,6 +28,14 @@
   color: rgba(41, 21, 7, 0.75);
 }
 
+.popular-breeds {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 20px;
+  row-gap: 20px;
+  min-height: 300px;
+}
+
 @media screen and (min-width: 840px) {
   .popular-breed-summary h1::after {
     width: 60px;
@@ -37,5 +45,10 @@
   .popular-breed-summary h2 {
     line-height: 60px;
     max-width: 520px;
+  }
+
+  .popular-breeds {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    min-height: 180px;
   }
 }

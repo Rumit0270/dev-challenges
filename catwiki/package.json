@@ -11,7 +11,8 @@
     "start": "export NODE_ENV=production && rimraf build && npm run build && pm2 start build/index.js",
     "test": "export NODE_ENV=test && env TS_NODE_COMPILER_OPTIONS='{\"module\": \"commonjs\" }' mocha -r ts-node/register 'src/tests/**/*.ts'",
     "docker-test": "docker-compose -f docker-compose.test.yml up --abort-on-container-exit",
-    "postdocker-test": "docker-compose -f docker-compose.test.yml down"
+    "postdocker-test": "docker-compose -f docker-compose.test.yml down",
+    "dev": "docker-compose up"
   },
   "devDependencies": {
     "@types/chai": "^4.2.12",

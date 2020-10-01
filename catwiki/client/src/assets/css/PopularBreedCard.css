@@ -1,0 +1,41 @@
+.popular-breed__img {
+  height: 140px;
+  object-fit: cover;
+  border-radius: 12px;
+  -webkit-transition: -webkit-filter 0.3s;
+  transition: -webkit-filter 0.3s;
+  -o-transition: filter 0.3s;
+  transition: filter 0.3s;
+  transition: filter 0.3s, -webkit-filter 0.3s;
+  filter: none;
+}
+
+.popular-breed__img:hover {
+  filter: grayscale(80%);
+}
+
+.popular-breed:first-child::before {
+  content: '';
+  position: absolute;
+  top: 16%;
+  left: -5px;
+  width: 5px;
+  height: 50%;
+  background-color: #dec68b;
+  border-top-left-radius: 14px;
+  border-bottom-left-radius: 14px;
+}
+
+@media screen and (min-width: 840px) {
+  .popular-breed__img {
+    height: 160px;
+    border-radius: 24px;
+  }
+
+  .popular-breed:first-child::before {
+    left: -8px;
+    width: 8px;
+    border-top-left-radius: 24px;
+    border-bottom-left-radius: 24px;
+  }
+}
