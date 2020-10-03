@@ -12,3 +12,7 @@ export interface IPopularBreed {
 export const fetchPopularBreeds = () => {
   return apiService.get<IPopularBreed[]>('/api/breeds/popular');
 };
+
+export const searchBreeds = (searchTerm: string) => {
+  return apiService.get<any[]>(`/api/breeds/search?searchTerm=${searchTerm}`);
+};

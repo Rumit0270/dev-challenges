@@ -17,6 +17,111 @@
   width: 150px;
 }
 
+.input-group {
+  border-radius: 59px;
+  border: 1px solid black;
+  width: 140px;
+}
+
+.input-group input {
+  width: 80%;
+}
+
+.input-group input::placeholder,
+.input-group input {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 15px;
+  color: #291507;
+}
+
+.input-group input:focus {
+  outline: none;
+}
+
+.input-group:focus-within {
+  border: 1px solid #dec68b;
+}
+
+.backdrop {
+  background-color: rgba(0, 0, 0, 0.16);
+  transition: all 0.33s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.backdrop--show {
+  width: 100%;
+  height: 100vh;
+}
+
+.btn-search-exit {
+  visibility: hidden;
+  display: none;
+  background: rgba(151, 151, 151, 0.1);
+  border-radius: 8px;
+  padding: 2px 4px;
+}
+
+.breed-search--mobile {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60vh;
+  max-height: 500px;
+  z-index: 30;
+  background-color: white;
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
+}
+
+.breed-search--mobile .input-group {
+  width: 90%;
+  margin: 16px auto;
+}
+
+.breed-search--mobile .input-group__action {
+  visibility: hidden;
+  display: none;
+}
+
+.breed-search--mobile .btn-search-exit {
+  visibility: visible;
+  display: inline-block;
+  margin-right: 5%;
+  align-self: flex-end;
+  margin-top: 10px;
+}
+
+.search-results {
+  top: calc(100% + 32px);
+  left: 0;
+  width: 100%;
+  background-color: white;
+  max-height: 300px;
+  overflow-y: auto;
+  z-index: 30;
+  border-radius: 24px;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none;
+}
+
+/* Hide the scrollbar chrome */
+.search-results::-webkit-scrollbar {
+  display: none;
+}
+
+.search-result {
+  border-radius: 12px;
+}
+
+.search-result:focus {
+  outline: none;
+}
+
+.search-result:hover {
+  background: rgba(151, 151, 151, 0.1);
+}
+
 @media screen and (min-width: 840px) {
   .banner {
     height: 320px;
@@ -24,11 +129,33 @@
   }
 
   .banner__logo {
-    width: 290px;
+    width: 200px;
   }
 
   .banner__title {
     width: 340px;
+  }
+
+  .input-group {
+    width: 320px;
+  }
+
+  .input-group input::placeholder,
+  .input-group input {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    color: #291507;
+  }
+
+  .input-group__action {
+    visibility: hidden;
+    display: none;
+  }
+
+  .search-results {
+    max-height: 240px;
+    top: calc(100% + 20px);
   }
 }
 
@@ -36,5 +163,9 @@
   .banner {
     height: 480px;
     background-image: url('../images/HeroImagelg.png');
+  }
+
+  .banner__logo {
+    width: 280px;
   }
 }

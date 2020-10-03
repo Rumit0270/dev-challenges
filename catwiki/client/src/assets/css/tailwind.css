@@ -10,4 +10,5 @@
 @import 'PopularBreedSummary.css';
 @import 'PopularBreedCard.css';
 @import 'WhyToOwnCat.css';
+@import 'SearchLoader.css';
 @import '~/react-lazy-load-image-component/src/effects/blur.css';
