@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Scrollbars } from 'react-custom-scrollbars';
+import { Link } from 'react-router-dom';
 
 import whiteLogo from '../assets/images/CatwikiLogoWhite.svg';
 import { searchBreeds } from '../api/breedApiService';
@@ -62,12 +63,13 @@ const Banner: React.FC = (): JSX.Element => {
     }
 
     return breeds.map((breed) => (
-      <button
+      <Link
         className="block py-4 md:py-5 px-2 md:px-3 mb-1 w-full text-left font-medium text-base md:text-lg leading-4 md:leading-5 search-result"
         key={breed.id}
+        to={`/breeds/${breed.name}`}
       >
         {breed.name}
-      </button>
+      </Link>
     ));
   };
 
