@@ -14,7 +14,7 @@ const favouriteBreedSchema = new Schema({
     type: String,
     required: true,
   },
-  defaultImageUrl: String,
+  imageUrl: String,
   searchCount: {
     type: Number,
     required: true,
