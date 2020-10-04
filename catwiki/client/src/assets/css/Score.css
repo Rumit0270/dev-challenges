@@ -1,0 +1,24 @@
+.scores {
+  max-width: 520px;
+}
+
+.score {
+  height: 5px;
+  background-color: #e0e0e0;
+  border-radius: 8px;
+  margin-right: 8px;
+}
+
+.score:last-child {
+  margin-right: 0px;
+}
+
+.score--highlighted {
+  background-color: #544439;
+}
+
+@media screen and (min-width: 840px) {
+  .score {
+    height: 8px;
+  }
+}
