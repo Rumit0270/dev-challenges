@@ -1,21 +1,30 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Scrollbars } from 'react-custom-scrollbars';
 import { Link } from 'react-router-dom';
 
 import whiteLogo from '../assets/images/CatwikiLogoWhite.svg';
 import { searchBreeds } from '../api/breedApiService';
 import SearchLoader from './SearchLoader';
+import useWindowClickListener from '../hooks/useWindowClickListener';
 
 const Banner: React.FC = (): JSX.Element => {
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
   const [breedSearchClass, setBreedSearchClass] = useState<string>('');
   const [backdropClass, setBackdropClass] = useState<string>('');
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [searchText, setSearchText] = useState<string>('');
   const [breeds, setBreeds] = useState<any[]>([]);
 
-  useEffect(() => {
-    let timeout: NodeJS.Timeout;
+  useWindowClickListener(() => {
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+    }
+    setSearchText('');
+    setIsLoading(false);
+    setBreeds([]);
+  });
 
+  useEffect(() => {
     const handleSearchBreeds = async () => {
       if (searchText === '') {
         setBreeds([]);
@@ -33,12 +42,14 @@ const Banner: React.FC = (): JSX.Element => {
       }
     };
 
-    timeout = setTimeout(() => {
+    timeoutRef.current = setTimeout(() => {
       handleSearchBreeds();
     }, 300);
 
     return () => {
-      clearTimeout(timeout);
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+      }
     };
   }, [searchText]);
 

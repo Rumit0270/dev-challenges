@@ -11,7 +11,7 @@ const Score: React.FC<ScoreProps> = ({ total = 5, current }): JSX.Element => {
 
     for (let i = 0; i < total; i++) {
       const scoreClass = i < current ? 'score--highlighted' : '';
-      scores.push(<span className={`flex-1 score ${scoreClass}`}></span>);
+      scores.push(<span className={`flex-1 score ${scoreClass}`} key={i}></span>);
     }
 
     return scores;
