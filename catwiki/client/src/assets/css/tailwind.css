@@ -13,4 +13,5 @@
 @import 'SearchLoader.css';
 @import 'Breed.css';
 @import 'Score.css';
+@import 'BreedDetail.css';
 @import '~react-lazy-load-image-component/src/effects/blur.css';
