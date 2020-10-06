@@ -24,7 +24,7 @@ const PopularBreedSummary: React.FC = (): JSX.Element => {
 
   const renderPopularBreedCards = () => {
     if (loading) {
-      return <p className="text-sm">Loading...</p>;
+      return null;
     }
 
     if (!loading && popularBreeds.length === 0) {

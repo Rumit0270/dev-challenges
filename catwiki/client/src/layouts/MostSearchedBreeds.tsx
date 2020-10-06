@@ -3,6 +3,7 @@ import { LazyLoadImage } from 'react-lazy-load-image-component';
 import { Link } from 'react-router-dom';
 
 import { fetchPopularBreeds, IPopularBreed } from '../api/breedApiService';
+import Loader from '../components/Loader';
 
 const MostSearchedBreed: React.FC = (): JSX.Element => {
   const [loading, setLoading] = useState<boolean>(true);
@@ -46,7 +47,11 @@ const MostSearchedBreed: React.FC = (): JSX.Element => {
   };
 
   if (loading) {
-    return <section className="w-full flex justify-center items-center">Loading...</section>;
+    return (
+      <section className="w-full flex justify-center items-center loading">
+        <Loader />
+      </section>
+    );
   }
 
   if (mostSearchedBreeds.length === 0) {

@@ -9,6 +9,7 @@ import {
 } from '../api/breedApiService';
 import BreedDetail from '../components/BreedDetail';
 import BreedImages from '../components/BreedImages';
+import Loader from '../components/Loader';
 
 const Breed: React.FC = (): JSX.Element => {
   const { id } = useParams<{ id: string }>();
@@ -53,12 +54,16 @@ const Breed: React.FC = (): JSX.Element => {
   }, [id]);
 
   if (loading) {
-    return <section className="w-full flex justify-center items-center breed">Loading...</section>;
+    return (
+      <section className="w-full flex justify-center items-center loading">
+        <Loader />
+      </section>
+    );
   }
 
   if (!breedDetail) {
     return (
-      <section className="w-full flex justify-center items-center breed">
+      <section className="w-full flex justify-center items-center loading">
         Something went wrong!
       </section>
     );

@@ -13,3 +13,7 @@
 .noscroll {
   overflow: hidden;
 }
+
+.loading {
+  min-height: 60vh;
+}
