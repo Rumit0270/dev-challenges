@@ -53,15 +53,30 @@ const Banner: React.FC = (): JSX.Element => {
     };
   }, [searchText]);
 
+  useEffect(() => {
+    return () => {
+      // Make sure no scroll class in removed when component is unmounted
+      if (document.body.classList.contains('noscroll')) {
+        document.body.classList.remove('noscroll');
+      }
+    };
+  }, []);
+
   const handleBreedSearchActionClick = () => {
     setBreedSearchClass('breed-search--mobile');
     setBackdropClass('backdrop--show');
+    // Disable body scrolling
+    document.body.classList.add('noscroll');
   };
 
   const handleSearchExit = () => {
     setBreedSearchClass('');
     setBackdropClass('');
     setSearchText('');
+    // Enable body scrolling
+    if (document.body.classList.contains('noscroll')) {
+      document.body.classList.remove('noscroll');
+    }
   };
 
   const handleSearchTextChange = (event: React.ChangeEvent<HTMLInputElement>) => {

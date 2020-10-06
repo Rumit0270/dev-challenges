@@ -1,0 +1,18 @@
+.not-found {
+  min-height: 70vh;
+}
+
+.not-found p:last-child {
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  max-width: 200px;
+  justify-content: space-between;
+}
+
+@media screen and (min-width: 840px) {
+  .not-found p:last-child {
+    border-radius: 18px;
+    max-width: 260px;
+  }
+}

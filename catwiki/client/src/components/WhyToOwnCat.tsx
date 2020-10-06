@@ -1,10 +1,12 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 import image1 from '../assets/images/image1.png';
 import image2 from '../assets/images/image2.png';
 import image3 from '../assets/images/image3.png';
+
+const CAT_ARTICLE_URL =
+  'https://www.mentalfloss.com/article/51154/10-scientific-benefits-being-cat-owner';
 
 const WhyToOwnCat: React.FC = (): JSX.Element => {
   return (
@@ -17,10 +19,15 @@ const WhyToOwnCat: React.FC = (): JSX.Element => {
           Having a cat around you can actually trigger the release of calming chemicals in your body
           which lower your stress and anxiety levels
         </p>
-        <Link to="/" className="font-bold text-sm leading-4 md:text-base md:leading-5 read-more">
+        <a
+          href={CAT_ARTICLE_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="font-bold text-sm leading-4 md:text-base md:leading-5 read-more"
+        >
           <span className="uppercase">Read More</span>
           <span className="material-icons ml-2">trending_flat</span>
-        </Link>
+        </a>
       </div>
       <div className="grid grid-cols-5 gap-4 why-to-own-a-cat__images">
         <LazyLoadImage

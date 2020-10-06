@@ -15,7 +15,7 @@ const BreedDetail: React.FC<BreedDetailProps> = ({ breed }): JSX.Element => {
         <figure className="relative mb-5 md:mb-0 md:mr-24 breed-detail__image-wrapper">
           <LazyLoadImage
             src={breed.imageUrl}
-            alt={`${breed.name}`}
+            alt={breed.name}
             effect="blur"
             className="breed-detail__image"
           />
@@ -25,7 +25,7 @@ const BreedDetail: React.FC<BreedDetailProps> = ({ breed }): JSX.Element => {
         <h2 className="text-cannon-black font-semibold text-2xl leading-8 md:text-4xl md:leading-9 mb-4 md:mb-8">
           {breed.name}
         </h2>
-        <p className="text-canon-black font-medium text-sm leading-5 md:text-base md:leading-6 mb-3 md:mb-6 pr-8">
+        <p className="text-canon-black font-medium text-sm leading-6 md:text-base md:leading-7 mb-4 md:mb-6 pr-10 md:pr-12">
           {breed.description}
         </p>
         <div className="flex flex-col md:flex-row mb-3 md:mb-6">
