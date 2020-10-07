@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 
 import { fetchPopularBreeds, IPopularBreed } from '../api/breedApiService';
 import Loader from '../components/Loader';
@@ -49,6 +50,9 @@ const MostSearchedBreed: React.FC = (): JSX.Element => {
   if (loading) {
     return (
       <section className="w-full flex justify-center items-center loading">
+        <Helmet>
+          <title>Loading...</title>
+        </Helmet>
         <Loader />
       </section>
     );
@@ -57,18 +61,26 @@ const MostSearchedBreed: React.FC = (): JSX.Element => {
   if (mostSearchedBreeds.length === 0) {
     return (
       <section className="w-full flex justify-center items-center">
+        <Helmet>
+          <title>Oops!</title>
+        </Helmet>
         Oops! No data to display :(
       </section>
     );
   }
 
   return (
-    <section className="mb-12 md:mb-32">
-      <h2 className="font-bold text-2xl leading-8 md:text-3xl md:leading-9 mb-8 md:mb-12">
-        Top 10 most searched breeds
-      </h2>
-      <div>{renderMostSearchedBreeds()}</div>
-    </section>
+    <>
+      <Helmet>
+        <title>Most Searched Breeds</title>
+      </Helmet>
+      <section className="mb-12 md:mb-32">
+        <h2 className="font-bold text-2xl leading-8 md:text-3xl md:leading-9 mb-8 md:mb-12">
+          Top 10 most searched breeds
+        </h2>
+        <div>{renderMostSearchedBreeds()}</div>
+      </section>
+    </>
   );
 };
 

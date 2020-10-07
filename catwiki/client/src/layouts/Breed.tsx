@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 
 import {
   searchBreeds,
@@ -56,6 +57,9 @@ const Breed: React.FC = (): JSX.Element => {
   if (loading) {
     return (
       <section className="w-full flex justify-center items-center loading">
+        <Helmet>
+          <title>Loading...</title>
+        </Helmet>
         <Loader />
       </section>
     );
@@ -64,6 +68,9 @@ const Breed: React.FC = (): JSX.Element => {
   if (!breedDetail) {
     return (
       <section className="w-full flex justify-center items-center loading">
+        <Helmet>
+          <title>Oops!</title>
+        </Helmet>
         Something went wrong!
       </section>
     );
@@ -71,6 +78,9 @@ const Breed: React.FC = (): JSX.Element => {
 
   return (
     <>
+      <Helmet>
+        <title>{id}</title>
+      </Helmet>
       <BreedDetail breed={breedDetail} />
       <BreedImages images={breedImages} />
     </>
