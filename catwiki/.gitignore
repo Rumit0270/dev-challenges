@@ -4,5 +4,4 @@ logs
 *.log
 *-audit.json
 .env.production
-.env
 mongodb

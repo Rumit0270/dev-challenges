@@ -4,3 +4,4 @@ logs
 .env*
 mongodb
 .env.production
+client
