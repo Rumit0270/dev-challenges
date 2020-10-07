@@ -4,6 +4,7 @@ import cors from 'cors';
 import compression from 'compression';
 import dotenv from 'dotenv';
 import morgan from 'morgan';
+import path from 'path';
 dotenv.config({
   path: `.env.${process.env.NODE_ENV}`,
 });
@@ -22,12 +23,6 @@ app.use(morgan('short'));
 app.use(express.json());
 
 app.use('/api/breeds', catRoutes);
-
-app.get('/', (req: Request, res: Response) => {
-  return res.status(200).json({
-    message: 'Working',
-  });
-});
 
 const PORT = process.env.PORT || 5000;
 
@@ -54,6 +49,22 @@ if (process.env.NODE_ENV === 'development') {
   const specs = swaggerJsDoc(swaggerOptions);
 
   app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(specs));
+}
+
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static('client/build'));
+
+  app.use((req, res, next) => {
+    if (req.header('x-forwarded-proto') !== 'https') {
+      res.redirect(`https://${req.header('host')}${req.url}`);
+    } else {
+      next();
+    }
+  });
+
+  app.get('*', (req, res) => {
+    return res.sendFile(path.join(__dirname + '/client/build/index.html'));
+  });
 }
 
 connectDb(async () => {
