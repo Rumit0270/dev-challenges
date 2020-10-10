@@ -8,12 +8,14 @@
   "scripts": {
     "start:dev": "export NODE_ENV=development && nodemon",
     "build": "tsc",
-    "start": "export NODE_ENV=production && rimraf build && npm run build && pm2 start build/index.js",
+    "start": "export NODE_ENV=production && pm2-runtime start src/ecosystem.config.js --env production",
     "test": "export NODE_ENV=test && env TS_NODE_COMPILER_OPTIONS='{\"module\": \"commonjs\" }' mocha -r ts-node/register 'src/tests/**/*.ts'",
     "docker-test": "docker-compose -f docker-compose.test.yml up --abort-on-container-exit",
     "postdocker-test": "docker-compose -f docker-compose.test.yml down",
     "dev": "docker-compose up",
-    "heroku-postbuild": "cd client && yarn && yarn run build"
+    "heroku-postbuild": "yarn run build:server:prod && yarn run build:client:prod",
+    "build:client:prod": "export NODE_ENV=development && cd client && yarn && export NODE_ENV=production && yarn run build",
+    "build:server:prod": "rimraf build && yarn run build"
   },
   "devDependencies": {
     "@types/chai": "^4.2.12",

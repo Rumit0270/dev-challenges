@@ -16,7 +16,9 @@ import { seedFavouriteBreeds } from './utils/seeds';
 
 const app = express();
 
-app.use(helmet());
+app.use(helmet({
+  contentSecurityPolicy: false,
+}));
 app.use(cors());
 app.use(compression());
 app.use(morgan('short'));
@@ -52,18 +54,11 @@ if (process.env.NODE_ENV === 'development') {
 }
 
 if (process.env.NODE_ENV === 'production') {
-  app.use(express.static('client/build'));
+  app.use(express.static(path.resolve(__dirname + '/..', 'client/build/')));
 
-  app.use((req, res, next) => {
-    if (req.header('x-forwarded-proto') !== 'https') {
-      res.redirect(`https://${req.header('host')}${req.url}`);
-    } else {
-      next();
-    }
-  });
-
+  // We always return index.html (SPA)
   app.get('*', (req, res) => {
-    return res.sendFile(path.join(__dirname + '/client/build/index.html'));
+    return res.sendFile(path.resolve(__dirname + '/..', 'client/build/index.html'));
   });
 }
 
