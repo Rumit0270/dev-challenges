@@ -6,12 +6,16 @@ import { IPopularBreed } from '../api/breedApiService';
 
 interface IPopularBreedCardProps {
   breed: IPopularBreed;
+  className?: string;
 }
 
-const PopularBreedCard: React.FC<IPopularBreedCardProps> = ({ breed }): JSX.Element => {
+const PopularBreedCard: React.FC<IPopularBreedCardProps> = ({
+  breed,
+  className = '',
+}): JSX.Element => {
   return (
     <Link to={`/breeds/${breed.name}`}>
-      <figure className="w-full relative cursor-pointer popular-breed">
+      <figure className={`w-full relative cursor-pointer popular-breed ${className}`}>
         <LazyLoadImage
           src={breed.imageUrl}
           alt={breed.name}

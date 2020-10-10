@@ -31,7 +31,13 @@ const PopularBreedSummary: React.FC = (): JSX.Element => {
       return <div>No popular breeds available</div>;
     }
 
-    return popularBreeds.map((item) => <PopularBreedCard breed={item} key={item._id} />);
+    return popularBreeds.map((item, index) => (
+      <PopularBreedCard
+        breed={item}
+        key={item._id}
+        className={index === 0 ? 'popular-breeds__first' : ''}
+      />
+    ));
   };
 
   return (

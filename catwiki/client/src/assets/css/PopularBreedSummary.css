@@ -36,6 +36,18 @@
   min-height: 320px;
 }
 
+.popular-breeds__first::before {
+  content: '';
+  position: absolute;
+  top: 16%;
+  left: -5px;
+  width: 5px;
+  height: 50%;
+  background-color: #dec68b;
+  border-top-left-radius: 14px;
+  border-bottom-left-radius: 14px;
+}
+
 @media screen and (min-width: 840px) {
   .popular-breed-summary h1::after {
     width: 60px;
@@ -50,5 +62,12 @@
   .popular-breeds {
     grid-template-columns: 1fr 1fr 1fr 1fr;
     min-height: 190px;
+  }
+
+  .popular-breeds__first::before {
+    left: -8px;
+    width: 8px;
+    border-top-left-radius: 24px;
+    border-bottom-left-radius: 24px;
   }
 }
