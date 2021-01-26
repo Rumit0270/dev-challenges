@@ -28,8 +28,11 @@ const Main = () => {
     try {
       setShowRandomQuote(true);
       setLoading(true);
-      let res = await getRandomQuote();
-      setQuote(res.data.quote);
+      const res = await getRandomQuote();
+      const quote = res.data.data[0];
+      if (quote) {
+        setQuote(quote);
+      }
       setLoading(false);
     } catch (err) {
       setQuote(null);
@@ -45,7 +48,7 @@ const Main = () => {
       setShowRandomQuote(false);
       setLoading(true);
       let res = await getQuotesByAuthor(quote.quoteAuthor);
-      setAuthorQuotes(res.data.quotes);
+      setAuthorQuotes(res.data.data);
       setLoading(false);
     } catch (err) {
       setAuthorQuotes([]);

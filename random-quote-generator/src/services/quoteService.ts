@@ -6,17 +6,16 @@ export interface Quote {
   quoteAuthor: string;
   quoteGenre: string;
 }
-
 interface IRandomQuoteResponse {
   statusCode: number;
-  quote: Quote;
+  message?: string;
+  data: Quote[];
 }
-
 interface IQuotesByAuthorResponse {
   statusCode: number;
-  totalPages: number;
-  currentPage: number;
-  quotes: Quote[];
+  totalQuotes: number;
+  pagination?: object;
+  data: Quote[];
 }
 
 export const getRandomQuote = () => {
@@ -29,6 +28,6 @@ export const getQuotesByAuthor = (
   limit: number = 3
 ) => {
   return apiService.get<IQuotesByAuthorResponse>(
-    `/authors/${authorName}?page=${page}&limit=${limit}`
+    `/quotes?author=${authorName}&page=${page}&limit=${limit}`
   );
 };

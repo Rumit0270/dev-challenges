@@ -17,12 +17,12 @@
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  transition: box-shadow 0.4s;
+  transition: all 0.4s;
   background-color: #cdcdcd;
 }
 
 .refresh:hover {
-  box-shadow: 0px 2px 5px #eeeeee;
+  box-shadow: 0px 4px 8px #eeeeee;
   transform: translateY(-1px);
 }
 
