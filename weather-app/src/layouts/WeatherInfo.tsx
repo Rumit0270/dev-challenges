@@ -185,7 +185,7 @@ const WeatherInfo: React.FC = (): JSX.Element => {
       {renderWeatherCards()}
       {renderTodaysHighlights()}
 
-      <footer className="text-center font-montserrat font-semibold text-sm leading-5 text-comet">
+      <footer className="text-center font-montserrat font-semibold text-sm leading-4 text-comet">
         Rumit Tandukar @ DevChallenges.io
       </footer>
     </section>
